@@ -14,4 +14,11 @@
       "iconAlt": "캘린더"
     }
   }
+  ,
+  "buildTour": {
+    "title": "나만의 투어 만들기",
+    "date": "여행은 언제인가요?",
+    "duration": "여행 기간은 얼마나 되나요?",
+    "start": "Start"
+  }
 }

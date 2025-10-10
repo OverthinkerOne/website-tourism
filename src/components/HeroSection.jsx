@@ -27,7 +27,7 @@ export default function HeroSection() {
   }, [t('hero.title')])
 
   return (
-    <Box component="section" sx={{ position: 'relative', height: '100vh', width: '100%', overflow: 'hidden', mb: '100px' }}>
+    <Box component="section" sx={{ position: 'relative', height: '100vh', width: '100%', overflow: 'hidden' }}>
       {/* Background video */}
       <Box
         component="video"
@@ -195,7 +195,7 @@ export default function HeroSection() {
           position: 'absolute',
           left: 0,
           right: 0,
-          bottom: 0,
+          bottom: -1,
           width: '100%',
           height: 'auto',
           display: 'block',

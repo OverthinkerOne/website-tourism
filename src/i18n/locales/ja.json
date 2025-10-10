@@ -14,4 +14,11 @@
       "iconAlt": "カレンダー"
     }
   }
+  ,
+  "buildTour": {
+    "title": "自分だけのツアーを作成",
+    "date": "旅行はいつですか？",
+    "duration": "旅行期間はどれくらいですか？",
+    "start": "Start"
+  }
 }

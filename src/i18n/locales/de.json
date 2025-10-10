@@ -14,4 +14,11 @@
       "iconAlt": "Kalender"
     }
   }
+  ,
+  "buildTour": {
+    "title": "Stelle deine eigene Tour zusammen",
+    "date": "Wann ist deine Reise?",
+    "duration": "Wie lange dauert deine Reise?",
+    "start": "Start"
+  }
 }

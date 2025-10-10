@@ -14,4 +14,11 @@
       "iconAlt": "calendário"
     }
   }
+  ,
+  "buildTour": {
+    "title": "Monte seu próprio tour",
+    "date": "Quando é sua viagem?",
+    "duration": "Quanto tempo dura sua viagem?",
+    "start": "Start"
+  }
 }
