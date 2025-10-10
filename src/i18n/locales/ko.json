@@ -4,5 +4,14 @@
     "about_us": "회사 소개",
     "gallery": "갤러리",
     "blog": "블로그"
+  },
+  "hero": {
+    "title": "IGUASSU FALLS EXPERIENCE",
+    "subtitle": "당신의 다음 모험이 기다리고 있습니다",
+    "cta": {
+      "title": "통화 예약",
+      "subtitle": "맞춤형 경험을 제공합니다",
+      "iconAlt": "캘린더"
+    }
   }
 }

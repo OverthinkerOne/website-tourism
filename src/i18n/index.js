@@ -36,4 +36,11 @@ i18n
     },
   })
 
+// Keep <html lang> in sync and allow global reactions to language changes
+i18n.on('languageChanged', (lng) => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.setAttribute('lang', lng)
+  }
+})
+
 export default i18n

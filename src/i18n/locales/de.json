@@ -4,5 +4,14 @@
     "about_us": "Über uns",
     "gallery": "Galerie",
     "blog": "Blog"
+  },
+  "hero": {
+    "title": "IGUASSU FALLS EXPERIENCE",
+    "subtitle": "DEIN NÄCHSTES ABENTEUER ERWARTET DICH",
+    "cta": {
+      "title": "EINEN ANRUF VEREINBAREN",
+      "subtitle": "wir gestalten deine Erfahrung individuell",
+      "iconAlt": "Kalender"
+    }
   }
 }

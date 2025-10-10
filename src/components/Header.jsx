@@ -29,9 +29,8 @@ function Tape() {
 
 export default function Header() {
   const { t, i18n } = useTranslation()
-  const [lang, setLang] = React.useState(i18n.resolvedLanguage || 'en')
+  const lang = i18n.resolvedLanguage || i18n.language || 'en'
   const handleLang = (code) => {
-    setLang(code)
     i18n.changeLanguage(code)
   }
   const theme = useTheme()
