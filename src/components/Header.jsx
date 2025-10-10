@@ -2,13 +2,19 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Divider from '@mui/material/Divider'
-import MenuItem from '@mui/material/MenuItem'
-import Select from '@mui/material/Select'
+import IconButton from '@mui/material/IconButton'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from '@mui/material/styles'
+import MenuIcon from '@mui/icons-material/Menu'
 import Typography from '@mui/material/Typography'
 import { sizes, colors, fonts, i18nLanguages } from '../theme/tokens.js'
 import TapeMarquee from './TapeMarquee.jsx'
 import LanguageSelect from './LanguageSelect.jsx'
 import { useTranslation } from 'react-i18next'
+import Brand from './header/Brand.jsx'
+import SocialIcons from './header/SocialIcons.jsx'
+import NavLinks from './header/NavLinks.jsx'
+import MobileMenu from './header/MobileMenu.jsx'
 
 function Tape() {
   return (
@@ -28,6 +34,12 @@ export default function Header() {
     setLang(code)
     i18n.changeLanguage(code)
   }
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const [menuAnchor, setMenuAnchor] = React.useState(null)
+  const openMenu = Boolean(menuAnchor)
+  const handleOpenMenu = (e) => setMenuAnchor(e.currentTarget)
+  const handleCloseMenu = () => setMenuAnchor(null)
   return (
     <Box component="section" sx={{ width: '100%' }}>
   <TapeMarquee direction="left" speedSec={sizes.marqueeVerySlowSec} />
@@ -46,52 +58,41 @@ export default function Header() {
         }}
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ height: 1 }}>
-          {/* Left: Logo + Divider + Social icons */}
-          <Stack direction="row" alignItems="center" spacing={2}>
-            <Box component="img" src="/images/dark-logo.svg" alt="logo" sx={{ height: sizes.logoHeight, width: 'auto' }} />
-            <Divider orientation="vertical" sx={{
-              height: `${sizes.headerHeight * sizes.dividerHeightPct}px`,
-              alignSelf: 'center',
-              borderRightWidth: sizes.dividerThickness,
-              borderColor: 'divider',
-            }} />
-            <Stack direction="row" alignItems="center" spacing={1.5}>
-                {['facebook', 'instagram', 'whatsapp', 'get-your-guide'].map((name) => (
-                  <Box
-                    key={name}
-                    component="img"
-                    src={`/images/icons/${name}.svg`}
-                    alt={name}
-                    sx={{ height: name === 'get-your-guide' ? sizes.iconSize * 3 : sizes.iconSize, width: 'auto' }}
-                  />
-                ))}
-            </Stack>
-          </Stack>
+          {/* Left: Brand + (desktop) Social icons */}
+          <Brand showDivider dividerSx={{ display: { xs: 'none', md: 'block' } }}>
+            <SocialIcons sx={{ display: { xs: 'none', md: 'flex' } }} />
+          </Brand>
 
-          {/* Right: Nav + Language selector */}
-          <Stack direction="row" alignItems="center" spacing={{ xs: 2, md: 3 }} sx={{ mr: 1 }}>
-            {[t('nav.private_guided_tours'), t('nav.about_us'), t('nav.gallery'), t('nav.blog')].map((label) => (
-              <Typography
-                key={label}
-                component="a"
-                href="#"
-                sx={{
-                  fontFamily: fonts.headings,
-                  fontWeight: 400,
-                  fontSize: sizes.navFontSize,
-                  textTransform: 'uppercase',
-                  color: colors.textPrimary,
-                  textDecoration: 'none',
-                  letterSpacing: 1.2,
-                  transition: 'opacity .2s ease, transform .2s ease',
-                  '&:hover': { opacity: 0.75, transform: 'translateY(-1px)' },
-                  lineHeight: 1,
-                }}
-              >
-                {label}
-              </Typography>
-            ))}
-            <LanguageSelect value={lang} onChange={handleLang} />
+          {/* Right: Nav + Language selector (responsive) */}
+          <Stack direction="row" alignItems="center" spacing={{ xs: 1.5, md: 3 }} sx={{ mr: 1 }}>
+            {isMobile ? (
+              <>
+                <LanguageSelect value={lang} onChange={handleLang} />
+                <IconButton
+                  aria-label="menu"
+                  onClick={handleOpenMenu}
+                  sx={{
+                    color: colors.textPrimary,
+                    transition: 'transform .2s ease, color .2s ease',
+                    '&:hover': { color: colors.accent, transform: 'translateY(-1px)' },
+                    '&:active': { transform: 'translateY(0) scale(0.95)' },
+                  }}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <MobileMenu
+                  anchorEl={menuAnchor}
+                  open={openMenu}
+                  onClose={handleCloseMenu}
+                  labels={[t('nav.private_guided_tours'), t('nav.about_us'), t('nav.gallery'), t('nav.blog')]}
+                />
+              </>
+            ) : (
+              <>
+                <NavLinks labels={[t('nav.private_guided_tours'), t('nav.about_us'), t('nav.gallery'), t('nav.blog')]} />
+                <LanguageSelect value={lang} onChange={handleLang} />
+              </>
+            )}
           </Stack>
         </Stack>
       </Box>

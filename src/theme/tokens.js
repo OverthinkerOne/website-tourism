@@ -20,6 +20,11 @@ export const fonts = {
 export const colors = {
   headerBg: '#FFFFFF',
   textPrimary: '#000000',
+  accent: '#FF7300',
+  accentGlow1: 'rgba(255, 115, 0, 0.9)',
+  accentGlow2: 'rgba(255, 115, 0, 0.55)',
+  accentGlow3: 'rgba(255, 115, 0, 0.25)',
+  strokeOnWhite: 'rgba(0, 0, 0, 0.35)',
 }
 
 export const i18nLanguages = [

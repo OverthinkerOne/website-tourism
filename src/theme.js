@@ -2,7 +2,10 @@ import { createTheme } from '@mui/material/styles'
 import { fonts } from './theme/tokens.js'
 
 const theme = createTheme({
-  palette: { mode: 'light' },
+  palette: {
+    mode: 'light',
+    primary: { main: '#FF7300' },
+  },
   typography: {
     fontFamily: fonts.body,
     h1: { fontFamily: fonts.headings },
