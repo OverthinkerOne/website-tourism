@@ -3,22 +3,44 @@
     "private_guided_tours": "Visites privées guidées",
     "about_us": "À propos",
     "gallery": "Galerie",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Menu"
   },
+  "brand": { "logoAlt": "logo" },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "VOTRE PROCHAINE AVENTURE VOUS ATTEND",
     "cta": {
       "title": "PLANIFIER UN APPEL",
       "subtitle": "nous personnaliserons votre expérience",
-      "iconAlt": "calendrier"
-    }
+      "iconAlt": "calendrier",
+      "ariaLabel": "Planifier un appel"
+    },
+    "certificationAlt": "certification"
   }
   ,
   "buildTour": {
     "title": "Créez votre propre tour",
     "date": "Quand est votre voyage ?",
     "duration": "Combien de temps dure votre voyage ?",
-    "start": "Start"
+    "start": "Start",
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "days": "{{count}} jour"
+  },
+  "session2": {
+    "title": "Liberté d'explorer la Triple Frontier à votre façon",
+    "subtitle": "découvrez la différence de voyager dans la Triple Frontier à votre façon",
+    "carouselAlt": "image du carrousel {{index}}",
+    "features": {
+      "f1_title": "vous êtes aux commandes",
+      "f1_text": "concevez le voyage de vos rêves dans la triple frontier avec un contrôle total sur chaque détail",
+      "f2_title": "des expériences réelles",
+      "f2_text": "vivez l'authentique grâce à notre sélection de voyages uniques",
+      "f3_title": "voyagez en toute confiance",
+      "f3_text": "voyagez avec l'assurance d'un support flexible, même lorsque les plans changent",
+      "f4_title": "votre bien-être est notre affaire",
+      "f4_text": "profitez de visites privées plus sûres qui priorisent votre bien-être plutôt que des alternatives bondées"
+    }
   }
 }

@@ -69,6 +69,8 @@ export default function HeroSection() {
           textAlign: 'center',
           boxSizing: 'border-box',
           pb: { xs: '44px', md: '63px' },
+          // Lift content slightly above perfect center
+          transform: { xs: 'translateY(-20px)', md: 'translateY(-36px)', lg: 'translateY(-44px)' },
         }}
       >
         {/* Wrapper shrinks to the title width so side bars match title width */}
@@ -77,7 +79,7 @@ export default function HeroSection() {
           <Box
             component="img"
             src="/images/certification.png"
-            alt="certification"
+            alt={t('hero.certificationAlt')}
             sx={{
               display: 'block',
               height: { xs: 120, md: 160 },
@@ -168,7 +170,7 @@ export default function HeroSection() {
                 boxShadow: (theme) => `0 0 0 3px ${alpha(theme.palette.primary.main, 0.35)}, 0 10px 22px ${alpha('#000', 0.28)}`,
               },
             }}
-            aria-label="Schedule a call"
+            aria-label={t('hero.cta.ariaLabel')}
           >
             <Stack direction="row" alignItems="center" spacing={{ xs: 1.5, md: 2 }}>
               <Box sx={{ textAlign: 'left' }}>
@@ -190,7 +192,7 @@ export default function HeroSection() {
       <Box
         component="img"
         src="/images/paper.png"
-        alt="paper edge"
+        alt=""
         sx={{
           position: 'absolute',
           left: 0,
@@ -203,6 +205,7 @@ export default function HeroSection() {
           pointerEvents: 'none',
           userSelect: 'none',
         }}
+        aria-hidden
       />
     </Box>
   )

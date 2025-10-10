@@ -3,22 +3,44 @@
     "private_guided_tours": "프라이빗 가이드 투어",
     "about_us": "회사 소개",
     "gallery": "갤러리",
-    "blog": "블로그"
+    "blog": "블로그",
+    "menu": "메뉴"
   },
+  "brand": { "logoAlt": "로고" },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "당신의 다음 모험이 기다리고 있습니다",
     "cta": {
       "title": "통화 예약",
       "subtitle": "맞춤형 경험을 제공합니다",
-      "iconAlt": "캘린더"
-    }
+      "iconAlt": "캘린더",
+      "ariaLabel": "통화 예약"
+    },
+    "certificationAlt": "인증"
   }
   ,
   "buildTour": {
     "title": "나만의 투어 만들기",
     "date": "여행은 언제인가요?",
     "duration": "여행 기간은 얼마나 되나요?",
-    "start": "Start"
+    "start": "시작",
+    "days_one": "{{count}} 일",
+    "days_other": "{{count}} 일",
+    "days": "{{count}} 일"
+  },
+  "session2": {
+    "title": "당신의 방식으로 트리플 프론티어를 자유롭게 탐험",
+    "subtitle": "당신의 조건으로 트리플 프론티어를 여행하는 차이를 느껴보세요",
+    "carouselAlt": "캐러셀 이미지 {{index}}",
+    "features": {
+      "f1_title": "당신이 주도",
+      "f1_text": "모든 세부 사항을 완전히 제어하며 트리플 프론티어의 꿈의 여행을 설계하세요",
+      "f2_title": "진짜 경험",
+      "f2_text": "엄선된 특별한 여행으로 진정성을 경험하세요",
+      "f3_title": "자신감을 가지고 여행",
+      "f3_text": "계획이 바뀌어도 유연한 지원으로 안심하고 여행하세요",
+      "f4_title": "당신의 웰빙이 우리의 일",
+      "f4_text": "혼잡한 대안보다 당신의 웰빙을 우선하는 더 안전한 프라이빗 투어를 즐기세요"
+    }
   }
 }

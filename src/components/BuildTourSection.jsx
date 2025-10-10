@@ -42,20 +42,25 @@ export default function BuildTourSection() {
   }, [adapterLocale])
 
   return (
-    <Box component="section" sx={{ bgcolor: '#fff', height: 226, display: 'grid', placeItems: 'center' }}>
+    <Box component="section" sx={{ bgcolor: '#fff', minHeight: 226, display: 'grid', placeItems: 'center', overflowX: 'auto' }}>
       <Box
         sx={{
-          width: 'min(1180px, 92vw)',
-          height: 160,
+          // Let the box size to its contents while never exceeding viewport
+          width: 'max-content',
+          maxWidth: 'none',
+          minHeight: 160,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          flexWrap: 'nowrap',
           bgcolor: '#fff',
           borderRadius: '20px',
           border: '1px solid',
           borderColor: 'rgba(95,95,95,0.5)', // #5F5F5F @ 50%
-          px: 3,
-          gap: 2.5,
+          px: { xs: 2, sm: 3 },
+          py: { xs: 2, sm: 2 },
+          columnGap: 2.5,
+          rowGap: 2,
         }}
       >
         <Typography
@@ -112,16 +117,9 @@ export default function BuildTourSection() {
               displayEmpty
               sx={{ minWidth: 200, borderRadius: 2 }}
             >
-              <MenuItem value={"1"}>1 day</MenuItem>
-              <MenuItem value={"2"}>2 days</MenuItem>
-              <MenuItem value={"3"}>3 days</MenuItem>
-              <MenuItem value={"4"}>4 days</MenuItem>
-              <MenuItem value={"5"}>5 days</MenuItem>
-              <MenuItem value={"6"}>6 days</MenuItem>
-              <MenuItem value={"7"}>7 days</MenuItem>
-              <MenuItem value={"8"}>8 days</MenuItem>
-              <MenuItem value={"9"}>9 days</MenuItem>
-              <MenuItem value={"10"}>10 days</MenuItem>
+              {[1,2,3,4,5,6,7,8,9,10].map((n) => (
+                <MenuItem key={n} value={String(n)}>{t('buildTour.days', { count: n })}</MenuItem>
+              ))}
             </Select>
           </Box>
         </Box>

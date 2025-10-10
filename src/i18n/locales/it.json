@@ -3,22 +3,44 @@
     "private_guided_tours": "Tour privati guidati",
     "about_us": "Chi siamo",
     "gallery": "Galleria",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Menu"
   },
+  "brand": { "logoAlt": "logo" },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "LA TUA PROSSIMA AVVENTURA TI ATTENDE",
     "cta": {
       "title": "PROGRAMMA UNA CHIAMATA",
       "subtitle": "personalizzeremo la tua esperienza",
-      "iconAlt": "calendario"
-    }
+      "iconAlt": "calendario",
+      "ariaLabel": "Programma una chiamata"
+    },
+    "certificationAlt": "certificazione"
   }
   ,
   "buildTour": {
     "title": "Crea il tuo tour",
     "date": "Quando è il tuo viaggio?",
     "duration": "Quanto dura il tuo viaggio?",
-    "start": "Start"
+    "start": "Avvia",
+    "days_one": "{{count}} giorno",
+    "days_other": "{{count}} giorni",
+    "days": "{{count}} giorno"
+  },
+  "session2": {
+    "title": "Libertà di esplorare la Triple Frontier a modo tuo",
+    "subtitle": "scopri la differenza di viaggiare nella Triple Frontier alle tue condizioni",
+    "carouselAlt": "immagine del carosello {{index}}",
+    "features": {
+      "f1_title": "sei tu al comando",
+      "f1_text": "progetta il viaggio dei tuoi sogni nella triple frontier con il pieno controllo di ogni dettaglio",
+      "f2_title": "esperienze reali",
+      "f2_text": "vivi l'autentico con la nostra selezione curata di viaggi unici",
+      "f3_title": "viaggia con fiducia",
+      "f3_text": "viaggia con la garanzia di un supporto flessibile, anche quando i piani cambiano",
+      "f4_title": "il tuo benessere è il nostro lavoro",
+      "f4_text": "goditi tour privati più sicuri che danno priorità al tuo benessere rispetto alle alternative affollate"
+    }
   }
 }

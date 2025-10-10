@@ -18,8 +18,8 @@ export default function TapeMarquee({ direction = 'left', speedSec = sizes.marqu
   return (
     <Box sx={{ width: '100%', overflow: 'hidden', height: sizes.tapeHeight, bgcolor: 'transparent' }}>
       <Box sx={{ display: 'flex', width: '200%', height: '100%' }}>
-        <Box component="img" src="/images/top-tape.svg" alt="tape" sx={{ height: '100%', width: '50%' }} />
-        <Box component="img" src="/images/top-tape.svg" alt="tape" sx={{ height: '100%', width: '50%' }} />
+        <Box component="img" src="/images/top-tape.svg" alt="" aria-hidden sx={{ height: '100%', width: '50%' }} />
+        <Box component="img" src="/images/top-tape.svg" alt="" aria-hidden sx={{ height: '100%', width: '50%' }} />
       </Box>
       <Box sx={{
         position: 'relative',
@@ -29,8 +29,8 @@ export default function TapeMarquee({ direction = 'left', speedSec = sizes.marqu
         animation,
         display: 'flex',
       }}>
-        <Box component="img" src="/images/top-tape.svg" alt="tape" sx={{ height: '100%', width: '50%' }} />
-        <Box component="img" src="/images/top-tape.svg" alt="tape" sx={{ height: '100%', width: '50%' }} />
+        <Box component="img" src="/images/top-tape.svg" alt="" aria-hidden sx={{ height: '100%', width: '50%' }} />
+        <Box component="img" src="/images/top-tape.svg" alt="" aria-hidden sx={{ height: '100%', width: '50%' }} />
       </Box>
     </Box>
   )

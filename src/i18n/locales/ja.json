@@ -3,22 +3,44 @@
     "private_guided_tours": "プライベートガイドツアー",
     "about_us": "私たちについて",
     "gallery": "ギャラリー",
-    "blog": "ブログ"
+    "blog": "ブログ",
+    "menu": "メニュー"
   },
+  "brand": { "logoAlt": "ロゴ" },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "次の冒険があなたを待っています",
     "cta": {
       "title": "通話を予約",
       "subtitle": "あなたに合った体験をご提案します",
-      "iconAlt": "カレンダー"
-    }
+      "iconAlt": "カレンダー",
+      "ariaLabel": "通話を予約"
+    },
+    "certificationAlt": "認定"
   }
   ,
   "buildTour": {
     "title": "自分だけのツアーを作成",
     "date": "旅行はいつですか？",
     "duration": "旅行期間はどれくらいですか？",
-    "start": "Start"
+    "start": "開始",
+    "days_one": "{{count}} 日",
+    "days_other": "{{count}} 日",
+    "days": "{{count}} 日"
+  },
+  "session2": {
+    "title": "自分のスタイルでトリプル・フロンティアを自由に探検",
+    "subtitle": "自分の条件でトリプル・フロンティアを旅する違いを体験しよう",
+    "carouselAlt": "カルーセル画像 {{index}}",
+    "features": {
+      "f1_title": "あなたが主導",
+      "f1_text": "トリプル・フロンティアの理想の旅を、すべての詳細を思い通りに設計",
+      "f2_title": "リアルな体験",
+      "f2_text": "厳選されたユニークな旅で本物を体験",
+      "f3_title": "安心して旅する",
+      "f3_text": "予定が変わっても柔軟にサポートする安心感",
+      "f4_title": "あなたの健康が最優先",
+      "f4_text": "混雑を避け、健康を優先する安全なプライベートツアーを"
+    }
   }
 }

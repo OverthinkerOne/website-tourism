@@ -3,22 +3,44 @@
     "private_guided_tours": "Private guided tours",
     "about_us": "About us",
     "gallery": "Gallery",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Menu"
   },
+  "brand": { "logoAlt": "logo" },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "YOUR NEXT ADVENTURE AWAITS",
     "cta": {
       "title": "SCHEDULE A CALL",
       "subtitle": "we’ll tailor your experience",
-      "iconAlt": "calendar"
-    }
+      "iconAlt": "calendar",
+      "ariaLabel": "Schedule a call"
+    },
+    "certificationAlt": "certification"
   }
   ,
   "buildTour": {
     "title": "Build Your Own Tour",
     "date": "When is your trip?",
     "duration": "How long is your trip?",
-    "start": "Start"
+    "start": "Start",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "days": "{{count}} day"
+  },
+  "session2": {
+    "title": "Freedom to Explore the Triple Frontier Your Way",
+    "subtitle": "discover the difference of travelling triple frontier on your own terms",
+    "carouselAlt": "carousel image {{index}}",
+    "features": {
+      "f1_title": "You're in Control",
+      "f1_text": "design your dream triple frontier trip with full control over every detail",
+      "f2_title": "Real Experiences",
+      "f2_text": "experience authentic with our curated selection of unique trips",
+      "f3_title": "Travel with Confidence",
+      "f3_text": "travel with the assurance of flexible support, even when plans need to change",
+      "f4_title": "Your Wellbeing is our Business",
+      "f4_text": "enjoy safer, private tours prioritizing your wellbeing over crowded alternatives"
+    }
   }
 }

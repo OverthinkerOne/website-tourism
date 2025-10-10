@@ -4,6 +4,8 @@ import CssBaseline from '@mui/material/CssBaseline'
 import theme from './theme.js'
 import Header from './components/Header.jsx'
 import HeroSection from './components/HeroSection.jsx'
+import BuildTourSection from './components/BuildTourSection.jsx'
+import Session2 from './components/Session2.jsx'
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
       <CssBaseline />
       <Header />
       <HeroSection />
+      <BuildTourSection />
+      <Session2 />
     </ThemeProvider>
   )
 }

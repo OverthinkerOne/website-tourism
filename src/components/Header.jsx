@@ -68,7 +68,7 @@ export default function Header() {
               <>
                 <LanguageSelect value={lang} onChange={handleLang} />
                 <IconButton
-                  aria-label="menu"
+                  aria-label={t('nav.menu')}
                   onClick={handleOpenMenu}
                   sx={{
                     color: colors.textPrimary,
