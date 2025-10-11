@@ -106,6 +106,7 @@
     "title": "¿BUSCAS INSPIRACIÓN?",
     "subtitle": "Deja volar tu imaginación y visualiza destinos memorables, encuentros significativos y los recuerdos que te esperan.",
     "readMore": "Leer más",
+    "seeAllPosts": "Ver todas las publicaciones",
     "posts": {
       "inspiration-1": {
         "category": "Consejos de viaje",
@@ -126,6 +127,152 @@
         "category": "Tesoros ocultos",
         "title": "Más allá de las cataratas: senderos tranquilos y miradores secretos",
         "excerpt": "Cambia las multitudes por senderos silenciosos donde mariposas y rocío enmarcan la copa del bosque."
+      }
+    }
+  }
+
+  ,
+  "footer": {
+    "rights": "Todos los derechos reservados a RevoAds",
+    "aria_main_nav": "Navegación del pie de página",
+    "description": "Tours privados a medida por la Triple Frontera — Brasil, Argentina y Paraguay — diseñados por expertos locales para experiencias inolvidables.",
+    "explore": "Explorar",
+    "resources": "Recursos",
+    "contact": "Contacto",
+    "links": {
+      "faq": "Preguntas frecuentes",
+      "plan_trip": "Planifica tu viaje",
+      "privacy": "Política de privacidad",
+      "terms": "Términos del servicio"
+    },
+    "address": "Foz do Iguaçu • PR • Brasil",
+    "emailLabel": "Correo",
+    "phoneLabel": "Teléfono"
+  }
+
+  ,
+  "session10": {
+    "title": "¿Listo para empezar?",
+    "cta": "PLANIFICA TU VIAJE",
+    "calendlyPrefix": "O agenda una llamada en"
+  }
+
+  ,
+  "session5": {
+    "title": "Por qué reservar un road trip privado con guía",
+    "cards": {
+      "c1": { "title": "Itinerarios a medida", "desc": "Rutas adaptadas a tu ritmo y pasiones." },
+      "c2": { "title": "Experiencias auténticas", "desc": "Conoce locales, prueba sabores reales, evita los clichés." },
+      "c3": { "title": "Reservas flexibles", "desc": "Cambia fechas y planes con pocas molestias." },
+      "c4": { "title": "Seguridad en viajes privados", "desc": "Conductores discretos, alojamientos verificados y trayectos más seguros." },
+      "c5": { "title": "Experiencia local", "desc": "Consejos de guías que viven el destino." },
+      "c6": { "title": "Tours galardonados", "desc": "Reconocidos por viajeros y el sector." }
+    }
+  }
+
+  ,
+  "session6": {
+    "title": "TOURS PRIVADOS GUIADOS",
+    "viewDetails": "Ver detalles",
+    "countries": {
+      "br": "Brasil",
+      "ar": "Argentina",
+      "py": "Paraguay"
+    },
+    "titles": {
+      "br-iguacu-br": "Parque Nacional do Iguaçu (lado brasileño)",
+      "br-itaipu-night": "Luces nocturnas de Itaipú",
+      "ar-iguacu-ar": "Parque Nacional Iguazú (lado argentino)",
+      "ar-gran-aventura": "Paseo en lancha Gran Aventura",
+      "py-shopping-cde": "Compras en Ciudad del Este",
+      "py-saltos-monday": "Cascadas Saltos del Monday"
+    }
+  }
+
+  ,
+  "session8": {
+    "title": "PREGUNTAS FRECUENTES",
+    "items": {
+      "q1": {
+        "question": "¿Necesito cruzar fronteras para las Cataratas del Iguazú?",
+        "answer": "Para vivir la magia completa de Iguazú, recomendamos visitar los lados brasileño y argentino. El cruce es sencillo con la documentación adecuada y te guiamos en cada paso."
+      },
+      "q2": {
+        "question": "¿Pueden personalizar los tours a mis intereses y ritmo?",
+        "answer": "Claro. Todos los tours son personalizables — duración, actividades y nivel de confort. Cuéntanos tus preferencias y armamos un itinerario a medida."
+      },
+      "q3": {
+        "question": "¿Es seguro visitar la Triple Frontera?",
+        "answer": "Sí. Trabajamos con socios locales de confianza y te orientamos sobre rutas y horarios seguros. Los tours privados ofrecen mayor comodidad y flexibilidad."
+      },
+      "q4": {
+        "question": "¿Qué llevar para las cataratas y la selva?",
+        "answer": "Zapatillas cómodas, chaqueta liviana impermeable, protector solar, repelente y una bolsa impermeable para el móvil."
+      },
+      "q5": {
+        "question": "¿Ustedes organizan transporte y alojamiento?",
+        "answer": "Sí — podemos gestionar traslados, transporte transfronterizo y recomendar o reservar hoteles según tu estilo y presupuesto."
+      },
+      "q6": {
+        "question": "¿Puedo viajar con niños o personas mayores?",
+        "answer": "Por supuesto. Adaptamos actividades a distintas edades y movilidad para una experiencia cómoda y memorable para todos."
+      }
+    }
+  }
+
+  ,
+  "session9": {
+    "title": "OPINIONES REALES E INDEPENDIENTES",
+    "subtitle": "Reseñas verificadas y sin filtros de viajeros que exploraron la Triple Frontera con nosotros.",
+    "verified": "Verificado",
+    "items": {
+      "t1": {
+        "name": "Mariana R.",
+        "title": "Una experiencia impecable y flexible",
+        "text": "Desde los senderos panorámicos del lado brasileño hasta las pasarelas sobre el agua en Argentina — todo coordinado a la perfección. Los cruces fueron fluidos y nuestro guía ajustó el ritmo para mis padres. Nos sentimos seguros y cuidados todo el tiempo.",
+        "tags": ["Cataratas del Iguazú", "Familia", "Frontera"],
+        "rating": 5,
+        "date": "Ago 2025"
+      },
+      "t2": {
+        "name": "Daniel G.",
+        "title": "Paraíso fotográfico al amanecer",
+        "text": "Supieron exactamente adónde llevarnos para capturar el amanecer. Conseguí las fotos sedosas de cascadas que siempre quise. Transporte privado, cero apuro y excelentes consejos gastronómicos locales.",
+        "tags": ["Fotografía", "Amanecer", "Privado"],
+        "rating": 4.5,
+        "date": "Jun 2025"
+      },
+      "t3": {
+        "name": "Sofía M.",
+        "title": "Auténtico y sin estrés",
+        "text": "Visitamos ambos lados de las cataratas y también probamos mate y un sendero tranquilo en la selva. Todo organizado y, aun así, espontáneo. ¡Muy recomendable!",
+        "tags": ["Cultura", "Argentina", "Brasil"],
+        "rating": 5,
+        "date": "May 2025"
+      },
+      "t4": {
+        "name": "Camille L.",
+        "title": "Adaptado a nuestro estilo",
+        "text": "Queríamos un ritmo relajado con algo de aventura. Combinaron el bote Macuco con miradores tranquilos. La comunicación antes y durante el viaje fue excelente.",
+        "tags": ["Macuco", "Relajado", "A medida"],
+        "rating": 4.5,
+        "date": "Abr 2025"
+      },
+      "t5": {
+        "name": "Johannes K.",
+        "title": "Gran logística transfronteriza",
+        "text": "Me preocupaban los documentos y los horarios, pero lo gestionaron sin problemas. Incluso hicimos una parada rápida de compras en Ciudad del Este.",
+        "tags": ["Logística", "Compras", "Paraguay"],
+        "rating": 4.5,
+        "date": "Mar 2025"
+      },
+      "t6": {
+        "name": "Giulia P.",
+        "title": "Tour privado memorable",
+        "text": "Nuestro guía compartió historias locales y los mejores miradores. Evitamos las multitudes y vimos todos los puntos destacados. ¡Valió la pena!",
+        "tags": ["Privado", "Imperdibles", "Historias"],
+        "rating": 5,
+        "date": "Feb 2025"
       }
     }
   }

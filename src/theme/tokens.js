@@ -29,11 +29,6 @@ export const colors = {
 
 export const i18nLanguages = [
   { code: 'en', label: 'English' },
-  { code: 'pt', label: 'Português' },
   { code: 'es', label: 'Español' },
-  { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'it', label: 'Italiano' },
-  { code: 'ja', label: '日本語' },
-  { code: 'ko', label: '한국어' },
+  { code: 'zh', label: '中文' },
 ]

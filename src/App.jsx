@@ -13,6 +13,8 @@ import Session6 from './components/Session6'
 import Session7 from './components/Session7'
 import Session8 from './components/Session8'
 import Session9 from './components/Session9'
+import Session10 from './components/Session10'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
       <Session7 />
   <Session8 />
       <Session9 />
+      <Session10 />
+      <Footer />
     </ThemeProvider>
   )
 }

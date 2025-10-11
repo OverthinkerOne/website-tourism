@@ -102,6 +102,34 @@
       "step4": "Confirm, book, and let the adventure begin! Once you are 100% happy with your custom itinerary, we handle all the bookings—hotels, transport, tours, and transfers. All you have to do is pack your bags, arrive in Foz do Iguaçu, and let Guará Travel take care of every detail, ensuring a seamless and unforgettable journey through the Triple Frontier."
     }
   },
+  "session6": {
+    "title": "PRIVATE GUIDED TOURS",
+    "viewDetails": "View details",
+    "countries": {
+      "br": "Brazil",
+      "ar": "Argentina",
+      "py": "Paraguay"
+    },
+    "titles": {
+      "br-iguacu-br": "Iguaçu National Park (Brazilian Side)",
+      "br-itaipu-night": "Itaipu Dam Night Lights",
+      "ar-iguacu-ar": "Iguazú National Park (Argentine Side)",
+      "ar-gran-aventura": "Gran Aventura Boat Ride",
+      "py-shopping-cde": "Shopping Ciudad del Este Experience",
+      "py-saltos-monday": "Saltos del Monday Falls"
+    }
+  },
+  "session5": {
+    "title": "Why book a privately guided road trip",
+    "cards": {
+      "c1": { "title": "Bespoke Itineraries", "desc": "Tailored routes built around your pace and passions." },
+      "c2": { "title": "Authentic Experiences", "desc": "Meet locals, taste real flavors, skip the clichés." },
+      "c3": { "title": "Flexible Bookings", "desc": "Change dates and plans with minimal hassle." },
+      "c4": { "title": "Private Travel Safety", "desc": "Discreet drivers, vetted stays, safer journeys." },
+      "c5": { "title": "Local Expertise", "desc": "Insider tips from guides who live the destination." },
+      "c6": { "title": "World's Top Awarded Tours", "desc": "Recognized by travelers and industry leaders." }
+    }
+  },
   "session7": {
     "title": "LOOKING FOR INSPIRATION?",
     "subtitle": "Encourage your imagination to soar and envision remarkable destinations, meaningful encounters, and the lasting memories that await.",
@@ -215,5 +243,29 @@
         "date": "Feb 2025"
       }
     }
+  }
+  ,
+  "session10": {
+    "title": "So, ready to start?",
+    "cta": "PLAN YOUR TRIP",
+    "calendlyPrefix": "Or schedule a call on"
+  }
+  ,
+  "footer": {
+    "rights": "All rights reserved to RevoAds",
+    "aria_main_nav": "Footer navigation",
+    "description": "Custom private tours across the Triple Frontier — Brazil, Argentina, and Paraguay — designed by local experts for unforgettable experiences.",
+    "explore": "Explore",
+    "resources": "Resources",
+    "contact": "Contact",
+    "links": {
+      "faq": "FAQ",
+      "plan_trip": "Plan your trip",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "address": "Foz do Iguaçu • PR • Brazil",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone"
   }
 }

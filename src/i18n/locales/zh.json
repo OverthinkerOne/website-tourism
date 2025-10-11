@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "private_guided_tours": "私人导览",
+    "about_us": "关于我们",
+    "gallery": "画廊",
+    "blog": "博客",
+    "menu": "菜单"
+  },
+  "brand": { "logoAlt": "标志" },
+  "footer": {
+    "rights": "版权所有归 RevoAds 所有",
+    "aria_main_nav": "页脚导航",
+    "description": "由本地专家为您设计，覆盖三国边境（巴西、阿根廷、巴拉圭）的定制私人游。",
+    "explore": "探索",
+    "resources": "资源",
+    "contact": "联系",
+    "links": {
+      "faq": "常见问题",
+      "plan_trip": "规划行程",
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    },
+    "address": "巴西 • 巴拉那州 • 伊瓜苏市",
+    "emailLabel": "邮箱",
+    "phoneLabel": "电话"
+  }
+  ,
+  "session10": {
+    "title": "准备好开始了吗？",
+    "cta": "规划你的行程",
+    "calendlyPrefix": "或通过以下方式预约通话"
+  }
+  ,
+  "session5": {
+    "title": "为什么选择私人定制自驾游",
+    "cards": {
+      "c1": { "title": "量身定制行程", "desc": "根据你的节奏与喜好打造路线。" },
+      "c2": { "title": "地道真实体验", "desc": "结识当地人、品尝正宗风味、远离刻板路线。" },
+      "c3": { "title": "灵活预订", "desc": "更改日期与计划更从容。" },
+      "c4": { "title": "私享旅途更安心", "desc": "谨慎司机、甄选住宿，旅途更安全。" },
+      "c5": { "title": "当地专家团队", "desc": "由深谙目的地的向导提供内幕建议。" },
+      "c6": { "title": "屡获殊荣的行程", "desc": "获得旅行者与行业认可。" }
+    }
+  }
+  ,
+  "session6": {
+    "title": "私人导览行程",
+    "viewDetails": "查看详情",
+    "countries": {
+      "br": "巴西",
+      "ar": "阿根廷",
+      "py": "巴拉圭"
+    },
+    "titles": {
+      "br-iguacu-br": "伊瓜苏国家公园（巴西段）",
+      "br-itaipu-night": "伊泰普水坝夜景灯光",
+      "ar-iguacu-ar": "伊瓜苏国家公园（阿根廷段）",
+      "ar-gran-aventura": "Gran Aventura 快艇",
+      "py-shopping-cde": "东方市购物体验",
+      "py-saltos-monday": "Monday 瀑布"
+    }
+  }
+}

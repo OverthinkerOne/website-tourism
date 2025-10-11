@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import { sizes, colors } from '../../theme/tokens.js'
 
-export default function SocialIcons({ variant = 'desktop', onItemClick, sx }) {
+export default function SocialIcons({ variant = 'desktop', onItemClick, sx, color = colors.textPrimary }) {
   const names = ['facebook', 'instagram', 'whatsapp', 'get-your-guide']
   const isMenu = variant === 'menu'
 
@@ -60,7 +60,7 @@ export default function SocialIcons({ variant = 'desktop', onItemClick, sx }) {
                 width: sizes.iconSize * 1.4,
                 height: sizes.iconSize * 1.4,
                 display: 'inline-block',
-                backgroundColor: colors.textPrimary,
+                backgroundColor: color,
                 mask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
                 WebkitMask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
                 transition: 'background-color .2s ease',
@@ -77,7 +77,7 @@ export default function SocialIcons({ variant = 'desktop', onItemClick, sx }) {
                 display: 'inline-block',
                 width: sizes.iconSize,
                 height: sizes.iconSize,
-                backgroundColor: colors.textPrimary,
+                backgroundColor: color,
                 mask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
                 WebkitMask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
                 opacity: 0.95,

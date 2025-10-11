@@ -36,13 +36,8 @@ const StyledSelect = styled(Select)(({ theme }) => ({
 
 const flagMap = {
   en: '🇬🇧',
-  pt: '🇧🇷',
   es: '🇪🇸',
-  fr: '🇫🇷',
-  de: '🇩🇪',
-  it: '🇮🇹',
-  ja: '🇯🇵',
-  ko: '🇰🇷',
+  zh: '🇨🇳',
 }
 
 export default function LanguageSelect({ value, onChange }) {

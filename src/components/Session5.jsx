@@ -2,6 +2,7 @@ import React from 'react'
 import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { fonts, colors } from '../theme/tokens.js'
+import { useTranslation } from 'react-i18next'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import HandshakeIcon from '@mui/icons-material/Handshake'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
@@ -9,40 +10,17 @@ import SecurityIcon from '@mui/icons-material/Security'
 import SupportAgentIcon from '@mui/icons-material/SupportAgent'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 
-const cards = [
-  {
-    title: 'Bespoke Itineraries',
-    desc: 'Tailored routes built around your pace and passions.',
-    Icon: AutoFixHighIcon,
-  },
-  {
-    title: 'Authentic Experiences',
-    desc: 'Meet locals, taste real flavors, skip the clichés.',
-    Icon: HandshakeIcon,
-  },
-  {
-    title: 'Flexible Bookings',
-    desc: 'Change dates and plans with minimal hassle.',
-    Icon: EventAvailableIcon,
-  },
-  {
-    title: 'Private Travel Safety',
-    desc: 'Discreet drivers, vetted stays, safer journeys.',
-    Icon: SecurityIcon,
-  },
-  {
-    title: 'Local Expertise',
-    desc: 'Insider tips from guides who live the destination.',
-    Icon: SupportAgentIcon,
-  },
-  {
-    title: "World's Top Awarded Tours",
-    desc: 'Recognized by travelers and industry leaders.',
-    Icon: EmojiEventsIcon,
-  },
+const cardMeta = [
+  { key: 'c1', Icon: AutoFixHighIcon },
+  { key: 'c2', Icon: HandshakeIcon },
+  { key: 'c3', Icon: EventAvailableIcon },
+  { key: 'c4', Icon: SecurityIcon },
+  { key: 'c5', Icon: SupportAgentIcon },
+  { key: 'c6', Icon: EmojiEventsIcon },
 ]
 
 export default function Session5() {
+  const { t } = useTranslation()
   return (
     <Box component="section" sx={{ position: 'relative', width: '100%', bgcolor: '#fff' }}>
       <Box sx={{ position: 'relative', zIndex: 1, width: 'min(1200px, 94vw)', mx: 'auto', py: { xs: 8, md: 12 } }}>
@@ -61,7 +39,7 @@ export default function Session5() {
             color: '#000',
           }}
         >
-          Why book a privately guided road trip
+          {t('session5.title')}
         </Typography>
 
         {/* Cards grid */}
@@ -72,9 +50,12 @@ export default function Session5() {
             gap: { xs: 2.5, md: 3 },
           }}
         >
-          {cards.map(({ title, desc, Icon }) => (
+          {cardMeta.map(({ key, Icon }) => {
+            const title = t(`session5.cards.${key}.title`)
+            const desc = t(`session5.cards.${key}.desc`)
+            return (
             <Box
-              key={title}
+              key={key}
               sx={{
                 position: 'relative',
                 p: { xs: 2.5, md: 3 },
@@ -137,7 +118,7 @@ export default function Session5() {
                 {desc}
               </Typography>
             </Box>
-          ))}
+          )})}
         </Box>
       </Box>
     </Box>

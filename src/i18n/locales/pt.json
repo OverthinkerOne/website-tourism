@@ -102,6 +102,34 @@
       "step4": "Confirme, reserve e deixe a aventura começar! Quando estiver 100% satisfeito com seu roteiro, cuidamos de todas as reservas — hotéis, transportes, passeios e transfers. Você só precisa fazer as malas, chegar a Foz do Iguaçu e deixar a Guará Travel cuidar de cada detalhe para uma jornada inesquecível pela Tríplice Fronteira."
     }
   },
+  "session6": {
+    "title": "PASSEIOS GUIADOS PRIVADOS",
+    "viewDetails": "Ver detalhes",
+    "countries": {
+      "br": "Brasil",
+      "ar": "Argentina",
+      "py": "Paraguai"
+    },
+    "titles": {
+      "br-iguacu-br": "Parque Nacional do Iguaçu (lado brasileiro)",
+      "br-itaipu-night": "Iluminação Noturna de Itaipu",
+      "ar-iguacu-ar": "Parque Nacional Iguazú (lado argentino)",
+      "ar-gran-aventura": "Passeio de Barco Gran Aventura",
+      "py-shopping-cde": "Compras em Ciudad del Este",
+      "py-saltos-monday": "Cachoeiras Saltos del Monday"
+    }
+  },
+  "session5": {
+    "title": "Por que reservar uma road trip guiada privativa",
+    "cards": {
+      "c1": { "title": "Roteiros Sob Medida", "desc": "Trajetos feitos no seu ritmo e interesses." },
+      "c2": { "title": "Experiências Autênticas", "desc": "Conheça locais, prove sabores reais e fuja do clichê." },
+      "c3": { "title": "Reservas Flexíveis", "desc": "Altere datas e planos com o mínimo de atrito." },
+      "c4": { "title": "Segurança em Viagens Privadas", "desc": "Motoristas discretos, estadias verificadas e trajetos mais seguros." },
+      "c5": { "title": "Expertise Local", "desc": "Dicas de quem vive o destino no dia a dia." },
+      "c6": { "title": "Tours Mais Premiados do Mundo", "desc": "Reconhecidos por viajantes e pelo mercado." }
+    }
+  },
   "session7": {
     "title": "BUSCANDO INSPIRAÇÃO?",
     "subtitle": "Deixe a imaginação voar e visualize destinos marcantes, encontros significativos e as memórias que te aguardam.",
@@ -216,5 +244,29 @@
         "date": "Fev 2025"
       }
     }
+  }
+  ,
+  "session10": {
+    "title": "Então, pronto para começar?",
+    "cta": "PLANEJE SUA VIAGEM",
+    "calendlyPrefix": "Ou agende uma ligação no"
+  }
+  ,
+  "footer": {
+    "rights": "Todos os direitos reservados a RevoAds",
+    "aria_main_nav": "Navegação do rodapé",
+    "description": "Passeios privados sob medida na Tríplice Fronteira — Brasil, Argentina e Paraguai — feitos por especialistas locais para experiências inesquecíveis.",
+    "explore": "Explorar",
+    "resources": "Recursos",
+    "contact": "Contato",
+    "links": {
+      "faq": "Perguntas frequentes",
+      "plan_trip": "Planeje sua viagem",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Uso"
+    },
+    "address": "Foz do Iguaçu • PR • Brasil",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefone"
   }
 }

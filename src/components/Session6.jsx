@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Button } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { fonts, colors } from '../theme/tokens.js'
+import { useTranslation } from 'react-i18next'
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar'
 import LandscapeIcon from '@mui/icons-material/Landscape'
 import NightlifeIcon from '@mui/icons-material/Nightlife'
@@ -57,6 +58,7 @@ const tours = [
 
 
 function TourCard({ tour }) {
+  const { t } = useTranslation()
   const { country, title, Icon, image } = tour
   const hasImage = Boolean(image)
   return (
@@ -144,7 +146,7 @@ function TourCard({ tour }) {
             '&:hover': { bgcolor: '#ff7f14' },
           }}
         >
-          Ver detalhes
+          {t('session6.viewDetails')}
         </Button>
       </Box>
     </Box>
@@ -152,6 +154,7 @@ function TourCard({ tour }) {
 }
 
 export default function Session6() {
+  const { t } = useTranslation()
   // Triplicate items for seamless infinite loop in both directions
   const items = React.useMemo(() => [...tours, ...tours, ...tours], [])
   const viewportRef = React.useRef(null)
@@ -262,7 +265,7 @@ export default function Session6() {
             color: '#000',
           }}
         >
-          PRIVATE GUIDED TOURS
+          {t('session6.title')}
         </Typography>
 
         {/* Edge fade masks for elegance */}
@@ -287,9 +290,14 @@ export default function Session6() {
             sx={{ overflow: 'hidden', cursor: isDragging ? 'grabbing' : 'grab' }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 2.5, md: 3 }, px: { xs: 1.5, md: 2 }, height: '100%' }}>
-              {items.map((tour, idx) => (
-                <TourCard key={tour.id + '-' + idx} tour={{ ...tour, image: images[tour.id] || tour.image }} />
-              ))}
+              {items.map((tour, idx) => {
+                const countryCode = (tour.id || '').split('-')[0] || 'br'
+                const countryLabel = t(`session6.countries.${countryCode}`, tour.country)
+                const titleLabel = t(`session6.titles.${tour.id}`, tour.title)
+                return (
+                  <TourCard key={tour.id + '-' + idx} tour={{ ...tour, country: countryLabel, title: titleLabel, image: images[tour.id] || tour.image }} />
+                )
+              })}
             </Box>
           </Box>
         </Box>
