@@ -86,4 +86,20 @@
       }
     }
   }
+  ,
+  "session4": {
+    "title": "LAISSEZ-NOUS VOUS GUIDER",
+    "accordion": {
+      "step1": "Parlez-nous de votre voyage et de vos préférences.",
+      "step2": "Recevez un road trip personnalisé.",
+      "step3": "Personnalisez votre parcours.",
+      "step4": "Commencez votre aventure."
+    },
+    "descriptions": {
+      "step1": "Tout commence par vous. Dites-nous vos rêves, la durée de votre séjour, votre style de voyage (aventure, détente, culture—ou tout à la fois !) et avec qui vous voyagez. Voyageur solo, couple ou famille : ces infos aident nos experts locaux à créer votre expérience idéale à Iguazú.",
+      "step2": "Votre itinéraire personnalisé arrive. À partir de vos informations, nos experts Guará conçoivent un plan unique, jour par jour, couvrant les côtés brésilien, argentin et paraguayen. Ce premier jet inclut hébergements sélectionnés, activités suggérées (des chutes incontournables aux pépites cachées) et options de transport efficaces.",
+      "step3": "Affinez les détails avec un expert local. Passez en revue l’itinéraire et dites-nous ce que vous aimez ou souhaitez changer. Ajustez le rythme, remplacez une activité, améliorez l’hébergement. Notre spécialiste effectue des révisions illimitées jusqu’à ce que le voyage corresponde exactement à votre vision. C’est votre road trip, nous le rendons parfait !",
+      "step4": "Confirmez, réservez et que l’aventure commence ! Une fois satisfait à 100 %, nous gérons toutes les réservations — hôtels, transports, visites et transferts. Il ne vous reste qu’à faire vos valises, arriver à Foz do Iguaçu et laisser Guará Travel s’occuper de chaque détail pour une expérience inoubliable à la Triple Frontière."
+    }
+  }
 }

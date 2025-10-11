@@ -41,6 +41,9 @@ export default function BuildTourSection() {
     dayjs.locale(adapterLocale)
   }, [adapterLocale])
 
+  // Always use day/month/year format as requested
+  const dateFormat = 'DD/MM/YYYY'
+
   return (
     <Box component="section" sx={{ bgcolor: '#fff', minHeight: 226, display: 'grid', placeItems: 'center', overflowX: 'auto' }}>
       <Box
@@ -87,11 +90,22 @@ export default function BuildTourSection() {
             </InputLabel>
             <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={adapterLocale}>
               <DatePicker
+                views={['year', 'month', 'day']}
+                openTo="day"
+                format={dateFormat}
                 value={date}
-                onChange={(newVal) => setDate(newVal)}
+                onChange={(newVal) => {
+                  if (dayjs.isDayjs(newVal) && newVal.isValid()) {
+                    setDate(newVal)
+                  }
+                }}
                 slotProps={{
                   textField: {
                     size: 'small',
+                    onKeyDown: (e) => {
+                      if (e.key === 'Enter') e.preventDefault()
+                    },
+                    inputProps: { inputMode: 'numeric' },
                     sx: {
                       minWidth: 220,
                       '& .MuiOutlinedInput-root': { borderRadius: 2 },

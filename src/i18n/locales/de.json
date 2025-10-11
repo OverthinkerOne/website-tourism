@@ -86,4 +86,20 @@
       }
     }
   }
+  ,
+  "session4": {
+    "title": "LASSEN SIE SICH VON UNS FÜHREN",
+    "accordion": {
+      "step1": "Erzählen Sie uns von Ihrer Reise und Ihren Vorlieben.",
+      "step2": "Erhalten Sie eine maßgeschneiderte Rundreise.",
+      "step3": "Passen Sie Ihre Reise an.",
+      "step4": "Beginnen Sie Ihr Abenteuer."
+    },
+    "descriptions": {
+      "step1": "Alles beginnt bei Ihnen. Teilen Sie Ihre Wünsche, Aufenthaltsdauer, Ihren Reisestil (Abenteuer, Entspannung, Kultur – oder alles zusammen!) und mit wem Sie reisen. Ob allein, als Paar oder Familie – diese Infos helfen unseren lokalen Experten, Ihre perfekte Iguazú-Erfahrung zu gestalten.",
+      "step2": "Ihr persönliches Itinerary trifft ein. Basierend auf Ihren Angaben erstellen unsere Guará-Experten einen einzigartigen Tagesplan für Brasilien, Argentinien und Paraguay. Der erste Entwurf umfasst sorgfältig ausgewählte Unterkünfte, Aktivitätsvorschläge (von den Must-See-Fällen bis zu Geheimtipps) und effiziente Transportoptionen.",
+      "step3": "Feinabstimmung mit einem lokalen Experten. Prüfen Sie das Itinerary und sagen Sie uns, was Sie lieben oder ändern möchten. Passen Sie das Tempo an, tauschen Sie Aktivitäten, upgraden Sie Unterkünfte. Unser Spezialist nimmt unbegrenzt Anpassungen vor – bis die Reise exakt Ihrer Vorstellung entspricht. Ihr Roadtrip – von uns perfektioniert!",
+      "step4": "Bestätigen, buchen – und los geht’s! Sobald Sie zu 100 % zufrieden sind, übernehmen wir alle Buchungen: Hotels, Transport, Touren und Transfers. Packen Sie nur Ihre Koffer, reisen Sie nach Foz do Iguaçu – Guará Travel kümmert sich um jedes Detail für eine unvergessliche Reise an der Dreiländerecke."
+    }
+  }
 }

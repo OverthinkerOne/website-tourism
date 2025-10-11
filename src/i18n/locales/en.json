@@ -86,4 +86,20 @@
       }
     }
   }
+  ,
+  "session4": {
+    "title": "LET US GUIDE YOU",
+    "accordion": {
+      "step1": "Tell us about your trip and your preferences.",
+      "step2": "Get sent a customised road trip.",
+      "step3": "Tailor your journey.",
+      "step4": "Begin Your Adventure."
+    },
+    "descriptions": {
+      "step1": "It all starts with you. Share your dreams, the length of your stay, your travel style (adventure, relax, culture, or all of the above!), and who you're traveling with. Whether you're a solo explorer, a couple, or a family, this information helps our local experts understand exactly what you need to craft your perfect Iguassu experience.",
+      "step2": "Your personalised itinerary arrives. Based on your input, our Guará experts will design a unique, day-by-day plan covering the Brazilian, Argentinian, and Paraguayan sides of the border. This first draft includes hand-picked accommodations, suggested activities (from the must-see Falls to hidden gems), and efficient transportation options.",
+      "step3": "Fine-tune the details with a local expert. Review the customised itinerary and let us know what you love and what you want to change. Adjust the pace, swap an activity, or upgrade your accommodation. Our specialist is here to make unlimited revisions until your journey is exactly what you envisioned. This is your road trip, we just make it perfect!",
+      "step4": "Confirm, book, and let the adventure begin! Once you are 100% happy with your custom itinerary, we handle all the bookings—hotels, transport, tours, and transfers. All you have to do is pack your bags, arrive in Foz do Iguaçu, and let Guará Travel take care of every detail, ensuring a seamless and unforgettable journey through the Triple Frontier."
+    }
+  }
 }
