@@ -38,6 +38,7 @@ const flagMap = {
   en: '🇬🇧',
   es: '🇪🇸',
   zh: '🇨🇳',
+  pt: '🇧🇷',
 }
 
 export default function LanguageSelect({ value, onChange }) {

@@ -19,6 +19,69 @@
     "certificationAlt": "certificación"
   }
   ,
+  "tours": {
+    "list": {
+      "title": "Tours privados guiados",
+      "subtitle": "Explora nuestros tours privados por Brasil, Argentina y Paraguay.",
+      "empty": "No hay tours disponibles.",
+      "country": "País"
+    },
+    "cta": {
+      "viewDetails": "Ver detalles",
+      "plan": "PLANIFICA TU VIAJE",
+      "backToList": "Volver a todos los tours"
+    },
+    "sections": {
+      "highlights": "Destacados",
+      "includes": "Qué incluye",
+      "tips": "Información útil"
+    },
+    "notFound": "No encontramos este tour.",
+    "details": {
+      "br-iguacu-br": {
+        "short": "Vistas panorámicas de las Cataratas del Iguazú desde Brasil.",
+        "intro": "Vive los mejores miradores panorámicos del lado brasileño. Pasarelas y plataformas revelan la grandeza de esta Maravilla Natural.",
+        "highlights": ["Mirador de la Garganta del Diablo", "Pasarelas cuidadas", "Excelente para fotos al amanecer"],
+        "includes": ["Transporte y guía privados", "Recogida y retorno al hotel", "Asistencia con entradas (no incluidas)"],
+        "tips": ["Lleva capa ligera", "Protector solar y repelente"]
+      },
+      "br-itaipu-night": {
+        "short": "Show nocturno de luces en Itaipú.",
+        "intro": "Conoce la imponente represa de Itaipú bajo iluminación nocturna. Aprende sobre su ingeniería e historia.",
+        "highlights": ["Iluminación nocturna", "Maravilla de ingeniería", "Paradas para fotos"],
+        "includes": ["Transporte privado", "Asistencia del guía", "Asistencia con entradas"],
+        "tips": ["Lleva abrigo ligero por la noche", "Trípode permitido en algunas áreas"]
+      },
+      "ar-iguacu-ar": {
+        "short": "Senderos inmersivos sobre y bajo las caídas del lado argentino.",
+        "intro": "Recorre los circuitos superior e inferior y accede a la pasarela de la Garganta del Diablo.",
+        "highlights": ["Circuito superior e inferior", "Pasarela a Garganta del Diablo", "Selva"],
+        "includes": ["Transporte privado", "Guía local", "Asistencia con entradas"],
+        "tips": ["Más caminata", "Bolsa impermeable para el móvil"]
+      },
+      "ar-gran-aventura": {
+        "short": "Lancha de adrenalina cerca de las cataratas.",
+        "intro": "Combina selva y una emocionante lancha que se acerca a las caídas.",
+        "highlights": ["Lancha veloz", "Tramo 4x4", "Emoción y salpicaduras"],
+        "includes": ["Transporte privado", "Asistencia del guía", "Asistencia con entrada de la lancha"],
+        "tips": ["Ropa extra", "Protege tus electrónicos del agua"]
+      },
+      "py-shopping-cde": {
+        "short": "Compras guiadas en Ciudad del Este.",
+        "intro": "Cruza a Paraguay para un tour de compras curado, con tiendas confiables y consejos de aduana.",
+        "highlights": ["Electrónica y perfumes", "Duty free", "Consejos locales"],
+        "includes": ["Transporte privado", "Asistencia en aduana", "Horario flexible"],
+        "tips": ["Lleva pasaporte", "Tarjetas y efectivo aceptados"]
+      },
+      "py-saltos-monday": {
+        "short": "Visita a los Saltos del Monday.",
+        "intro": "Descubre los hermosos Saltos del Monday en Paraguay, un complemento tranquilo para Iguazú.",
+        "highlights": ["Miradores y senderos", "Menos concurrido", "Fotos"],
+        "includes": ["Transporte privado", "Guía local", "Asistencia con entradas"],
+        "tips": ["Calzado cómodo", "Agua y protector solar"]
+      }
+    }
+  },
   "buildTour": {
     "title": "Crea tu propio tour",
     "date": "¿Cuándo es tu viaje?",
@@ -129,9 +192,7 @@
         "excerpt": "Cambia las multitudes por senderos silenciosos donde mariposas y rocío enmarcan la copa del bosque."
       }
     }
-  }
-
-  ,
+  },
   "footer": {
     "rights": "Todos los derechos reservados a RevoAds",
     "aria_main_nav": "Navegación del pie de página",
@@ -148,16 +209,12 @@
     "address": "Foz do Iguaçu • PR • Brasil",
     "emailLabel": "Correo",
     "phoneLabel": "Teléfono"
-  }
-
-  ,
+  },
   "session10": {
     "title": "¿Listo para empezar?",
     "cta": "PLANIFICA TU VIAJE",
     "calendlyPrefix": "O agenda una llamada en"
-  }
-
-  ,
+  },
   "session5": {
     "title": "Por qué reservar un road trip privado con guía",
     "cards": {
@@ -274,6 +331,77 @@
         "rating": 5,
         "date": "Feb 2025"
       }
+    }
+  }
+  ,
+  "about": {
+    "title": "Sobre nosotros",
+    "intro": {
+      "p1": "Hola, soy Paulo Portugal. Desde hace años diseño experiencias privadas realmente a medida por la Triple Frontera —Brasil, Argentina y Paraguay—. Mi misión es unir autenticidad y confort, con logística impecable y una mirada local sobre cada detalle de tu itinerario.",
+      "p2": "Trabajamos con un equipo seleccionado de guías y conductores profesionales, priorizando seguridad, puntualidad y flexibilidad. Ya sea para parejas, familias o pequeños grupos, nos encargamos de todo para que solo te preocupes por disfrutar."
+    },
+    "differentials": {
+      "title": "Diferenciales",
+      "items": [
+        "Itinerarios 100% personalizados con expertos locales",
+        "Asistencia completa con fronteras, horarios ideales y entradas",
+        "Acceso a experiencias auténticas y menos obvias",
+        "Comunicación directa y transparente desde la planificación hasta el post-viaje"
+      ]
+    },
+    "transports": {
+      "title": "Nuestros transportes",
+      "desc": "Operamos con una flota seleccionada de autos ejecutivos y vans espaciosas para atender distintos tamaños de grupo y estilos de viaje. Todos los vehículos tienen mantenimiento riguroso, aire acondicionado y seguro.",
+      "cars": {
+        "title": "Autos ejecutivos",
+        "desc": "Comodidad y discreción para parejas, viajeros solos o grupos pequeños. Ideal para traslados rápidos, paseos urbanos y horarios flexibles.",
+        "chips": ["Sedán premium", "SUV confortable", "Baúl amplio", "Agua de cortesía"]
+      },
+      "vans": {
+        "title": "Vans para grupos",
+        "desc": "Espacio y practicidad para familias y grupos. Perfecto para cruces fronterizos y paseos completos con varios puntos de interés en el mismo día.",
+        "chips": ["Hasta 15 pasajeros", "Aire acondicionado", "Conducción profesional", "Seguro completo"]
+      }
+    }
+  }
+  ,
+  "gallery": {
+    "title": "Galería",
+    "intro": "Explora momentos reales capturados en fotos y videos — desde los senderos de Iguazú hasta cruces fronterizos y experiencias auténticas por la Triple Frontera."
+  }
+  ,
+  "blog": {
+    "list": {
+      "title": "Inspiración de viaje",
+      "subtitle": "Historias, consejos y guías de la Triple Frontera.",
+      "empty": "Aún no hay publicaciones."
+    },
+    "cta": {
+      "readMore": "Leer más",
+      "backToList": "Volver a todas las publicaciones"
+    },
+    "notFound": "No encontramos esta publicación.",
+    "sidebar": {
+      "title": "Planifica tu tour privado",
+      "desc": "¿Listo para convertir la inspiración en itinerario? Nuestros expertos locales diseñan tu viaje privado por Brasil, Argentina y Paraguay."
+    },
+    "posts": {
+      "inspiration-1": { "body": [
+        "De cruces fronterizos a miradores secretos, arma un road trip privado que equilibre asombro y comodidad.",
+        "Mapa los imperdibles en ambos lados y reserva tiempo para amanecer y senderos tranquilos."
+      ]},
+      "inspiration-2": { "body": [
+        "La hora dorada en Iguazú es mágica. Usa trípode/estabilización, ISO bajo y exposiciones largas para agua sedosa.",
+        "Respeta la bruma y las salpicaduras — protege tu equipo y sé amable en pasarelas estrechas."
+      ]},
+      "inspiration-3": { "body": [
+        "El mate es más que una bebida: es ritual y comunidad. Prueba blends tradicionales y combínalos con bocados callejeros.",
+        "Los sabores de frontera cuentan historias de migración y cultura compartida en la Triple Frontera."
+      ]},
+      "inspiration-4": { "body": [
+        "Más allá de los circuitos principales, hay senderos calmos y miradores secretos. Mariposas, bruma y copa del bosque acompañan.",
+        "Contrata un guía local para llegar seguro y responsablemente a sitios menos conocidos."
+      ]}
     }
   }
 }

@@ -9,6 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import { findImage } from '../lib/imageProvider.js'
 import { useTranslation } from 'react-i18next'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { useNavigate } from 'react-router-dom'
 
 const posts = [
   { id: 'inspiration-1', Icon: ExploreIcon, query: 'Iguazu waterfall viewpoint road trip' },
@@ -17,7 +18,8 @@ const posts = [
   { id: 'inspiration-4', Icon: ArticleIcon, query: 'Iguazu hidden trail forest canopy butterflies' },
 ]
 
-function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel }) {
+function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel, id }) {
+  const navigate = useNavigate()
   return (
     <Box
       sx={{
@@ -74,7 +76,7 @@ function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel }) {
 
       {/* Button (no navigation yet) */}
       <Box sx={{ px: 2, pb: 1.25, mt: 'auto' }}>
-        <Button variant="contained" disableElevation onClick={(e) => e.preventDefault()} sx={{ width: '100%', bgcolor: colors.accent, color: '#fff', fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 700, textTransform: 'none', '&:hover': { bgcolor: '#ff7f14' } }}>
+        <Button variant="contained" disableElevation onClick={() => navigate(`/blog/${id}`)} sx={{ width: '100%', bgcolor: colors.accent, color: '#fff', fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 700, textTransform: 'none', '&:hover': { bgcolor: '#ff7f14' } }}>
           {readMoreLabel}
         </Button>
       </Box>
@@ -84,6 +86,7 @@ function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel }) {
 
 export default function Session7() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const items = React.useMemo(() => [...posts, ...posts, ...posts], [])
   const viewportRef = React.useRef(null)
   const [images, setImages] = React.useState({})
@@ -206,7 +209,7 @@ export default function Session7() {
                 const image = images[post.id]
                 return (
                   <Box key={post.id + '-' + idx}>
-                    <BlogCard category={category} title={title} excerpt={excerpt} Icon={Icon} image={image} readMoreLabel={t('session7.readMore')} />
+                    <BlogCard id={post.id} category={category} title={title} excerpt={excerpt} Icon={Icon} image={image} readMoreLabel={t('session7.readMore')} />
                   </Box>
                 )
               })}
@@ -219,7 +222,7 @@ export default function Session7() {
   <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: { xs: 4, md: 8 }, textAlign: 'center', zIndex: 2 }}>
         <Button
           variant="text"
-          onClick={(e) => e.preventDefault()}
+          onClick={() => navigate('/blog')}
           aria-label={t('session7.seeAllPosts', 'See All Posts')}
           sx={{
             px: 0,

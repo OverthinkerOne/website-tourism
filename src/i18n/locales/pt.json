@@ -19,6 +19,69 @@
     "certificationAlt": "certificação"
   }
   ,
+  "tours": {
+    "list": {
+      "title": "Passeios guiados privados",
+      "subtitle": "Explore nossos passeios privados pela Tríplice Fronteira — Brasil, Argentina e Paraguai.",
+      "empty": "Nenhum passeio disponível.",
+      "country": "País"
+    },
+    "cta": {
+      "viewDetails": "Ver detalhes",
+      "plan": "PLANEJE SUA VIAGEM",
+      "backToList": "Voltar para todos os passeios"
+    },
+    "sections": {
+      "highlights": "Destaques",
+      "includes": "O que está incluído",
+      "tips": "Dicas úteis"
+    },
+    "notFound": "Não encontramos este passeio.",
+    "details": {
+      "br-iguacu-br": {
+        "short": "Vistas panorâmicas das Cataratas do Iguaçu no Brasil.",
+        "intro": "Viva os melhores mirantes panorâmicos das Cataratas do Iguaçu no lado brasileiro. Passarelas e plataformas revelam toda a grandiosidade deste Patrimônio Natural.",
+        "highlights": ["Mirante da Garganta do Diabo", "Passarelas e plataformas bem cuidadas", "Ótimo para fotos no nascer do sol"],
+        "includes": ["Transporte e guia privativos", "Pickup e drop-off no hotel", "Assistência com ingressos (não inclusos)"] ,
+        "tips": ["Leve capa leve para respingos", "Protetor solar e repelente recomendados"]
+      },
+      "br-itaipu-night": {
+        "short": "Show de luzes noturno na Usina de Itaipu.",
+        "intro": "Conheça a impressionante Itaipu sob iluminação noturna. Saiba mais sobre sua engenharia e história com um guia privativo.",
+        "highlights": ["Show de iluminação", "Obra-prima da engenharia", "Paradas para fotos"],
+        "includes": ["Transporte privativo", "Acompanhamento do guia", "Assistência com ingressos"],
+        "tips": ["Leve um agasalho leve à noite", "Tripé permitido em algumas áreas"]
+      },
+      "ar-iguacu-ar": {
+        "short": "Trilhas imersivas sobre e sob as quedas na Argentina.",
+        "intro": "Caminhe por trilhas e passarelas no lado argentino para uma perspectiva imersiva, incluindo o acesso à passarela da Garganta do Diabo.",
+        "highlights": ["Circuitos superior e inferior", "Passarela da Garganta do Diabo", "Cenário de selva"],
+        "includes": ["Transporte privativo", "Guia local", "Assistência com ingressos"],
+        "tips": ["Espere mais caminhada", "Capa à prova d’água para celular é útil"]
+      },
+      "ar-gran-aventura": {
+        "short": "Passeio de barco com adrenalina próximo às quedas.",
+        "intro": "Combine trilha na selva e um emocionante passeio de barco que se aproxima das quedas para uma aventura molhada.",
+        "highlights": ["Lancha próxima às quedas", "Trecho 4x4 pela selva", "Emoção e respingos"],
+        "includes": ["Transporte privativo", "Acompanhamento do guia", "Assistência com ingressos do barco"],
+        "tips": ["Leve roupa extra", "Proteja eletrônicos da água"]
+      },
+      "py-shopping-cde": {
+        "short": "Experiência de compras guiada em Ciudad del Este.",
+        "intro": "Cruze para o Paraguai para um tour de compras curado em Ciudad del Este, com orientação sobre lojas confiáveis e alfândega.",
+        "highlights": ["Eletrônicos e perfumes", "Opções duty free", "Dicas de mercado local"],
+        "includes": ["Transporte privativo", "Assistência na aduana", "Horário flexível"],
+        "tips": ["Leve passaporte para a fronteira", "Cartões e dinheiro aceitos na maioria das lojas"]
+      },
+      "py-saltos-monday": {
+        "short": "Visita às quedas Saltos del Monday.",
+        "intro": "Descubra os belos Saltos del Monday no Paraguai, um complemento tranquilo à experiência de Iguaçu.",
+        "highlights": ["Mirantes e trilhas", "Local mais tranquilo", "Boas fotos"],
+        "includes": ["Transporte privativo", "Acompanhamento local", "Assistência com ingressos"],
+        "tips": ["Use calçado confortável", "Leve água e protetor solar"]
+      }
+    }
+  },
   "buildTour": {
     "title": "Monte seu próprio tour",
     "date": "Quando é sua viagem?",
@@ -268,5 +331,76 @@
     "address": "Foz do Iguaçu • PR • Brasil",
     "emailLabel": "E-mail",
     "phoneLabel": "Telefone"
+  }
+  ,
+  "about": {
+    "title": "Sobre nós",
+    "intro": {
+      "p1": "Olá, eu sou Paulo Portugal. Há anos atuo criando experiências privadas e realmente sob medida pela região da Tríplice Fronteira — Brasil, Argentina e Paraguai. Minha missão é unir autenticidade e conforto, com logística impecável e um olhar local para cada detalhe do seu roteiro.",
+      "p2": "Trabalhamos com um time selecionado de guias e motoristas profissionais, priorizando segurança, pontualidade e flexibilidade. Seja para casais, famílias ou pequenos grupos, cuidamos de tudo para que você só se preocupe em aproveitar."
+    },
+    "differentials": {
+      "title": "Diferenciais",
+      "items": [
+        "Roteiros 100% personalizados e acompanhados por especialistas locais",
+        "Ajuda completa com fronteiras, horários ideais e ingressos",
+        "Acesso a experiências autênticas e menos óbvias",
+        "Comunicação direta e transparente do planejamento ao pós-viagem"
+      ]
+    },
+    "transports": {
+      "title": "Nossos transportes",
+      "desc": "Operamos com frota selecionada de carros executivos e vans espaçosas para atender diferentes tamanhos de grupo e estilos de viagem. Todos os veículos contam com manutenção rigorosa, ar-condicionado e seguro.",
+      "cars": {
+        "title": "Carros executivos",
+        "desc": "Conforto e discrição para casais, viajantes solo ou pequenos grupos. Ideal para deslocamentos rápidos, passeios urbanos e horários flexíveis.",
+        "chips": ["Sedan premium", "SUV confortável", "Porta-malas amplo", "Água cortesia"]
+      },
+      "vans": {
+        "title": "Vans para grupos",
+        "desc": "Espaço e praticidade para famílias e grupos. Perfeito para travessias de fronteira e passeios completos com vários pontos de interesse no mesmo dia.",
+        "chips": ["Até 15 passageiros", "Ar-condicionado", "Condução profissional", "Seguro completo"]
+      }
+    }
+  }
+  ,
+  "gallery": {
+    "title": "Galeria",
+    "intro": "Explore momentos reais capturados em fotos e vídeos — das trilhas nas Cataratas do Iguaçu às travessias e experiências autênticas pela Tríplice Fronteira."
+  }
+  ,
+  "blog": {
+    "list": {
+      "title": "Inspiração de viagem",
+      "subtitle": "Histórias, dicas e guias da Tríplice Fronteira.",
+      "empty": "Ainda não há postagens."
+    },
+    "cta": {
+      "readMore": "Ler mais",
+      "backToList": "Voltar para todas as postagens"
+    },
+    "notFound": "Não encontramos esta postagem.",
+    "sidebar": {
+      "title": "Planeje seu passeio privativo",
+      "desc": "Pronto para transformar inspiração em roteiro? Nossos especialistas locais montam sua viagem privada por Brasil, Argentina e Paraguai."
+    },
+    "posts": {
+      "inspiration-1": { "body": [
+        "De travessias de fronteira a mirantes secretos, monte uma road trip privada que equilibra encanto e conforto.",
+        "Mapeie os imperdíveis nos dois lados das quedas e reserve tempo para fotos ao amanhecer e trilhas mais tranquilas."
+      ]},
+      "inspiration-2": { "body": [
+        "A golden hour em Iguaçu é mágica. Use tripé/estabilização, ISO baixo e exponha por mais tempo para efeito sedoso.",
+        "Respeite a névoa e os respingos — proteja seu equipamento e seja gentil nas passarelas estreitas."
+      ]},
+      "inspiration-3": { "body": [
+        "Mate é mais que bebida — é ritual e comunidade. Prove blends tradicionais e combine com petiscos de rua.",
+        "Sabores de fronteira contam a história de migração e cultura compartilhada na Tríplice Fronteira."
+      ]},
+      "inspiration-4": { "body": [
+        "Além das trilhas principais, há caminhos calmos e mirantes escondidos. Borboletas, névoa e copa da floresta compõem o cenário.",
+        "Contrate um guia local para chegar com segurança e responsabilidade aos pontos menos conhecidos."
+      ]}
+    }
   }
 }

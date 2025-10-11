@@ -6,6 +6,81 @@
     "blog": "Blog",
     "menu": "Menu"
   },
+  "tours": {
+    "list": {
+      "title": "Private Guided Tours",
+      "subtitle": "Explore our curated private tours across Brazil, Argentina, and Paraguay.",
+      "empty": "No tours available.",
+      "country": "Country"
+    },
+    "cta": {
+      "viewDetails": "View details",
+      "plan": "PLAN YOUR TRIP",
+      "backToList": "Back to all tours"
+    },
+    "sections": {
+      "highlights": "Highlights",
+      "includes": "What’s included",
+      "tips": "Good to know"
+    },
+    "notFound": "We couldn’t find this tour."
+    ,
+    "details": {
+      "br-iguacu-br": {
+        "short": "Panoramic views of the Iguazu Falls from Brazil.",
+        "intro": "Experience the best panoramic viewpoints of Iguazu Falls on the Brazilian side. Boardwalks and platforms reveal the full grandeur of this Natural Wonder.",
+        "highlights": [
+          "Devil’s Throat panoramic viewpoint",
+          "Well-maintained boardwalks and platforms",
+          "Great for photography at golden hour"
+        ],
+        "includes": [
+          "Private transport and guide",
+          "Hotel pickup and drop-off",
+          "Assistance with park tickets (tickets not included)"
+        ],
+        "tips": [
+          "Bring a light rain jacket for mist",
+          "Sunscreen and insect repellent recommended"
+        ]
+      },
+      "br-itaipu-night": {
+        "short": "Night light show at the Itaipu Dam.",
+        "intro": "Discover the impressive Itaipu Dam under a spectacular night lighting. Learn about its engineering and history with a private guide.",
+        "highlights": ["Night illumination show", "Engineering wonder", "Photo stops"],
+        "includes": ["Private transport", "Guide assistance", "Ticket assistance"],
+        "tips": ["Bring a light jacket at night", "Tripod allowed in some areas"]
+      },
+      "ar-iguacu-ar": {
+        "short": "Immersive trails over and under the falls in Argentina.",
+        "intro": "Walk the extensive trails and catwalks on the Argentine side for an immersive perspective, including access to the Devil’s Throat walkway.",
+        "highlights": ["Upper and lower circuits", "Devil’s Throat walkway", "Jungle scenery"],
+        "includes": ["Private transport", "Local guide", "Ticket assistance"],
+        "tips": ["Expect more walking", "Waterproof phone pouch is useful"]
+      },
+      "ar-gran-aventura": {
+        "short": "Adrenaline boat ride close to the waterfalls.",
+        "intro": "Combine jungle ride and an exhilarating boat experience that approaches the falls for a soaking adventure.",
+        "highlights": ["Speedboat near the falls", "Jungle 4x4 ride", "Thrill and splash"],
+        "includes": ["Private transport", "Guide assistance", "Boat ticket assistance"],
+        "tips": ["Bring spare clothes", "Protect electronics from water"]
+      },
+      "py-shopping-cde": {
+        "short": "Guided shopping experience in Ciudad del Este.",
+        "intro": "Cross into Paraguay for a curated shopping tour in Ciudad del Este, with guidance on trusted stores and customs.",
+        "highlights": ["Electronics and perfumes", "Duty free options", "Local market tips"],
+        "includes": ["Private transport", "Assistance with customs", "Flexible schedule"],
+        "tips": ["Bring passport for border crossing", "Cards and cash accepted in most stores"]
+      },
+      "py-saltos-monday": {
+        "short": "Visit the scenic Saltos del Monday waterfalls.",
+        "intro": "Discover the beautiful Saltos del Monday in Paraguay, a tranquil complement to the Iguazu experience.",
+        "highlights": ["Viewpoints and trails", "Less crowded nature spot", "Photo opportunities"],
+        "includes": ["Private transport", "Local guidance", "Ticket assistance"],
+        "tips": ["Wear comfortable shoes", "Bring water and sunscreen"]
+      }
+    }
+  },
   "brand": { "logoAlt": "logo" },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
@@ -267,5 +342,76 @@
     "address": "Foz do Iguaçu • PR • Brazil",
     "emailLabel": "Email",
     "phoneLabel": "Phone"
+  }
+  ,
+  "about": {
+    "title": "About us",
+    "intro": {
+      "p1": "Hello, I'm Paulo Portugal. For years I've been crafting truly bespoke private experiences across the Triple Frontier — Brazil, Argentina, and Paraguay. My mission is to blend authenticity and comfort with impeccable logistics and a local eye for every detail of your itinerary.",
+      "p2": "We work with a carefully selected team of professional guides and drivers, prioritizing safety, punctuality, and flexibility. Whether for couples, families, or small groups, we take care of everything so you can simply enjoy."
+    },
+    "differentials": {
+      "title": "Differentials",
+      "items": [
+        "100% tailored itineraries guided by local experts",
+        "Full support with borders, ideal timings, and tickets",
+        "Access to authentic, less obvious experiences",
+        "Direct, transparent communication from planning to post-trip"
+      ]
+    },
+    "transports": {
+      "title": "Our transports",
+      "desc": "We operate a selected fleet of executive cars and spacious vans to serve different group sizes and travel styles. All vehicles undergo strict maintenance and include air-conditioning and insurance.",
+      "cars": {
+        "title": "Executive cars",
+        "desc": "Comfort and discretion for couples, solo travelers, or small groups. Ideal for quick transfers, city tours, and flexible schedules.",
+        "chips": ["Premium sedan", "Comfortable SUV", "Large trunk", "Complimentary water"]
+      },
+      "vans": {
+        "title": "Vans for groups",
+        "desc": "Space and practicality for families and groups. Perfect for border crossings and full-day tours with multiple points of interest.",
+        "chips": ["Up to 15 passengers", "Air conditioning", "Professional driving", "Comprehensive insurance"]
+      }
+    }
+  }
+  ,
+  "gallery": {
+    "title": "Gallery",
+    "intro": "Explore real moments captured in photos and videos—from Iguazu Falls trails to cross-border journeys and authentic experiences across the Triple Frontier."
+  }
+  ,
+  "blog": {
+    "list": {
+      "title": "Travel Inspiration",
+      "subtitle": "Stories, tips, and guides from the Triple Frontier.",
+      "empty": "No posts yet."
+    },
+    "cta": {
+      "readMore": "Read more",
+      "backToList": "Back to all posts"
+    },
+    "notFound": "We couldn’t find this post.",
+    "sidebar": {
+      "title": "Plan your private tour",
+      "desc": "Ready to turn inspiration into an itinerary? Our local experts will tailor a private trip across Brazil, Argentina, and Paraguay."
+    },
+    "posts": {
+      "inspiration-1": { "body": [
+        "From border crossings to hidden viewpoints, here’s how to shape a private road trip that balances wonder and comfort.",
+        "Start by mapping the must-sees on both sides of the falls. Build in time for sunrise photography and quieter jungle trails."
+      ]},
+      "inspiration-2": { "body": [
+        "Golden hour at Iguazu is magic. Use a tripod or stabilisation, keep ISO low, and experiment with longer exposures for silky water.",
+        "Respect mist and spray—protect your gear and be mindful of other visitors on narrow platforms."
+      ]},
+      "inspiration-3": { "body": [
+        "Mate is more than a drink—it’s ritual and community. Try traditional yerba blends and pair them with local street bites.",
+        "Cross-border flavors tell the story of migration and shared culture across the Triple Frontier."
+      ]},
+      "inspiration-4": { "body": [
+        "Beyond the main trails, the region offers calm paths and secret viewpoints. Butterflies, mist, and forest canopies set the scene.",
+        "Hire a local guide to reach lesser-known spots safely and responsibly."
+      ]}
+    }
   }
 }

@@ -2,14 +2,16 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import { colors, fonts, sizes } from '../../theme/tokens.js'
 
-export default function NavLinks({ labels }) {
+// Backwards-compatible: accepts either `items` [{ label, href }] or legacy `labels` [string]
+export default function NavLinks({ items, labels }) {
+  const data = items || (labels ? labels.map((l) => ({ label: l, href: '#' })) : [])
   return (
     <>
-      {labels.map((label) => (
+      {data.map(({ label, href }) => (
         <Typography
           key={label}
           component="a"
-          href="#"
+          href={href || '#'}
           sx={{
             fontFamily: fonts.headings,
             fontWeight: 400,

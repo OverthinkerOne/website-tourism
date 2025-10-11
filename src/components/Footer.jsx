@@ -59,10 +59,10 @@ export default function Footer() {
               {t('footer.explore')}
             </Typography>
             <Stack component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }} spacing={0.75}>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('nav.private_guided_tours')}</Typography></li>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('nav.about_us')}</Typography></li>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('nav.gallery')}</Typography></li>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('nav.blog')}</Typography></li>
+              <li><Typography component="a" href="/tours" sx={linkSx}>{t('nav.private_guided_tours')}</Typography></li>
+              <li><Typography component="a" href="/about" sx={linkSx}>{t('nav.about_us')}</Typography></li>
+              <li><Typography component="a" href="/gallery" sx={linkSx}>{t('nav.gallery')}</Typography></li>
+              <li><Typography component="a" href="/blog" sx={linkSx}>{t('nav.blog')}</Typography></li>
             </Stack>
           </Stack>
 

@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import { fonts, colors } from '../theme/tokens.js'
 import { useTranslation } from 'react-i18next'
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar'
+import { useNavigate } from 'react-router-dom'
 import LandscapeIcon from '@mui/icons-material/Landscape'
 import NightlifeIcon from '@mui/icons-material/Nightlife'
 import LocalMallIcon from '@mui/icons-material/LocalMall'
@@ -59,7 +60,8 @@ const tours = [
 
 function TourCard({ tour }) {
   const { t } = useTranslation()
-  const { country, title, Icon, image } = tour
+  const { country, title, Icon, image, id } = tour
+  const navigate = useNavigate()
   const hasImage = Boolean(image)
   return (
     <Box
@@ -135,7 +137,7 @@ function TourCard({ tour }) {
         <Button
           variant="contained"
           disableElevation
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) => { e.preventDefault(); navigate(`/tours/${id}`) }}
           sx={{
             width: '100%',
             bgcolor: colors.accent,

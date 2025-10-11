@@ -83,12 +83,24 @@ export default function Header() {
                   anchorEl={menuAnchor}
                   open={openMenu}
                   onClose={handleCloseMenu}
-                  labels={[t('nav.private_guided_tours'), t('nav.about_us'), t('nav.gallery'), t('nav.blog')]}
+                  items={[
+                    { label: t('nav.private_guided_tours'), href: '/tours' },
+                    { label: t('nav.about_us'), href: '/about' },
+                    { label: t('nav.gallery'), href: '/gallery' },
+                    { label: t('nav.blog'), href: '/blog' },
+                  ]}
                 />
               </>
             ) : (
               <>
-                <NavLinks labels={[t('nav.private_guided_tours'), t('nav.about_us'), t('nav.gallery'), t('nav.blog')]} />
+                <NavLinks
+                  items={[
+                    { label: t('nav.private_guided_tours'), href: '/tours' },
+                    { label: t('nav.about_us'), href: '/about' },
+                    { label: t('nav.gallery'), href: '/gallery' },
+                    { label: t('nav.blog'), href: '/blog' },
+                  ]}
+                />
                 <LanguageSelect value={lang} onChange={handleLang} />
               </>
             )}

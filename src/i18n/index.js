@@ -4,12 +4,14 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import en from './locales/en.json'
 import es from './locales/es.json'
 import zh from './locales/zh.json'
+import pt from './locales/pt.json'
 
 // Base resources per language (can be split by namespace later)
 const resources = {
   en: { translation: en },
   es: { translation: es },
   zh: { translation: zh },
+  pt: { translation: pt },
 }
 
 i18n
@@ -18,7 +20,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-  supportedLngs: ['en', 'es', 'zh'],
+  supportedLngs: ['en', 'es', 'zh', 'pt'],
     interpolation: { escapeValue: false },
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],

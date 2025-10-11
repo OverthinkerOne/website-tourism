@@ -6,7 +6,8 @@ import Box from '@mui/material/Box'
 import { fonts } from '../../theme/tokens.js'
 import SocialIcons from './SocialIcons.jsx'
 
-export default function MobileMenu({ anchorEl, open, onClose, labels }) {
+// Backwards-compatible: accepts either `items` [{ label, href }] or legacy `labels` [string]
+export default function MobileMenu({ anchorEl, open, onClose, items, labels }) {
   return (
     <Menu
       anchorEl={anchorEl}
@@ -23,12 +24,12 @@ export default function MobileMenu({ anchorEl, open, onClose, labels }) {
         },
       }}
     >
-      {labels.map((label) => (
+      {(items || (labels ? labels.map((l) => ({ label: l, href: '#' })) : [])).map(({ label, href }) => (
         <MenuItem
           key={label}
           onClick={onClose}
           component="a"
-          href="#"
+          href={href || '#'}
           sx={{ fontFamily: fonts.headings, textTransform: 'uppercase', letterSpacing: 1, fontSize: 16 }}
         >
           {label}

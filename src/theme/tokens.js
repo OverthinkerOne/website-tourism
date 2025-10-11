@@ -31,4 +31,5 @@ export const i18nLanguages = [
   { code: 'en', label: 'English' },
   { code: 'es', label: 'Español' },
   { code: 'zh', label: '中文' },
+  { code: 'pt', label: 'Português' },
 ]
