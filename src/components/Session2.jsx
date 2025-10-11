@@ -1,6 +1,8 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { colors, fonts } from '../theme/tokens.js'
 
 const images = [
   '/images/carousel-s2/SaveClip.App_476343054_18032969774569592_7526527612979803973_n.jpg',
@@ -21,7 +23,7 @@ export default function Session2() {
   }, [])
 
   return (
-    <Box component="section" sx={{ position: 'relative', width: '100%', height: '120vh', overflow: 'hidden', bgcolor: '#000' }}>
+    <Box component="section" sx={{ position: 'relative', width: '100%', height: { xs: 'auto', md: '120vh' }, minHeight: { xs: '100vh', md: 'auto' }, overflow: 'hidden', bgcolor: '#000' }}>
       {/* Background carousel */}
       {images.map((src, i) => (
         <Box
@@ -65,13 +67,13 @@ export default function Session2() {
       {/* Content layer */}
       <Box sx={{ position: 'relative', zIndex: 3, inset: 0, color: '#fff', width: '100%', height: '100%' }}>
     {/* Top title/subtitle block */}
-  <Box sx={{ position: 'absolute', top: { xs: 120, md: 200 }, left: 0, right: 0, display: 'grid', placeItems: 'center', px: 2 }}>
+  <Box sx={{ position: { xs: 'relative', md: 'absolute' }, top: { xs: 'auto', md: 140 }, pt: { xs: 8, sm: 10 }, left: 0, right: 0, display: 'grid', placeItems: 'center', px: 2 }}>
           <Box sx={{ textAlign: 'center', maxWidth: 1100 }}>
             <Box component="h2" sx={{
               m: 0,
               fontFamily: 'Bebas Neue, Roboto, Arial, sans-serif',
               fontWeight: 400,
-              fontSize: { xs: 36, md: 48 },
+              fontSize: { xs: 32, sm: 36, md: 48 },
               textTransform: 'uppercase',
               color: '#fff',
               lineHeight: 1.05,
@@ -83,26 +85,30 @@ export default function Session2() {
               m: 0,
               fontFamily: 'Kumbh Sans, system-ui, sans-serif',
               fontWeight: 500,
-              fontSize: { xs: 18, md: 24 },
+              fontSize: { xs: 16, sm: 18, md: 24 },
               textTransform: 'lowercase',
               color: '#fff',
               lineHeight: 1.25,
               opacity: 0.95,
               mx: 'auto',
+              maxWidth: { xs: 560, md: 'none' },
+              textAlign: 'center',
             }}>
               {t('session2.subtitle')}
             </Box>
           </Box>
+
         </Box>
 
     {/* Bottom features grid */}
-  <Box sx={{ position: 'absolute', bottom: { xs: 100, md: 180 }, left: 0, right: 0, px: { xs: 2, md: 3 } }}>
+  <Box sx={{ position: { xs: 'relative', md: 'absolute' }, bottom: { xs: 'auto', md: 180 }, left: 0, right: 0, px: { xs: 2, md: 3 }, py: { xs: 6, sm: 8, md: 0 }, mt: { xs: 3, sm: 4 } }}>
           <Box sx={{
             width: 'min(1200px, 94vw)',
             mx: 'auto',
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: 'repeat(4, 1fr)' },
             gap: { xs: 2, md: 3 },
+            pb: { xs: 2, md: 5 },
           }}>
             {[
               {
@@ -140,7 +146,7 @@ export default function Session2() {
                   component="img"
                   src={item.icon}
                   alt="icon"
-                  sx={{ width: 36, height: 36, mb: 1.25, filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.4))' }}
+                  sx={{ width: { xs: 28, md: 36 }, height: { xs: 28, md: 36 }, mb: 1.25, filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.4))' }}
                 />
                 <Box
                   component="h3"
@@ -148,7 +154,7 @@ export default function Session2() {
                     m: 0,
                     fontFamily: 'Kumbh Sans, system-ui, sans-serif',
                     fontWeight: 700,
-                    fontSize: 16,
+                    fontSize: { xs: 15, md: 16 },
                     color: '#fff',
                     textTransform: 'capitalize',
                     lineHeight: 1.2,
@@ -163,18 +169,50 @@ export default function Session2() {
                     mt: 0.75,
                     fontFamily: 'Kumbh Sans, system-ui, sans-serif',
                     fontWeight: 500,
-                    fontSize: 16,
+                    fontSize: { xs: 14, md: 16 },
                     color: '#fff',
                     textTransform: 'lowercase',
                     lineHeight: 1.35,
                     opacity: 0.95,
-                    maxWidth: 260,
+                    maxWidth: { xs: 260, md: 260 },
                   }}
                 >
                   {item.text}
                 </Box>
               </Box>
             ))}
+          </Box>
+          {/* CTA inside the features container -> below the internal boxes */}
+          <Box sx={{ display: 'grid', placeItems: 'center', mt: { xs: 3, md: 3 } }}>
+            <Button
+              component="a"
+              href="/about"
+              aria-label={t('nav.about_us')}
+              endIcon={<ArrowForwardIosIcon sx={{ fontSize: 16 }} />}
+              sx={{
+                px: { xs: 2.75, md: 3.25 },
+                py: { xs: 1.1, md: 1.25 },
+                borderRadius: 999,
+                textTransform: 'uppercase',
+                letterSpacing: { xs: '0.14em', md: '0.18em' },
+                fontFamily: fonts.headings,
+                fontSize: { xs: 14, sm: 15, md: 16 },
+                fontWeight: 400,
+                color: '#fff',
+                background: 'linear-gradient(180deg, #FF8A33 0%, #FF7300 100%)',
+                boxShadow: '0 8px 18px rgba(255,115,0,0.40), 0 2px 8px rgba(0,0,0,0.16)',
+                transition: 'transform .18s ease, box-shadow .18s ease, background .18s ease',
+                '&:hover': {
+                  transform: 'translateY(-1px) scale(1.02)',
+                  background: 'linear-gradient(180deg, #FFA45F 0%, #FF6A00 100%)',
+                  boxShadow: '0 14px 30px rgba(255,115,0,0.60), 0 6px 14px rgba(0,0,0,0.22), 0 0 22px rgba(255,115,0,0.45)'
+                },
+                '&:active': { transform: 'translateY(0) scale(0.99)' },
+                '&:focus-visible': { outline: 'none', boxShadow: '0 0 0 3px rgba(255,115,0,0.35), 0 10px 22px rgba(0,0,0,0.28)' },
+              }}
+            >
+              {t('nav.about_us')}
+            </Button>
           </Box>
         </Box>
       </Box>

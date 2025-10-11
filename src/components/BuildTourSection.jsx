@@ -45,46 +45,51 @@ export default function BuildTourSection() {
   const dateFormat = 'DD/MM/YYYY'
 
   return (
-    <Box component="section" sx={{ bgcolor: '#fff', minHeight: 226, display: 'grid', placeItems: 'center', overflowX: 'auto' }}>
+    <Box component="section" sx={{ bgcolor: '#fff', minHeight: 226, display: 'grid', placeItems: 'center', overflowX: 'hidden', px: { xs: 1.5, sm: 2 }, py: { xs: 3, sm: 4 } }}>
       <Box
         sx={{
-          // Let the box size to its contents while never exceeding viewport
-          width: 'max-content',
-          maxWidth: 'none',
+          // Responsive card container
+          width: { xs: '100%', md: 'auto' },
+          maxWidth: 'min(1100px, 96vw)',
           minHeight: 160,
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          flexWrap: 'nowrap',
+          justifyContent: { xs: 'stretch', md: 'center' },
+          flexWrap: { xs: 'wrap', md: 'nowrap' },
           bgcolor: '#fff',
           borderRadius: '20px',
           border: '1px solid',
           borderColor: 'rgba(95,95,95,0.5)', // #5F5F5F @ 50%
           px: { xs: 2, sm: 3 },
           py: { xs: 2, sm: 2 },
-          columnGap: 2.5,
-          rowGap: 2,
+          columnGap: { xs: 0, md: 2.5 },
+          rowGap: { xs: 1.5, sm: 2 },
+          boxSizing: 'border-box',
         }}
       >
         <Typography
           sx={{
             fontFamily: fonts.headings,
-            fontSize: 36,
+            fontSize: { xs: 24, sm: 28, md: 36 },
             fontWeight: 400,
             lineHeight: 1,
             textTransform: 'uppercase',
             color: '#000',
-            mr: 2,
-            whiteSpace: 'nowrap',
+            mr: { xs: 0, md: 2 },
+            whiteSpace: { xs: 'normal', md: 'nowrap' },
+            overflowWrap: 'anywhere',
+            textAlign: { xs: 'center', md: 'left' },
+            width: { xs: '100%', md: 'auto' },
+            mb: { xs: 1, md: 0 },
           }}
         >
           {t('buildTour.title')}
         </Typography>
 
-        <Divider orientation="vertical" flexItem sx={{ borderColor: 'rgba(95,95,95,0.25)' }} />
+  <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', md: 'block' }, borderColor: 'rgba(95,95,95,0.25)' }} />
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-          <Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, width: { xs: '100%', md: 'auto' } }}>
+          <Box sx={{ width: '100%' }}>
             <InputLabel shrink sx={{ fontWeight: 500, color: colors.textPrimary }}>
               {t('buildTour.date')}
             </InputLabel>
@@ -102,12 +107,13 @@ export default function BuildTourSection() {
                 slotProps={{
                   textField: {
                     size: 'small',
+                    fullWidth: true,
                     onKeyDown: (e) => {
                       if (e.key === 'Enter') e.preventDefault()
                     },
                     inputProps: { inputMode: 'numeric' },
                     sx: {
-                      minWidth: 220,
+                      minWidth: { xs: '100%', md: 220 },
                       '& .MuiOutlinedInput-root': { borderRadius: 2 },
                     },
                   },
@@ -117,10 +123,10 @@ export default function BuildTourSection() {
           </Box>
         </Box>
 
-        <Divider orientation="vertical" flexItem sx={{ borderColor: 'rgba(95,95,95,0.25)' }} />
+  <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', md: 'block' }, borderColor: 'rgba(95,95,95,0.25)' }} />
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-          <Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, width: { xs: '100%', md: 'auto' } }}>
+          <Box sx={{ width: '100%' }}>
             <InputLabel shrink sx={{ fontWeight: 500, color: colors.textPrimary }}>
               {t('buildTour.duration')}
             </InputLabel>
@@ -129,7 +135,8 @@ export default function BuildTourSection() {
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
               displayEmpty
-              sx={{ minWidth: 200, borderRadius: 2 }}
+              fullWidth
+              sx={{ minWidth: { xs: '100%', md: 200 }, borderRadius: 2 }}
             >
               {[1,2,3,4,5,6,7,8,9,10].map((n) => (
                 <MenuItem key={n} value={String(n)}>{t('buildTour.days', { count: n })}</MenuItem>
@@ -138,23 +145,23 @@ export default function BuildTourSection() {
           </Box>
         </Box>
 
-        <Divider orientation="vertical" flexItem sx={{ borderColor: 'rgba(95,95,95,0.25)' }} />
+  <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', md: 'block' }, borderColor: 'rgba(95,95,95,0.25)' }} />
 
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: 220 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: { xs: 'auto', md: 220 }, width: { xs: '100%', md: 'auto' }, mt: { xs: 0.5, md: 0 } }}>
           <Button
             variant="contained"
             color="primary"
             sx={{
               height: 48,
-              px: 4,
+              px: { xs: 2.5, md: 4 },
               borderRadius: 2,
               // vivid orange base
               background: 'linear-gradient(180deg, #FF8A33 0%, #FF7300 100%)',
               boxShadow: '0 8px 18px rgba(255,115,0,0.40), 0 2px 8px rgba(0,0,0,0.16)',
               textTransform: 'uppercase',
-              letterSpacing: '0.2em', // 20%
+              letterSpacing: { xs: '0.12em', md: '0.2em' },
               fontFamily: fonts.headings,
-              fontSize: 24,
+              fontSize: { xs: 18, md: 24 },
               fontWeight: 400,
               color: '#FFF',
               position: 'relative',
@@ -182,6 +189,7 @@ export default function BuildTourSection() {
               },
               transition: 'all 180ms ease',
             }}
+            fullWidth
           >
             {t('buildTour.start')}
           </Button>

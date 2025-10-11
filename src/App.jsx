@@ -11,6 +11,8 @@ import Session4 from './components/Session4'
 import Session5 from './components/Session5'
 import Session6 from './components/Session6'
 import Session7 from './components/Session7'
+import Session8 from './components/Session8'
+import Session9 from './components/Session9'
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
       <Session5 />
       <Session6 />
       <Session7 />
+  <Session8 />
+      <Session9 />
     </ThemeProvider>
   )
 }

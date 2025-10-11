@@ -106,6 +106,7 @@
     "title": "BUSCANDO INSPIRAÇÃO?",
     "subtitle": "Deixe a imaginação voar e visualize destinos marcantes, encontros significativos e as memórias que te aguardam.",
     "readMore": "Ler mais",
+    "seeAllPosts": "Ver todas as postagens",
     "posts": {
       "inspiration-1": {
         "category": "Dicas de Viagem",
@@ -126,6 +127,93 @@
         "category": "Achados Secretos",
         "title": "Além das quedas: trilhas tranquilas e mirantes escondidos",
         "excerpt": "Troque as multidões por caminhos silenciosos onde borboletas e respingos emolduram a copa da floresta."
+      }
+    }
+  }
+  ,
+  "session8": {
+    "title": "PERGUNTAS FREQUENTES",
+    "items": {
+      "q1": {
+        "question": "Preciso cruzar a fronteira para os passeios nas Cataratas?",
+        "answer": "Para viver toda a magia de Iguaçu, recomendamos visitar os lados brasileiro e argentino. A travessia é simples com a documentação correta e orientamos você em cada etapa."
+      },
+      "q2": {
+        "question": "Vocês personalizam os passeios conforme meu ritmo e interesses?",
+        "answer": "Com certeza. Todos os passeios são personalizáveis — duração, atividades e nível de conforto. Conte suas preferências e montamos um roteiro sob medida."
+      },
+      "q3": {
+        "question": "É seguro visitar a região da Tríplice Fronteira?",
+        "answer": "Sim. Trabalhamos com parceiros locais de confiança e orientamos os caminhos e horários mais seguros. Passeios privados oferecem ainda mais conforto e flexibilidade."
+      },
+      "q4": {
+        "question": "O que levar para as quedas e atividades na selva?",
+        "answer": "Tênis confortáveis, jaqueta leve impermeável, protetor solar, repelente e uma bolsa impermeável para celular são recomendados."
+      },
+      "q5": {
+        "question": "Vocês organizam transporte e hospedagem?",
+        "answer": "Sim — podemos organizar transfers, transporte entre fronteiras e recomendar ou reservar hotéis de acordo com seu estilo e orçamento."
+      },
+      "q6": {
+        "question": "Posso viajar com crianças ou idosos?",
+        "answer": "Com certeza. Adaptamos as atividades para diferentes idades e níveis de mobilidade, garantindo conforto e boas memórias para todos."
+      }
+    }
+  }
+  ,
+  "session9": {
+    "title": "RELATOS REAIS E INDEPENDENTES DE VIAJANTES",
+    "subtitle": "Avaliações autênticas e verificadas de quem explorou a Tríplice Fronteira conosco.",
+    "verified": "Verificado",
+    "readMore": "Ler depoimento completo",
+    "items": {
+      "t1": {
+        "name": "Mariana R.",
+        "title": "Experiência impecável e flexível",
+        "text": "Das trilhas panorâmicas no Brasil às passarelas sobre a água na Argentina — tudo coordenado com perfeição. As fronteiras foram tranquilas e o guia adaptou o ritmo aos meus pais. Nos sentimos seguros e bem cuidados o tempo todo.",
+        "tags": ["Cataratas do Iguaçu", "Família", "Fronteira"],
+        "rating": 5,
+        "date": "Ago 2025"
+      },
+      "t2": {
+        "name": "Daniel G.",
+        "title": "Paraíso da fotografia ao amanhecer",
+        "text": "Eles sabiam exatamente onde nos levar para as fotos do nascer do sol. Consegui as fotos de cachoeira com efeito sedoso que sempre quis. Transporte privado, zero pressa e ótimas dicas gastronômicas locais!",
+        "tags": ["Fotografia", "Amanhecer", "Privativo"],
+        "rating": 4.5,
+        "date": "Jun 2025"
+      },
+      "t3": {
+        "name": "Sofía M.",
+        "title": "Autêntico e sem estresse",
+        "text": "Visitamos os dois lados das quedas e ainda deu tempo para degustar chimarrão e uma trilha tranquila na selva. Tudo organizado e, mesmo assim, espontâneo. Recomendo muito!",
+        "tags": ["Cultura", "Argentina", "Brasil"],
+        "rating": 5,
+        "date": "Mai 2025"
+      },
+      "t4": {
+        "name": "Camille L.",
+        "title": "Do jeito que a gente gosta",
+        "text": "Queríamos um ritmo tranquilo com um pouco de aventura. Eles combinaram Macuco de barco com mirantes mais calmos. A comunicação antes e durante a viagem foi excelente.",
+        "tags": ["Macuco", "Tranquilo", "Sob medida"],
+        "rating": 4.5,
+        "date": "Abr 2025"
+      },
+      "t5": {
+        "name": "Johannes K.",
+        "title": "Ótima logística transfronteiriça",
+        "text": "Eu me preocupava com documentos e horários, mas eles cuidaram de tudo sem dificuldades. Ainda encaixamos uma paradinha de compras em Ciudad del Este.",
+        "tags": ["Logística", "Compras", "Paraguai"],
+        "rating": 4.5,
+        "date": "Mar 2025"
+      },
+      "t6": {
+        "name": "Giulia P.",
+        "title": "Tour privativo memorável",
+        "text": "Nosso guia contou histórias locais e mostrou os melhores mirantes. Evitamos as multidões e vimos todos os destaques. Valeu muito!",
+        "tags": ["Privativo", "Destaques", "Histórias"],
+        "rating": 5,
+        "date": "Fev 2025"
       }
     }
   }

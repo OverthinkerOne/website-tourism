@@ -106,6 +106,7 @@
     "title": "LOOKING FOR INSPIRATION?",
     "subtitle": "Encourage your imagination to soar and envision remarkable destinations, meaningful encounters, and the lasting memories that await.",
     "readMore": "Read more",
+    "seeAllPosts": "See All Posts",
     "posts": {
       "inspiration-1": {
         "category": "Travel Tips",
@@ -126,6 +127,92 @@
         "category": "Hidden Gems",
         "title": "Beyond the falls: calm trails and secret viewpoints",
         "excerpt": "Trade the crowds for quiet paths where butterflies and sprays frame the forest canopy."
+      }
+    }
+  }
+  ,
+  "session8": {
+    "title": "FREQUENTLY ASKED QUESTIONS",
+    "items": {
+      "q1": {
+        "question": "Do I need to cross borders for the Iguazu Falls tours?",
+        "answer": "To experience the full magic of Iguazu, we recommend visiting both the Brazilian and Argentine sides. Border crossing is straightforward with proper documentation and we guide you through every step."
+      },
+      "q2": {
+        "question": "Can you customize tours to my interests and pace?",
+        "answer": "Absolutely. All tours are customizable — from duration and activities to comfort level. Tell us your preferences and we’ll tailor an itinerary that fits you perfectly."
+      },
+      "q3": {
+        "question": "Is it safe to visit the Triple Frontier region?",
+        "answer": "Yes. We work with trusted local partners and provide guidance on the safest routes and schedules. Private guided tours offer additional comfort and flexibility."
+      },
+      "q4": {
+        "question": "What should I bring for the falls and jungle activities?",
+        "answer": "Comfortable walking shoes, light waterproof jacket, sunscreen, insect repellent, and a waterproof phone pouch are recommended."
+      },
+      "q5": {
+        "question": "Do you arrange transport and accommodations?",
+        "answer": "Yes — we can arrange airport transfers, cross-border transport, and recommend or book hotels that match your style and budget."
+      },
+      "q6": {
+        "question": "Can I travel with kids or elderly family members?",
+        "answer": "Definitely. We adapt activities to different ages and mobility levels, ensuring a comfortable and memorable experience for everyone."
+      }
+    }
+  }
+  ,
+  "session9": {
+    "title": "REAL AND INDEPENDENT TRAVELLER FEEDBACK",
+    "subtitle": "Unfiltered, verified reviews from travellers who explored the Triple Frontier with us.",
+    "verified": "Verified",
+    "items": {
+      "t1": {
+        "name": "Mariana R.",
+        "title": "A flawless, flexible experience",
+        "text": "From the Brazilian panoramic trails to the Argentine walkways right over the water – everything was coordinated perfectly. Border crossings were smooth and our guide adapted the pace to my parents. We felt safe and taken care of the whole time.",
+        "tags": ["Iguazu Falls", "Family", "Cross-border"],
+        "rating": 5,
+        "date": "Aug 2025"
+      },
+      "t2": {
+        "name": "Daniel G.",
+        "title": "Photography heaven at dawn",
+        "text": "They knew exactly where to take us for sunrise shots. I got the silky waterfall photos I always wanted. Private transport, zero rush, and some unexpected local food tips too!",
+        "tags": ["Photography", "Sunrise", "Private"],
+        "rating": 4.5,
+        "date": "Jun 2025"
+      },
+      "t3": {
+        "name": "Sofía M.",
+        "title": "Authentic and stress-free",
+        "text": "We visited both sides of the falls and also had time for Yerba mate tasting and a quiet jungle trail. Everything was organised and yet felt spontaneous. Highly recommend!",
+        "tags": ["Culture", "Argentina", "Brazil"],
+        "rating": 5,
+        "date": "May 2025"
+      },
+      "t4": {
+        "name": "Camille L.",
+        "title": "Adapted to our style",
+        "text": "We wanted a relaxed pace with some adventure. They combined Macuco boat with peaceful viewpoints. Communication before and during the trip was excellent.",
+        "tags": ["Macuco", "Relaxed", "Custom"],
+        "rating": 4.5,
+        "date": "Apr 2025"
+      },
+      "t5": {
+        "name": "Johannes K.",
+        "title": "Great cross-border logistics",
+        "text": "I was worried about documents and timing, but they handled everything seamlessly. We even squeezed in a quick shopping stop in Ciudad del Este.",
+        "tags": ["Logistics", "Shopping", "Paraguay"],
+        "rating": 4.5,
+        "date": "Mar 2025"
+      },
+      "t6": {
+        "name": "Giulia P.",
+        "title": "Memorable private tour",
+        "text": "Our guide shared local stories and the best viewpoints. We avoided crowds and still saw all the highlights. Worth it!",
+        "tags": ["Private", "Highlights", "Storytelling"],
+        "rating": 5,
+        "date": "Feb 2025"
       }
     }
   }

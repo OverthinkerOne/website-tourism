@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { alpha } from '@mui/material/styles'
+import { keyframes } from '@emotion/react'
 import { colors, fonts } from '../theme/tokens.js'
 import { useTranslation } from 'react-i18next'
 
@@ -11,6 +12,12 @@ export default function HeroSection() {
   const titleRef = React.useRef(null)
   const [titleWidth, setTitleWidth] = React.useState(null)
   const { t } = useTranslation()
+
+  const pulseGlow = keyframes`
+    0% { opacity: .45; transform: scale(1); }
+    50% { opacity: .95; transform: scale(1.04); }
+    100% { opacity: .45; transform: scale(1); }
+  `
 
   React.useLayoutEffect(() => {
     const measure = () => {
@@ -35,7 +42,7 @@ export default function HeroSection() {
         muted
         loop
         playsInline
-  src="/images/videos/14088619_3840_2160_60fps.mp4"
+        src="/images/videos/14088619_3840_2160_60fps.mp4"
         sx={{
           position: 'absolute',
           inset: 0,
@@ -69,11 +76,9 @@ export default function HeroSection() {
           textAlign: 'center',
           boxSizing: 'border-box',
           pb: { xs: '44px', md: '63px' },
-          // Lift content slightly above perfect center
           transform: { xs: 'translateY(-20px)', md: 'translateY(-36px)', lg: 'translateY(-44px)' },
         }}
       >
-        {/* Wrapper shrinks to the title width so side bars match title width */}
         <Box sx={{ display: 'inline-block', maxWidth: { xs: '100%', md: '90%' } }}>
           {/* Certification icon above title */}
           <Box
@@ -82,7 +87,7 @@ export default function HeroSection() {
             alt={t('hero.certificationAlt')}
             sx={{
               display: 'block',
-              height: { xs: 120, md: 160 },
+              height: { xs: 90, sm: 110, md: 160 },
               width: 'auto',
               mx: 'auto',
               mb: { xs: 1, md: 1.5 },
@@ -98,19 +103,37 @@ export default function HeroSection() {
               textTransform: 'uppercase',
               letterSpacing: 1.2,
               color: '#FFFFFF',
-              fontSize: { xs: 48, sm: 64, md: 88, lg: 104 },
+              fontSize: { xs: 40, sm: 56, md: 88, lg: 104 },
               lineHeight: 1,
               textShadow: '0 2px 8px rgba(0,0,0,0.45)',
-              whiteSpace: 'nowrap',
+              whiteSpace: { xs: 'normal', sm: 'nowrap' },
+              wordBreak: 'break-word',
+              overflowWrap: 'anywhere',
+              hyphens: 'auto',
             }}
             ref={titleRef}
           >
             {t('hero.title')}
           </Typography>
 
-          {/* Subtitle with side bars matching title width */}
+          {/* Subtitle: swap to simple text on mobile; show decorative bars from md+ */}
           <Box sx={{ mt: { xs: 2, md: 2.5 } }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0, width: titleWidth ? `${titleWidth}px` : 'auto', mx: 'auto' }}>
+            {/* Mobile/simple variant */}
+            <Typography
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                fontFamily: fonts.headings,
+                textTransform: 'uppercase',
+                letterSpacing: 1.1,
+                color: '#FFFFFF',
+                fontSize: { xs: 13, sm: 14 },
+                lineHeight: 1.2,
+              }}
+            >
+              {t('hero.subtitle')}
+            </Typography>
+            {/* Desktop/bars variant */}
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0, width: titleWidth ? `${titleWidth}px` : 'auto', mx: 'auto' }}>
               <Box sx={{ flex: 1, height: 2, bgcolor: '#FFFFFF', opacity: 0.9, mr: '40px' }} />
               <Typography
                 sx={{
@@ -118,7 +141,7 @@ export default function HeroSection() {
                   textTransform: 'uppercase',
                   letterSpacing: 1.2,
                   color: '#FFFFFF',
-                  fontSize: { xs: 14, md: 18 },
+                  fontSize: { md: 18 },
                   lineHeight: 1,
                   whiteSpace: 'nowrap',
                 }}
@@ -129,45 +152,52 @@ export default function HeroSection() {
             </Box>
           </Box>
 
-          {/* CTA Button */}
+          {/* CTA Button (enhanced) */}
           <Button
             variant="contained"
             sx={{
               mt: { xs: 3, md: 4 },
-              px: { xs: 2.5, md: 3.5 },
-              py: { xs: 1.25, md: 1.5 },
-              borderRadius: 2.5,
+              px: { xs: 3.25, md: 4.25 },
+              py: { xs: 2, md: 2.25 },
+              borderRadius: 999,
               position: 'relative',
-              overflow: 'hidden',
+              overflow: 'visible',
               color: '#FFFFFF',
               textTransform: 'none',
-              // Glassy orange with subtle gradient
-              background: (theme) => `linear-gradient(180deg, ${alpha(theme.palette.primary.main, 0.38)} 0%, ${alpha(theme.palette.primary.main, 0.28)} 100%)`,
-              border: '1px solid',
-              borderColor: (theme) => alpha(theme.palette.primary.main, 0.65),
-              boxShadow: (theme) => `0 10px 22px ${alpha('#000', 0.28)}, 0 0 0 1px ${alpha(theme.palette.primary.main, 0.08)} inset`,
-              backdropFilter: 'saturate(180%) blur(8px)',
-              transition: 'transform .2s ease, box-shadow .2s ease, background .2s ease, filter .2s ease',
-              '&::after': {
-                // top sheen highlight
+              background: 'linear-gradient(180deg, #FF8A33 0%, #FF7300 100%)',
+              boxShadow: '0 12px 26px rgba(255,115,0,0.48), 0 6px 14px rgba(0,0,0,0.28)',
+              transition: 'transform .2s ease, box-shadow .2s ease, background .2s ease',
+              '&::before': {
                 content: '""',
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 40%)',
+                borderRadius: 'inherit',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 45%)',
                 pointerEvents: 'none',
               },
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                inset: -18,
+                borderRadius: 'inherit',
+                background: 'radial-gradient(circle, rgba(255,115,0,0.65) 0%, rgba(255,115,0,0.0) 70%)',
+                filter: 'blur(18px)',
+                zIndex: -1,
+                pointerEvents: 'none',
+                animation: `${pulseGlow} 2.6s ease-in-out infinite`,
+              },
               '&:hover': {
-                transform: 'translateY(-2px) scale(1.01)',
-                background: (theme) => `linear-gradient(180deg, ${alpha(theme.palette.primary.main, 0.44)} 0%, ${alpha(theme.palette.primary.main, 0.34)} 100%)`,
-                boxShadow: (theme) => `0 14px 30px ${alpha('#000', 0.34)}, 0 0 0 1px ${alpha(theme.palette.primary.main, 0.12)} inset, 0 0 18px ${alpha(theme.palette.primary.main, 0.28)}`,
+                transform: 'translateY(-2px) scale(1.02)',
+                background: 'linear-gradient(180deg, #FFA45F 0%, #FF6A00 100%)',
+                boxShadow: '0 16px 34px rgba(255,115,0,0.60), 0 8px 18px rgba(0,0,0,0.30), 0 0 22px rgba(255,115,0,0.45)',
               },
               '&:active': {
                 transform: 'translateY(0) scale(0.99)',
-                boxShadow: (theme) => `0 8px 18px ${alpha('#000', 0.28)}, 0 0 0 1px ${alpha(theme.palette.primary.main, 0.12)} inset`,
+                boxShadow: '0 10px 22px rgba(255,115,0,0.46), 0 4px 12px rgba(0,0,0,0.26)'
               },
               '&:focus-visible': {
                 outline: 'none',
-                boxShadow: (theme) => `0 0 0 3px ${alpha(theme.palette.primary.main, 0.35)}, 0 10px 22px ${alpha('#000', 0.28)}`,
+                boxShadow: '0 0 0 3px rgba(255,115,0,0.35), 0 12px 26px rgba(255,115,0,0.45)'
               },
             }}
             aria-label={t('hero.cta.ariaLabel')}
