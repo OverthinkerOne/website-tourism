@@ -8,6 +8,7 @@ import BuildTourSection from './components/BuildTourSection'
 import Session2 from './components/Session2'
 import Session3 from './components/Session3'
 import Session4 from './components/Session4'
+import Session5 from './components/Session5'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Session2 />
       <Session3 />
       <Session4 />
+      <Session5 />
     </ThemeProvider>
   )
 }
