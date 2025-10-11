@@ -101,5 +101,32 @@
       "step3": "Ajusta los detalles con un experto local. Revisa el itinerario personalizado y dinos lo que te encanta y lo que te gustaría cambiar. Ajusta el ritmo, cambia una actividad o mejora el alojamiento. Nuestro especialista hará revisiones ilimitadas hasta que tu viaje sea tal como lo imaginaste. ¡Es tu road trip, nosotros lo perfeccionamos!",
       "step4": "Confirma, reserva ¡y que comience la aventura! Cuando estés 100% satisfecho, nos encargamos de todas las reservas: hoteles, transporte, tours y traslados. Solo tienes que hacer la maleta, llegar a Foz do Iguaçu y dejar que Guará Travel cuide cada detalle para una experiencia inolvidable en la Triple Frontera."
     }
+  },
+  "session7": {
+    "title": "¿BUSCAS INSPIRACIÓN?",
+    "subtitle": "Deja volar tu imaginación y visualiza destinos memorables, encuentros significativos y los recuerdos que te esperan.",
+    "readMore": "Leer más",
+    "posts": {
+      "inspiration-1": {
+        "category": "Consejos de viaje",
+        "title": "Cómo planear el road trip privado perfecto en Foz do Iguaçu",
+        "excerpt": "De cruces fronterizos a miradores secretos—arma un itinerario que combine asombro, confort y autenticidad."
+      },
+      "inspiration-2": {
+        "category": "Fotografía",
+        "title": "Fotografiar cascadas: capturar la magia de Iguazú al amanecer",
+        "excerpt": "Hora dorada, bruma y movimiento—aprende ajustes y ángulos sencillos para caídas sedosas y dramáticas."
+      },
+      "inspiration-3": {
+        "category": "Cultura local",
+        "title": "Ritual del mate y sabores de frontera que no debes perderte",
+        "excerpt": "Saborea tradiciones de Argentina y Paraguay—y bocados callejeros que definen el alma de la triple frontera."
+      },
+      "inspiration-4": {
+        "category": "Tesoros ocultos",
+        "title": "Más allá de las cataratas: senderos tranquilos y miradores secretos",
+        "excerpt": "Cambia las multitudes por senderos silenciosos donde mariposas y rocío enmarcan la copa del bosque."
+      }
+    }
   }
 }

@@ -21,7 +21,7 @@ export default function Session2() {
   }, [])
 
   return (
-    <Box component="section" sx={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', bgcolor: '#000' }}>
+    <Box component="section" sx={{ position: 'relative', width: '100%', height: '120vh', overflow: 'hidden', bgcolor: '#000' }}>
       {/* Background carousel */}
       {images.map((src, i) => (
         <Box
@@ -41,8 +41,8 @@ export default function Session2() {
         />
       ))}
 
-      {/* Dark overlay for contrast */}
-      <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45))', zIndex: 1 }} />
+  {/* Dark overlay for contrast */}
+  <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55))', zIndex: 1 }} />
 
       {/* Top paper edge pinned to top limit */}
       <Box
@@ -64,7 +64,7 @@ export default function Session2() {
 
       {/* Content layer */}
       <Box sx={{ position: 'relative', zIndex: 3, inset: 0, color: '#fff', width: '100%', height: '100%' }}>
-        {/* Top title/subtitle block */}
+    {/* Top title/subtitle block */}
   <Box sx={{ position: 'absolute', top: { xs: 120, md: 200 }, left: 0, right: 0, display: 'grid', placeItems: 'center', px: 2 }}>
           <Box sx={{ textAlign: 'center', maxWidth: 1100 }}>
             <Box component="h2" sx={{
@@ -95,7 +95,7 @@ export default function Session2() {
           </Box>
         </Box>
 
-        {/* Bottom features grid */}
+    {/* Bottom features grid */}
   <Box sx={{ position: 'absolute', bottom: { xs: 100, md: 180 }, left: 0, right: 0, px: { xs: 2, md: 3 } }}>
           <Box sx={{
             width: 'min(1200px, 94vw)',

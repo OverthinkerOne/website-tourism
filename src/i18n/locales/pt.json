@@ -101,5 +101,32 @@
       "step3": "Ajuste os detalhes com um especialista local. Revise o roteiro personalizado e nos diga o que você ama e o que deseja mudar. Ajuste o ritmo, troque uma atividade ou faça upgrade de hospedagem. Nosso especialista fará revisões ilimitadas até sua jornada ficar exatamente como você imaginou. Esta é a sua road trip — nós a deixamos perfeita!",
       "step4": "Confirme, reserve e deixe a aventura começar! Quando estiver 100% satisfeito com seu roteiro, cuidamos de todas as reservas — hotéis, transportes, passeios e transfers. Você só precisa fazer as malas, chegar a Foz do Iguaçu e deixar a Guará Travel cuidar de cada detalhe para uma jornada inesquecível pela Tríplice Fronteira."
     }
+  },
+  "session7": {
+    "title": "BUSCANDO INSPIRAÇÃO?",
+    "subtitle": "Deixe a imaginação voar e visualize destinos marcantes, encontros significativos e as memórias que te aguardam.",
+    "readMore": "Ler mais",
+    "posts": {
+      "inspiration-1": {
+        "category": "Dicas de Viagem",
+        "title": "Como planejar a road trip privada perfeita em Foz do Iguaçu",
+        "excerpt": "De travessias de fronteira a mirantes secretos — monte um roteiro que combina encanto, conforto e autenticidade."
+      },
+      "inspiration-2": {
+        "category": "Fotografia",
+        "title": "Fotografando cachoeiras: capturando a magia de Iguaçu ao amanhecer",
+        "excerpt": "Hora dourada, névoa e movimento — aprenda configurações simples e ângulos para fotos dramáticas e fluidas."
+      },
+      "inspiration-3": {
+        "category": "Cultura Local",
+        "title": "Rituais do mate e sabores de fronteira que você não pode perder",
+        "excerpt": "Saboreie tradições da Argentina e Paraguai — e petiscos de rua que definem a alma da tríplice fronteira."
+      },
+      "inspiration-4": {
+        "category": "Achados Secretos",
+        "title": "Além das quedas: trilhas tranquilas e mirantes escondidos",
+        "excerpt": "Troque as multidões por caminhos silenciosos onde borboletas e respingos emolduram a copa da floresta."
+      }
+    }
   }
 }

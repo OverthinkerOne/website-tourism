@@ -101,5 +101,32 @@
       "step3": "Affina i dettagli con un esperto locale. Rivedi l’itinerario personalizzato e dicci cosa ti piace e cosa vuoi cambiare. Modifica il ritmo, sostituisci un’attività o fai un upgrade dell’alloggio. Il nostro specialista farà revisioni illimitate finché il viaggio non corrisponderà alla tua visione. È il tuo road trip: noi lo rendiamo perfetto!",
       "step4": "Conferma, prenota e che l’avventura abbia inizio! Quando sei soddisfatto al 100% del tuo itinerario, ci occupiamo di tutte le prenotazioni — hotel, trasporti, tour e transfer. Devi solo fare la valigia, arrivare a Foz do Iguaçu e lasciare che Guará Travel curi ogni dettaglio per un’esperienza indimenticabile alla Triplice Frontiera."
     }
+  },
+  "session7": {
+    "title": "CERCHI ISPIRAZIONE?",
+    "subtitle": "Lascia che l’immaginazione spicchi il volo e visualizza mete straordinarie, incontri significativi e ricordi che ti attendono.",
+    "readMore": "Scopri di più",
+    "posts": {
+      "inspiration-1": {
+        "category": "Consigli di viaggio",
+        "title": "Come progettare il road trip privato perfetto a Foz do Iguaçu",
+        "excerpt": "Dai confini ai belvedere segreti: crea un itinerario che unisca meraviglia, comfort e autenticità."
+      },
+      "inspiration-2": {
+        "category": "Fotografia",
+        "title": "Fotografare le cascate: catturare la magia di Iguazú all’alba",
+        "excerpt": "Ora dorata, foschia e movimento: impostazioni e angolazioni semplici per cascate setose e drammatiche."
+      },
+      "inspiration-3": {
+        "category": "Cultura locale",
+        "title": "Rituali del mate e sapori di frontiera da non perdere",
+        "excerpt": "Assapora tradizioni di Argentina e Paraguay — e street food che definisce l’anima della triplice frontiera."
+      },
+      "inspiration-4": {
+        "category": "Gioielli nascosti",
+        "title": "Oltre le cascate: sentieri tranquilli e punti panoramici segreti",
+        "excerpt": "Sostituisci la folla con sentieri silenziosi dove farfalle e spruzzi incorniciano la chioma."
+      }
+    }
   }
 }

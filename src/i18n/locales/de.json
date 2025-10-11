@@ -101,5 +101,32 @@
       "step3": "Feinabstimmung mit einem lokalen Experten. Prüfen Sie das Itinerary und sagen Sie uns, was Sie lieben oder ändern möchten. Passen Sie das Tempo an, tauschen Sie Aktivitäten, upgraden Sie Unterkünfte. Unser Spezialist nimmt unbegrenzt Anpassungen vor – bis die Reise exakt Ihrer Vorstellung entspricht. Ihr Roadtrip – von uns perfektioniert!",
       "step4": "Bestätigen, buchen – und los geht’s! Sobald Sie zu 100 % zufrieden sind, übernehmen wir alle Buchungen: Hotels, Transport, Touren und Transfers. Packen Sie nur Ihre Koffer, reisen Sie nach Foz do Iguaçu – Guará Travel kümmert sich um jedes Detail für eine unvergessliche Reise an der Dreiländerecke."
     }
+  },
+  "session7": {
+    "title": "AUF DER SUCHE NACH INSPIRATION?",
+    "subtitle": "Lassen Sie Ihrer Fantasie freien Lauf und stellen Sie sich bemerkenswerte Ziele, bedeutungsvolle Begegnungen und bleibende Erinnerungen vor.",
+    "readMore": "Mehr lesen",
+    "posts": {
+      "inspiration-1": {
+        "category": "Reisetipps",
+        "title": "So planen Sie den perfekten privaten Roadtrip in Foz do Iguaçu",
+        "excerpt": "Von Grenzübertritten bis zu geheimen Aussichtspunkten – erstellen Sie eine Route voller Staunen, Komfort und Authentizität."
+      },
+      "inspiration-2": {
+        "category": "Fotografie",
+        "title": "Wasserfälle fotografieren: die Magie von Iguazú im Morgengrauen",
+        "excerpt": "Goldene Stunde, Nebel und Bewegung – einfache Einstellungen und Winkel für seidige, dramatische Fälle."
+      },
+      "inspiration-3": {
+        "category": "Lokale Kultur",
+        "title": "Mate-Rituale und Grenzgeschmäcker, die Sie nicht verpassen sollten",
+        "excerpt": "Kosten Sie Traditionen aus Argentinien und Paraguay – und Streetfood, das die Seele der Dreiländerecke prägt."
+      },
+      "inspiration-4": {
+        "category": "Verborgene Schätze",
+        "title": "Jenseits der Fälle: ruhige Pfade und geheime Aussichtspunkte",
+        "excerpt": "Tauschen Sie Menschenmengen gegen stille Wege, wo Schmetterlinge und Gischt das Blätterdach rahmen."
+      }
+    }
   }
 }

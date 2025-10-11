@@ -101,5 +101,32 @@
       "step3": "Affinez les détails avec un expert local. Passez en revue l’itinéraire et dites-nous ce que vous aimez ou souhaitez changer. Ajustez le rythme, remplacez une activité, améliorez l’hébergement. Notre spécialiste effectue des révisions illimitées jusqu’à ce que le voyage corresponde exactement à votre vision. C’est votre road trip, nous le rendons parfait !",
       "step4": "Confirmez, réservez et que l’aventure commence ! Une fois satisfait à 100 %, nous gérons toutes les réservations — hôtels, transports, visites et transferts. Il ne vous reste qu’à faire vos valises, arriver à Foz do Iguaçu et laisser Guará Travel s’occuper de chaque détail pour une expérience inoubliable à la Triple Frontière."
     }
+  },
+  "session7": {
+    "title": "EN QUÊTE D’INSPIRATION ?",
+    "subtitle": "Laissez votre imagination s’envoler et visualisez des destinations marquantes, des rencontres mémorables et les souvenirs qui vous attendent.",
+    "readMore": "En savoir plus",
+    "posts": {
+      "inspiration-1": {
+        "category": "Conseils de voyage",
+        "title": "Concevoir un road trip privé parfait à Foz do Iguaçu",
+        "excerpt": "Des passages de frontière aux points de vue secrets — composez un itinéraire mêlant émerveillement, confort et authenticité."
+      },
+      "inspiration-2": {
+        "category": "Photographie",
+        "title": "Photographier les chutes : saisir la magie d’Iguazú à l’aube",
+        "excerpt": "Heure dorée, brume et mouvement — découvrez des réglages et des angles simples pour des chutes soyeuses et spectaculaires."
+      },
+      "inspiration-3": {
+        "category": "Culture locale",
+        "title": "Rituels du maté et saveurs de frontière à ne pas manquer",
+        "excerpt": "Savourez les traditions d’Argentine et du Paraguay — et des en-cas de rue qui capturent l’âme de la triple frontière."
+      },
+      "inspiration-4": {
+        "category": "Pépites cachées",
+        "title": "Au-delà des chutes : sentiers paisibles et points de vue secrets",
+        "excerpt": "Évitez la foule et parcourez des chemins calmes où papillons et embruns encadrent la canopée."
+      }
+    }
   }
 }

@@ -101,5 +101,32 @@
       "step3": "Fine-tune the details with a local expert. Review the customised itinerary and let us know what you love and what you want to change. Adjust the pace, swap an activity, or upgrade your accommodation. Our specialist is here to make unlimited revisions until your journey is exactly what you envisioned. This is your road trip, we just make it perfect!",
       "step4": "Confirm, book, and let the adventure begin! Once you are 100% happy with your custom itinerary, we handle all the bookings—hotels, transport, tours, and transfers. All you have to do is pack your bags, arrive in Foz do Iguaçu, and let Guará Travel take care of every detail, ensuring a seamless and unforgettable journey through the Triple Frontier."
     }
+  },
+  "session7": {
+    "title": "LOOKING FOR INSPIRATION?",
+    "subtitle": "Encourage your imagination to soar and envision remarkable destinations, meaningful encounters, and the lasting memories that await.",
+    "readMore": "Read more",
+    "posts": {
+      "inspiration-1": {
+        "category": "Travel Tips",
+        "title": "How to craft a perfect private road trip in Foz do Iguaçu",
+        "excerpt": "From border crossings to hidden viewpoints—build an itinerary that blends wonder, comfort, and authenticity."
+      },
+      "inspiration-2": {
+        "category": "Photography",
+        "title": "Shooting waterfalls: capturing the Iguazu magic at dawn",
+        "excerpt": "Golden hour, mist, and motion—learn the simple settings and angles behind dramatic, silky falls."
+      },
+      "inspiration-3": {
+        "category": "Local Culture",
+        "title": "Yerba mate rituals and border flavors you shouldn’t miss",
+        "excerpt": "Sip traditions from Argentina and Paraguay—plus street bites that define the tri-border’s soul."
+      },
+      "inspiration-4": {
+        "category": "Hidden Gems",
+        "title": "Beyond the falls: calm trails and secret viewpoints",
+        "excerpt": "Trade the crowds for quiet paths where butterflies and sprays frame the forest canopy."
+      }
+    }
   }
 }
