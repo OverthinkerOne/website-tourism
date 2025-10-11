@@ -43,4 +43,47 @@
       "f4_text": "aproveite passeios privados mais seguros que priorizam seu bem-estar em vez de alternativas lotadas"
     }
   }
+  ,
+  "session3": {
+    "left": {
+      "overline": "NOSSOS VALORES",
+      "title": "DEIXE-NOS GUIAR VOCÊ",
+      "p1": "Bem-vindo ao coração da América do Sul, onde três nações se encontram em perfeita harmonia. Somos uma agência local de turismo com sede em Foz do Iguaçu, Brasil, especializada em experiências inesquecíveis na região da Tríplice Fronteira.",
+      "p2": "Há mais de uma década, conectamos viajantes às maravilhas onde Brasil, Argentina e Paraguai se encontram. Nossos guias especialistas dão vida ao rico mosaico cultural desta região única, oferecendo insights autênticos que só os locais possuem.",
+      "p3": "Das quedas estrondosas das Cataratas do Iguaçu aos mercados vibrantes de Ciudad del Este e às ruas charmosas de Puerto Iguazú, criamos experiências que mostram o melhor de três países em um único destino incrível.",
+      "p4": "Seja aventura, cultura, natureza ou tudo isso junto, nossos roteiros cuidadosamente planejados garantem que você não perca nenhum destaque.",
+      "p5": "Acreditamos que viajar é mais do que ver lugares — é criar memórias duradouras. Com grupos pequenos, atenção personalizada e paixão pela nossa terra, oferecemos passeios tão enriquecedores quanto agradáveis.",
+      "p6": "Deixe-nos mostrar por que a Tríplice Fronteira é um dos destinos mais extraordinários da América do Sul.",
+      "p7": "Descubra três países. Viva uma única jornada inesquecível."
+    },
+    "right": {
+      "card1": {
+        "title": "Passeios Privados",
+        "text": "Passeios privados e personalizados com guias especialistas que compartilham conhecimento local, planejam seu dia e cuidam de cada detalhe.",
+        "cta": "VER PASSEIOS"
+      },
+      "accordion": {
+        "iguassu": {
+          "title": "Passeios nas Cataratas do Iguaçu",
+          "desc": "A principal atração da Tríplice Fronteira. Os passeios devem incluir os Parques Nacionais nos dois países: o lado brasileiro pelas vistas panorâmicas de tirar o fôlego e o lado argentino por uma imersão completa, com passarelas sobre e sob as quedas, incluindo a famosa Garganta do Diabo. A travessia de fronteira é simples, permitindo aproveitar perspectivas únicas desse Patrimônio Natural em dias diferentes."
+        },
+        "adventure": {
+          "title": "Passeios de Aventura",
+          "desc": "A natureza selvagem da região é o cenário perfeito para atividades cheias de adrenalina. No Brasil, destaque para o Macuco Safari, um emocionante passeio de barco que chega ao coração das quedas. Na Argentina, a Gran Aventura combina navegação no rio com trilha de jipe na selva. Há ainda voos de helicóptero, caminhadas desafiadoras e visita ao Parque das Aves (Brasil), santuário de espécies tropicais."
+        },
+        "winery": {
+          "title": "Enoturismo",
+          "desc": "Embora a região não seja produtora de vinhos, sua localização é ideal para apreciadores. A proximidade com a Argentina facilita o acesso a rótulos excelentes — especialmente os Malbecs de Mendoza — disponíveis para degustação e compra em lojas especializadas em Puerto Iguazú. Para rótulos internacionais, há ampla variedade no Duty Free (Brasil/Argentina) e nas lojas de Ciudad del Este (Paraguai)."
+        },
+        "shopping": {
+          "title": "Compras",
+          "desc": "A Tríplice Fronteira é um paraíso para compras. Ciudad del Este (Paraguai) é famosa por ótimos preços em eletrônicos, perfumes e importados. Em Foz do Iguaçu (Brasil), visite shoppings modernos como o Catuaí Palladium para moda, gastronomia e lazer. Para marcas de luxo e itens duty free, as lojas fronteiriças do Brasil e da Argentina oferecem uma experiência sofisticada."
+        },
+        "culture": {
+          "title": "Cultura Local",
+          "desc": "A cultura local é uma mistura rica, formada pelos costumes de Brasil, Paraguai e Argentina, além de importantes comunidades de imigrantes. Visite o Marco das Três Fronteiras para ver o encontro dos rios e assistir a apresentações. Foz é conhecida por sua diversidade religiosa, com o Templo Budista Chen Tien e a Mesquita Omar Ibn Al-Khattab. Em Puerto Iguazú e Ciudad del Este, experimente sabores, artesanato e vida noturna típicos de cada país."
+        }
+      }
+    }
+  }
 }

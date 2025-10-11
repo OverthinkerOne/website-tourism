@@ -43,4 +43,47 @@
       "f4_text": "profitez de visites privées plus sûres qui priorisent votre bien-être plutôt que des alternatives bondées"
     }
   }
+  ,
+  "session3": {
+    "left": {
+      "overline": "NOS VALEURS",
+      "title": "LAISSEZ-NOUS VOUS GUIDER",
+      "p1": "Bienvenue au cœur de l’Amérique du Sud, où trois nations se rencontrent en parfaite harmonie. Nous sommes une agence de tourisme locale basée à Foz do Iguaçu, au Brésil, spécialisée dans des expériences inoubliables dans la région de la Triple Frontière.",
+      "p2": "Depuis plus d’une décennie, nous connectons les voyageurs aux merveilles où le Brésil, l’Argentine et le Paraguay se rejoignent. Nos guides experts donnent vie à la riche mosaïque culturelle de cette région unique, avec des connaissances authentiques que seuls les locaux possèdent.",
+      "p3": "De la majesté tonitruante des chutes d’Iguazu aux marchés animés de Ciudad del Este, en passant par les rues charmantes de Puerto Iguazú, nous créons des expériences qui révèlent le meilleur de trois pays en une seule destination incroyable.",
+      "p4": "Que vous recherchiez l’aventure, la culture, la beauté naturelle — ou tout cela à la fois — nos circuits soigneusement conçus vous assurent de ne manquer aucun temps fort.",
+      "p5": "Nous pensons que voyager ne se résume pas à voir des lieux : c’est créer des souvenirs durables. Avec de petits groupes, une attention personnalisée et une passion pour notre région, nous garantissons des visites aussi enrichissantes qu’agréables.",
+      "p6": "Laissez-nous vous montrer pourquoi la Triple Frontière est l’un des plus extraordinaires destinations d’Amérique du Sud.",
+      "p7": "Découvrez trois pays. Vivez un seul voyage inoubliable."
+    },
+    "right": {
+      "card1": {
+        "title": "Visites privées",
+        "text": "Visites privées et personnalisées avec des guides experts qui partagent leurs connaissances locales, planifient votre journée et s’occupent de chaque détail.",
+        "cta": "VOIR LES VISITES"
+      },
+      "accordion": {
+        "iguassu": {
+          "title": "Visites des chutes d’Iguazu",
+          "desc": "L’attraction phare de la Triple Frontière. Les visites doivent inclure les parcs nationaux des deux pays : le côté brésilien pour ses vues panoramiques à couper le souffle et le côté argentin pour une immersion totale, avec des passerelles au-dessus et au-dessous des chutes, dont la célèbre Gorge du Diable. Le passage de la frontière est simple, permettant de profiter de perspectives uniques de cette merveille naturelle sur des jours distincts."
+        },
+        "adventure": {
+          "title": "Visites d’aventure",
+          "desc": "La nature sauvage de la région est le cadre idéal pour des activités riches en adrénaline. Au Brésil, l’attraction phare est le Macuco Safari, une excursion en bateau rapide au cœur des chutes. En Argentine, la Gran Aventura combine navigation fluviale et traversée de la jungle en 4x4. On trouve aussi des vols en hélicoptère, des randonnées exigeantes et la visite du Parque das Aves (Brésil), un sanctuaire d’espèces tropicales."
+        },
+        "winery": {
+          "title": "Oenotourisme",
+          "desc": "Bien que la région ne produise pas de vin, sa localisation est idéale pour les amateurs. La proximité de l’Argentine facilite l’accès à d’excellents vins — en particulier les Malbecs de Mendoza — disponibles à la dégustation et à l’achat dans des caves spécialisées à Puerto Iguazú. Pour les étiquettes internationales, rendez-vous aux boutiques Duty Free (Brésil/Argentine) et aux magasins de Ciudad del Este (Paraguay)."
+        },
+        "shopping": {
+          "title": "Shopping",
+          "desc": "La Triple Frontière est un paradis du shopping. Ciudad del Este (Paraguay) est réputée pour ses bonnes affaires en électronique, parfums et produits importés. À Foz do Iguaçu (Brésil), des centres commerciaux modernes comme Catuaí Palladium proposent mode, restauration et loisirs. Pour les marques de luxe et les articles détaxés, les boutiques frontalières du Brésil et de l’Argentine offrent une expérience haut de gamme."
+        },
+        "culture": {
+          "title": "Culture locale",
+          "desc": "La culture locale est un riche mélange, façonné par les coutumes du Brésil, du Paraguay et de l’Argentine, ainsi que par d’importantes communautés d’immigrés. Visitez le Monument des Trois Frontières pour admirer la confluence des fleuves et des spectacles locaux. Foz est connue pour sa diversité religieuse, avec le temple bouddhiste Chen Tien et la mosquée Omar Ibn Al-Khattab. À Puerto Iguazú et Ciudad del Este, découvrez les saveurs, l’artisanat et la vie nocturne propres à chaque pays."
+        }
+      }
+    }
+  }
 }

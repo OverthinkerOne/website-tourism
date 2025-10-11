@@ -43,4 +43,47 @@
       "f4_text": "enjoy safer, private tours prioritizing your wellbeing over crowded alternatives"
     }
   }
+  ,
+  "session3": {
+    "left": {
+      "overline": "OUR VALUES",
+      "title": "LET US GUIDE YOU",
+      "p1": "Welcome to the heart of South America, where three nations meet in perfect harmony. We are a locally-owned tourism agency based in Foz do Iguaçu, Brazil, specializing in unforgettable experiences across the Triple Frontier region.",
+      "p2": "For over a decade, we've been connecting travelers with the breathtaking wonders where Brazil, Argentina, and Paraguay converge. Our expert guides bring the rich cultural tapestry of this unique region to life, offering authentic insights that only locals can provide.",
+      "p3": "From the thundering majesty of Iguazu Falls to the vibrant markets of Ciudad del Este, and the charming streets of Puerto Iguazú, we curate experiences that showcase the best of three countries in one incredible destination.",
+      "p4": "Whether you're seeking adventure, culture, natural beauty, or all of the above, our carefully designed tours ensure you don't miss a single highlight.",
+      "p5": "We believe travel is more than just seeing places—it's about creating lasting memories. With small group sizes, personalized attention, and a passion for our homeland, we guarantee tours that are as enriching as they are enjoyable.",
+      "p6": "Let us show you why the Triple Frontier is one of South America's most extraordinary destinations.",
+      "p7": "Discover three countries. Experience one unforgettable journey."
+    },
+    "right": {
+      "card1": {
+        "title": "Private Tours",
+        "text": "Personalised, private New Zealand tours with expert guides who share their local knowledge, plan your day, and offer.",
+        "cta": "SEE TOURS"
+      },
+      "accordion": {
+        "iguassu": {
+          "title": "Iguassu Falls Tours",
+          "desc": "The premier attraction of the Triple Frontier. Tours must cover the National Parks in both countries: the Brazilian side for the breathtaking, panoramic views and the Argentine side for a deeply immersive experience, featuring extensive trails over and under the cascades, leading to the famed Devil’s Throat. Easy border crossing allows you to enjoy the unique perspectives of this Natural Wonder over separate days."
+        },
+        "adventure": {
+          "title": "Adventure Tours",
+          "desc": "The wild nature of the border region provides the perfect setting for high-energy activities. In Brazil, the highlight is the Macuco Safari, an exhilarating speedboat trip right into the heart of the falls. In Argentina, the Gran Aventura combines river navigation with a jungle jeep ride. The region also offers stunning helicopter flights, challenging jungle treks, and a visit to Parque das Aves (Brazil), a vital sanctuary for tropical bird species."
+        },
+        "winery": {
+          "title": "Winery Tours",
+          "desc": "Though not a wine-producing region itself, the Frontier’s location is ideal for wine lovers. Its proximity to Argentina grants easy access to superb wines, especially the Malbecs from Mendoza, available for tasting and purchase at specialized wine shops in Puerto Iguazú. For international labels, explore the vast selection at the sophisticated Duty Free Shops along the borders (Brazil/Argentina) and the stores in Ciudad del Este (Paraguay)."
+        },
+        "shopping": {
+          "title": "Shopping",
+          "desc": "The Triple Frontier is a shopper's paradise. Ciudad del Este (Paraguay) is renowned for great deals on electronics, perfumes, and imported goods. In Foz do Iguaçu (Brazil), you can visit modern malls like Catuaí Palladium for fashion, dining, and leisure. For luxury brands and tax-exempt items, the Duty Free Shops in both the Argentine and Brazilian border areas offer a high-end experience."
+        },
+        "culture": {
+          "title": "Local Culture",
+          "desc": "The culture here is a rich blend, forged by the customs of Brazil, Paraguay, and Argentina, alongside significant immigrant communities. Visit the Three Borders Landmark (Marco das Três Fronteiras) for views of the river junction and local performances. Foz is known for its religious diversity, home to the striking Chen Tien Buddhist Temple and the Omar Ibn Al-Khattab Muslim Mosque. In Puerto Iguazú and Ciudad del Este, you can experience the unique flavors, handicrafts, and vibrant nightlife of the respective Latin countries."
+        }
+      }
+    }
+  }
 }

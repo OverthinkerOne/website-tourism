@@ -43,4 +43,47 @@
       "f4_text": "genieße sicherere, private touren, die dein wohlbefinden über überfüllte alternativen stellen"
     }
   }
+  ,
+  "session3": {
+    "left": {
+      "overline": "UNSERE WERTE",
+      "title": "LASSEN SIE SICH VON UNS FÜHREN",
+      "p1": "Willkommen im Herzen Südamerikas, wo drei Nationen in perfekter Harmonie zusammentreffen. Wir sind eine lokale Reiseagentur mit Sitz in Foz do Iguaçu, Brasilien, die auf unvergessliche Erlebnisse in der Region der Dreiländerecke spezialisiert ist.",
+      "p2": "Seit über einem Jahrzehnt verbinden wir Reisende mit den Wundern, wo Brasilien, Argentinien und Paraguay zusammenkommen. Unsere erfahrenen Guides lassen das reiche kulturelle Mosaik dieser einzigartigen Region lebendig werden – mit authentischen Einblicken, die nur Einheimische bieten können.",
+      "p3": "Von der donnernden Majestät der Iguazu-Fälle über die lebhaften Märkte von Ciudad del Este bis zu den charmanten Straßen von Puerto Iguazú kuratieren wir Erlebnisse, die das Beste dreier Länder in einem einzigen, unglaublichen Reiseziel zeigen.",
+      "p4": "Ob Sie Abenteuer, Kultur, Natur – oder alles zusammen – suchen: Unsere sorgfältig gestalteten Touren sorgen dafür, dass Sie kein Highlight verpassen.",
+      "p5": "Wir glauben, dass Reisen mehr ist als Orte zu sehen – es geht darum, bleibende Erinnerungen zu schaffen. Mit kleinen Gruppen, persönlicher Betreuung und Leidenschaft für unsere Heimat garantieren wir Touren, die ebenso bereichernd wie angenehm sind.",
+      "p6": "Lassen Sie uns zeigen, warum die Dreiländerecke zu den außergewöhnlichsten Zielen Südamerikas gehört.",
+      "p7": "Entdecken Sie drei Länder. Erleben Sie eine unvergessliche Reise."
+    },
+    "right": {
+      "card1": {
+        "title": "Private Touren",
+        "text": "Personalisierte, private Touren mit erfahrenen Guides, die ihr lokales Wissen teilen, Ihren Tag planen und sich um jedes Detail kümmern.",
+        "cta": "TOUREN ANSEHEN"
+      },
+      "accordion": {
+        "iguassu": {
+          "title": "Iguazu-Fälle Touren",
+          "desc": "Die Hauptattraktion der Dreiländerecke. Touren sollten die Nationalparks in beiden Ländern umfassen: die brasilianische Seite für atemberaubende Panoramablicke und die argentinische Seite für ein tiefes Eintauchen mit Stegen über und unter den Fällen, einschließlich des berühmten Teufelsschlunds. Der Grenzübertritt ist unkompliziert und ermöglicht einzigartige Perspektiven auf dieses Naturwunder an verschiedenen Tagen."
+        },
+        "adventure": {
+          "title": "Abenteuertouren",
+          "desc": "Die wilde Natur der Grenzregion bietet den perfekten Rahmen für Aktivitäten voller Adrenalin. In Brasilien ist das Highlight die Macuco Safari – eine aufregende Schnellbootfahrt ins Herz der Fälle. In Argentinien kombiniert die Gran Aventura Flussfahrt mit einer Jeepfahrt durch den Dschungel. Zudem gibt es spektakuläre Helikopterflüge, anspruchsvolle Dschungelwanderungen und den Parque das Aves (Brasilien), ein bedeutendes Schutzgebiet für tropische Vogelarten."
+        },
+        "winery": {
+          "title": "Weintouren",
+          "desc": "Zwar ist die Region kein Weinbaugebiet, doch ihre Lage ist ideal für Weinliebhaber. Die Nähe zu Argentinien ermöglicht einfachen Zugang zu ausgezeichneten Weinen – vor allem Malbecs aus Mendoza – zur Verkostung und zum Kauf in Fachgeschäften in Puerto Iguazú. Für internationale Labels gibt es eine große Auswahl in den Duty-Free-Shops (Brasilien/Argentinien) und in den Geschäften von Ciudad del Este (Paraguay)."
+        },
+        "shopping": {
+          "title": "Shopping",
+          "desc": "Die Dreiländerecke ist ein Shopping-Paradies. Ciudad del Este (Paraguay) ist bekannt für gute Angebote bei Elektronik, Parfüms und Importwaren. In Foz do Iguaçu (Brasilien) bieten moderne Einkaufszentren wie das Catuaí Palladium Mode, Gastronomie und Freizeit. Für Luxusmarken und zollfreie Artikel bieten die Grenzshops in Brasilien und Argentinien ein gehobenes Einkaufserlebnis."
+        },
+        "culture": {
+          "title": "Lokale Kultur",
+          "desc": "Die lokale Kultur ist eine reiche Mischung, geprägt von den Bräuchen Brasiliens, Paraguays und Argentiniens sowie bedeutenden Einwanderergemeinschaften. Besuchen Sie das Dreiländereck-Monument für Ausblicke auf den Flusszusammenfluss und lokale Vorführungen. Foz ist bekannt für seine religiöse Vielfalt – mit dem buddhistischen Tempel Chen Tien und der Moschee Omar Ibn Al-Khattab. In Puerto Iguazú und Ciudad del Este erleben Sie die typischen Geschmäcker, Handwerkskunst und das Nachtleben der jeweiligen Länder."
+        }
+      }
+    }
+  }
 }
