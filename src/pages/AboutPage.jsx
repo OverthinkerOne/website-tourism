@@ -13,12 +13,16 @@ import { colors, fonts, sizes } from '../theme/tokens.js'
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled'
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle'
 import { useTranslation } from 'react-i18next'
+import Seo from '../components/Seo.jsx'
+import { getSiteUrl } from '../lib/content.js'
 
 export default function AboutPage() {
   const { t } = useTranslation()
+  const site = getSiteUrl()
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Seo title={t('seo.about.title', 'About us — Guará Travel')} description={t('seo.about.description', 'Meet Guará Travel: local expert guides offering private tours and premium transfers in Iguazu.')} canonical={`${site}/about`} />
       <Header />
 
       {/* Section 1: Video + Text side-by-side */}

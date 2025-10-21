@@ -21,8 +21,16 @@
     "sections": {
       "highlights": "Highlights",
       "includes": "What’s included",
-      "tips": "Good to know"
+      "tips": "Good to know",
+      "itinerary": "Itinerary",
+      "addons": "Optional add-ons",
+      "notIncluded": "Not included"
     },
+    "notIncluded": {
+      "ticketsMeals": "Park tickets and meals unless noted",
+      "borderFees": "Border fees, if applicable"
+    },
+    "borderNotice": "Border crossing: bring passport/ID as required. We help with documents and timing.",
     "notFound": "We couldn’t find this tour."
     ,
     "details": {
@@ -78,6 +86,27 @@
         "highlights": ["Viewpoints and trails", "Less crowded nature spot", "Photo opportunities"],
         "includes": ["Private transport", "Local guidance", "Ticket assistance"],
         "tips": ["Wear comfortable shoes", "Bring water and sunscreen"]
+      },
+      "br-itaipu-panoramico": {
+        "short": "Panoramic tour through Itaipu Dam viewpoints.",
+        "intro": "Explore the scale of Itaipu with strategic stops at panoramic viewpoints and interpretation points that reveal its history and engineering achievements.",
+        "highlights": ["Panoramic viewpoints", "Engineering insights", "Photo stops"],
+        "includes": ["Private transport", "Guide assistance", "Ticket assistance"],
+        "tips": ["Bring light jacket for wind", "Sun protection during the day"]
+      },
+      "br-itaipu-refugio": {
+        "short": "Visit the Itaipu Biological Refuge with wildlife and native flora.",
+        "intro": "Walk through the Biological Refuge to learn about conservation projects, native species, and the environmental work around Itaipu.",
+        "highlights": ["Fauna and flora", "Conservation projects", "Guided trails"],
+        "includes": ["Private transport", "Guide assistance", "Ticket assistance"],
+        "tips": ["Wear comfortable shoes", "Repellent recommended"]
+      },
+      "br-macuco-safari": {
+        "short": "Speedboat adventure to the base of the falls (Brazil).",
+        "intro": "A classic Iguazu experience on the Brazilian side: a jungle 4x4 ride and a thrilling speedboat that approaches the waterfalls for a soaking adventure.",
+        "highlights": ["Speedboat near the falls", "Jungle 4x4 section", "Thrill and splash"],
+        "includes": ["Private transport", "Guide assistance", "Boat ticket assistance"],
+        "tips": ["Bring spare clothes", "Protect electronics from water"]
       }
     }
   },
@@ -188,6 +217,9 @@
     "titles": {
       "br-iguacu-br": "Iguaçu National Park (Brazilian Side)",
       "br-itaipu-night": "Itaipu Dam Night Lights",
+      "br-itaipu-panoramico": "Itaipu Dam Panoramic Tour",
+      "br-itaipu-refugio": "Itaipu Biological Refuge",
+      "br-macuco-safari": "Macuco Safari (Brazil)",
       "ar-iguacu-ar": "Iguazú National Park (Argentine Side)",
       "ar-gran-aventura": "Gran Aventura Boat Ride",
       "py-shopping-cde": "Shopping Ciudad del Este Experience",
@@ -394,6 +426,15 @@
     "sidebar": {
       "title": "Plan your private tour",
       "desc": "Ready to turn inspiration into an itinerary? Our local experts will tailor a private trip across Brazil, Argentina, and Paraguay."
+    },
+    "post": {
+      "author": "Guará Travel Team",
+      "minRead": "min read",
+      "by": "by",
+      "tags": "Tags",
+      "share": "Share",
+      "shareNative": "Share",
+      "related": "Related posts"
     },
     "posts": {
       "inspiration-1": { "body": [

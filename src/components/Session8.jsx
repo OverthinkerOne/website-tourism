@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import Collapse from '@mui/material/Collapse'
 import { fonts } from '../theme/tokens.js'
 import { useTranslation } from 'react-i18next'
+import { getAllFaqs } from '../lib/content.js'
 
 export default function Session8() {
   const { t } = useTranslation()
@@ -17,14 +18,26 @@ export default function Session8() {
     })
   }
 
-  const items = [
+  const [dyn, setDyn] = React.useState(() => getAllFaqs())
+  const staticItems = React.useMemo(() => ([
     { key: 'q1' },
     { key: 'q2' },
     { key: 'q3' },
     { key: 'q4' },
     { key: 'q5' },
     { key: 'q6' },
-  ]
+  ]), [])
+  // Merge dynamic (overrides) with static baseline by id/key
+  const items = React.useMemo(() => {
+    const ids = new Set((dyn || []).map((x) => x.id))
+    const remainingStatics = staticItems.filter((s) => !ids.has(s.key))
+    return [...(dyn || []), ...remainingStatics]
+  }, [dyn, staticItems])
+  React.useEffect(() => {
+    const onStorage = () => setDyn(getAllFaqs())
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
+  }, [])
 
   return (
     <Box component="section" sx={{ position: 'relative', width: '100%', bgcolor: '#fff' }}>
@@ -52,12 +65,13 @@ export default function Session8() {
           <Box sx={{ bgcolor: 'rgba(255,255,255,0.92)', color: '#000', border: '1px solid #D9D9D9', borderRadius: '10px', overflow: 'hidden' }}>
             {items.map((item, idx) => {
               const isOpen = openSet.has(idx)
-              const q = t(`session8.items.${item.key}.question`)
-              const a = t(`session8.items.${item.key}.answer`)
+              const isDyn = Object.prototype.hasOwnProperty.call(item, 'question')
+              const q = isDyn ? (item.question || '') : t(`session8.items.${item.key}.question`)
+              const a = isDyn ? (item.answer || '') : t(`session8.items.${item.key}.answer`)
               const ctrlId = `s8-acc-${idx}`
               return (
                 <Box
-                  key={item.key}
+                  key={(item.id || item.key)}
                   sx={{
                     display: 'grid',
                     gridTemplateColumns: '1fr auto',

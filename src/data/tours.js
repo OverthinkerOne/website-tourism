@@ -7,6 +7,10 @@ const TOURS = [
   { id: 'ar-gran-aventura', countryCode: 'ar', query: 'boat ride waterfall adventure Iguazu' },
   { id: 'py-shopping-cde', countryCode: 'py', query: 'Ciudad del Este Paraguay skyline shopping' },
   { id: 'py-saltos-monday', countryCode: 'py', query: 'Saltos del Monday Paraguay waterfall forest' },
+  // New tours (Brazil)
+  { id: 'br-itaipu-panoramico', countryCode: 'br', query: 'Itaipu Dam panoramic tour Brazil viewpoint' },
+  { id: 'br-itaipu-refugio', countryCode: 'br', query: 'Itaipu Biological Refuge wildlife trail Brazil' },
+  { id: 'br-macuco-safari', countryCode: 'br', query: 'Macuco Safari boat Iguazu Falls Brazil' },
 ]
 
 export default TOURS

@@ -34,8 +34,16 @@
     "sections": {
       "highlights": "Destaques",
       "includes": "O que está incluído",
-      "tips": "Dicas úteis"
+      "tips": "Dicas úteis",
+      "itinerary": "Roteiro",
+      "addons": "Extras opcionais",
+      "notIncluded": "Não incluído"
     },
+    "notIncluded": {
+      "ticketsMeals": "Ingressos e refeições, salvo indicação",
+      "borderFees": "Taxas de fronteira, se aplicável"
+    },
+    "borderNotice": "Travessia de fronteira: leve passaporte/RG conforme exigido. Ajudamos com documentos e horários.",
     "notFound": "Não encontramos este passeio.",
     "details": {
       "br-iguacu-br": {
@@ -79,6 +87,27 @@
         "highlights": ["Mirantes e trilhas", "Local mais tranquilo", "Boas fotos"],
         "includes": ["Transporte privativo", "Acompanhamento local", "Assistência com ingressos"],
         "tips": ["Use calçado confortável", "Leve água e protetor solar"]
+      },
+      "br-itaipu-panoramico": {
+        "short": "Passeio panorâmico pelos mirantes da Usina de Itaipu.",
+        "intro": "Explore a grandiosidade de Itaipu com paradas estratégicas em mirantes e pontos de interpretação que revelam sua história e engenharia.",
+        "highlights": ["Mirantes panorâmicos", "Curiosidades de engenharia", "Paradas para fotos"],
+        "includes": ["Transporte privativo", "Acompanhamento do guia", "Assistência com ingressos"],
+        "tips": ["Leve agasalho leve para o vento", "Proteção solar durante o dia"]
+      },
+      "br-itaipu-refugio": {
+        "short": "Visita ao Refúgio Biológico de Itaipu com fauna e flora nativas.",
+        "intro": "Caminhe pelo Refúgio Biológico para conhecer projetos de conservação, espécies nativas e o trabalho ambiental ao redor de Itaipu.",
+        "highlights": ["Fauna e flora", "Projetos de conservação", "Trilhas guiadas"],
+        "includes": ["Transporte privativo", "Acompanhamento do guia", "Assistência com ingressos"],
+        "tips": ["Use calçado confortável", "Repelente recomendado"]
+      },
+      "br-macuco-safari": {
+        "short": "Aventura de lancha até a base das quedas (Brasil).",
+        "intro": "Experiência clássica no lado brasileiro: trecho de 4x4 na selva e uma lancha emocionante que se aproxima das quedas para um banho de adrenalina.",
+        "highlights": ["Lancha próxima às quedas", "Trecho 4x4 na selva", "Emoção e respingos"],
+        "includes": ["Transporte privativo", "Acompanhamento do guia", "Assistência com ingressos do barco"],
+        "tips": ["Leve roupa extra", "Proteja eletrônicos da água"]
       }
     }
   },
@@ -176,6 +205,9 @@
     "titles": {
       "br-iguacu-br": "Parque Nacional do Iguaçu (lado brasileiro)",
       "br-itaipu-night": "Iluminação Noturna de Itaipu",
+      "br-itaipu-panoramico": "Passeio Panorâmico de Itaipu",
+      "br-itaipu-refugio": "Refúgio Biológico de Itaipu",
+      "br-macuco-safari": "Macuco Safari (Brasil)",
       "ar-iguacu-ar": "Parque Nacional Iguazú (lado argentino)",
       "ar-gran-aventura": "Passeio de Barco Gran Aventura",
       "py-shopping-cde": "Compras em Ciudad del Este",
@@ -383,6 +415,15 @@
     "sidebar": {
       "title": "Planeje seu passeio privativo",
       "desc": "Pronto para transformar inspiração em roteiro? Nossos especialistas locais montam sua viagem privada por Brasil, Argentina e Paraguai."
+    },
+    "post": {
+      "author": "Equipe Guará Travel",
+      "minRead": "min de leitura",
+      "by": "por",
+      "tags": "Tags",
+      "share": "Compartilhar",
+      "shareNative": "Compartilhar",
+      "related": "Postagens relacionadas"
     },
     "posts": {
       "inspiration-1": { "body": [

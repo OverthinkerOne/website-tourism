@@ -4,8 +4,15 @@ import Stack from '@mui/material/Stack'
 import { sizes, colors } from '../../theme/tokens.js'
 
 export default function SocialIcons({ variant = 'desktop', onItemClick, sx, color = colors.textPrimary }) {
-  const names = ['facebook', 'instagram', 'whatsapp', 'get-your-guide']
+  // Show only networks with valid links
+  const names = ['facebook', 'instagram', 'whatsapp']
   const isMenu = variant === 'menu'
+  const hrefFor = (name) => {
+    if (name === 'facebook') return 'https://www.facebook.com/profile.php?id=61582651620609'
+    if (name === 'instagram') return 'https://www.instagram.com/paulo.iguassu/'
+    if (name === 'whatsapp') return 'https://wa.me/5545991120912'
+    return '#'
+  }
 
   return (
     <Stack direction="row" alignItems="center" spacing={isMenu ? 2 : 1.5} sx={sx}>
@@ -53,7 +60,9 @@ export default function SocialIcons({ variant = 'desktop', onItemClick, sx, colo
             <Box
               key={name}
               component="a"
-              href="#"
+              href={hrefFor(name)}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={name}
               onClick={onItemClick}
               sx={{
@@ -70,7 +79,10 @@ export default function SocialIcons({ variant = 'desktop', onItemClick, sx, colo
           ) : (
             <Box
               key={name}
-              component="span"
+              component="a"
+              href={hrefFor(name)}
+              target="_blank"
+              rel="noopener noreferrer"
               role="img"
               aria-label={name}
               sx={{

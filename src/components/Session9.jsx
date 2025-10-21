@@ -5,6 +5,7 @@ import { fonts, colors } from '../theme/tokens.js'
 import VerifiedIcon from '@mui/icons-material/Verified'
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote'
 import { useTranslation } from 'react-i18next'
+import { getAllTestimonials } from '../lib/content.js'
 
 const TESTIMONIALS_META = [
   { id: 't1', nameKey: 'items.t1.name', country: 'BR' },
@@ -117,10 +118,16 @@ function TestimonialCard({ name, country, title, text, tags, rating, date, verif
 
 export default function Session9() {
   const { t } = useTranslation()
-  const items = React.useMemo(() => [...TESTIMONIALS_META, ...TESTIMONIALS_META, ...TESTIMONIALS_META], [])
+  const [dyn, setDyn] = React.useState(() => getAllTestimonials())
+  // Merge dynamic with static; dynamic overrides static by id
+  const merged = React.useMemo(() => {
+    const ids = new Set((dyn || []).map((x) => x.id))
+    const statics = TESTIMONIALS_META.filter((m) => !ids.has(m.id))
+    return [...(dyn || []), ...statics]
+  }, [dyn])
+  const items = React.useMemo(() => [...merged, ...merged, ...merged], [merged])
   const viewportRef = React.useRef(null)
-  const [isDragging, setIsDragging] = React.useState(false)
-  const dragState = React.useRef({ startX: 0, startScroll: 0, pointerId: null })
+  const [isDragging] = React.useState(false)
 
   // recenter when mounted and when resized
   const recenter = React.useCallback(() => {
@@ -156,32 +163,14 @@ export default function Session9() {
     return () => cancelAnimationFrame(rafId)
   }, [isDragging])
 
-  const onPointerDown = (e) => {
-    const vp = viewportRef.current
-    if (!vp) return
-    vp.setPointerCapture?.(e.pointerId)
-    dragState.current = { startX: e.clientX, startScroll: vp.scrollLeft, pointerId: e.pointerId }
-    setIsDragging(true)
-    e.preventDefault()
-  }
-  const onPointerMove = (e) => {
-    if (!isDragging) return
-    const vp = viewportRef.current
-    if (!vp) return
-    const dx = e.clientX - dragState.current.startX
-    vp.scrollLeft = dragState.current.startScroll - dx
-    const unitWidth = vp.scrollWidth / 3
-    if (vp.scrollLeft >= unitWidth * 2) vp.scrollLeft -= unitWidth
-    if (vp.scrollLeft <= 0) vp.scrollLeft += unitWidth
-  }
-  const endDrag = () => {
-    const vp = viewportRef.current
-    if (!vp) return
-    if (dragState.current.pointerId) {
-      try { vp.releasePointerCapture?.(dragState.current.pointerId) } catch {}
-    }
-    setIsDragging(false)
-  }
+  // Update testimonials when Admin modifies localStorage
+  React.useEffect(() => {
+    const onStorage = () => setDyn(getAllTestimonials())
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
+  }, [])
+
+  // Drag disabled
 
   return (
     <Box component="section" sx={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', bgcolor: '#fff' }}>
@@ -201,21 +190,23 @@ export default function Session9() {
           <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 4%, rgba(255,255,255,0) 96%, rgba(255,255,255,1) 100%)' }} />
 
           {/* Viewport */}
-          <Box ref={viewportRef} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={endDrag} onPointerCancel={endDrag} sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'pan-y', height: '100%', width: '100%' }}>
+          <Box ref={viewportRef} sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: 'default', touchAction: 'pan-y', height: '100%', width: '100%' }}>
             <Box sx={{ display: 'flex', alignItems: 'stretch', gap: { xs: 2.5, md: 3 }, px: { xs: 1.5, md: 2 }, height: '100%' }}>
               {items.map((meta, idx) => {
-                const name = t(`session9.${meta.nameKey}`, 'Traveller')
-                const title = t(`session9.items.${meta.id}.title`)
-                const text = t(`session9.items.${meta.id}.text`)
-                const tags = t(`session9.items.${meta.id}.tags`, { returnObjects: true })
-                const rating = Number(t(`session9.items.${meta.id}.rating`, '5'))
-                const date = t(`session9.items.${meta.id}.date`, '')
                 const verifiedLabel = t('session9.verified', 'Verified')
+                const isDyn = meta && Object.prototype.hasOwnProperty.call(meta, 'name') // dynamic entries have concrete fields
+                const name = isDyn ? (meta.name || 'Traveller') : t(`session9.${meta.nameKey}`, 'Traveller')
+                const country = isDyn ? (meta.country || 'US') : meta.country
+                const title = isDyn ? (meta.title || '') : t(`session9.items.${meta.id}.title`)
+                const text = isDyn ? (meta.text || '') : t(`session9.items.${meta.id}.text`)
+                const tags = isDyn ? (Array.isArray(meta.tags) ? meta.tags : []) : t(`session9.items.${meta.id}.tags`, { returnObjects: true })
+                const rating = isDyn ? (Number(meta.rating) || 5) : Number(t(`session9.items.${meta.id}.rating`, '5'))
+                const date = isDyn ? (meta.date || '') : t(`session9.items.${meta.id}.date`, '')
                 return (
-                  <Box key={meta.id + '-' + idx} sx={{ height: '100%' }}>
+                  <Box key={(meta.id || 't') + '-' + idx} sx={{ height: '100%' }}>
                     <TestimonialCard
                       name={name}
-                      country={meta.country}
+                      country={country}
                       title={title}
                       text={text}
                       tags={Array.isArray(tags) ? tags : []}

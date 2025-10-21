@@ -10,13 +10,22 @@ import { findImage } from '../lib/imageProvider.js'
 import { useTranslation } from 'react-i18next'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { useNavigate } from 'react-router-dom'
+import { getAllBlogPosts } from '../lib/content.js'
 
-const posts = [
-  { id: 'inspiration-1', Icon: ExploreIcon, query: 'Iguazu waterfall viewpoint road trip' },
-  { id: 'inspiration-2', Icon: CameraAltIcon, query: 'Iguazu falls sunrise photography long exposure' },
-  { id: 'inspiration-3', Icon: FavoriteIcon, query: 'yerba mate argentina paraguay culture street food' },
-  { id: 'inspiration-4', Icon: ArticleIcon, query: 'Iguazu hidden trail forest canopy butterflies' },
-]
+const iconFor = (id) => {
+  switch (id) {
+    case 'inspiration-1':
+      return ExploreIcon
+    case 'inspiration-2':
+      return CameraAltIcon
+    case 'inspiration-3':
+      return FavoriteIcon
+    case 'inspiration-4':
+      return ArticleIcon
+    default:
+      return ArticleIcon
+  }
+}
 
 function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel, id }) {
   const navigate = useNavigate()
@@ -87,24 +96,34 @@ function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel, id }) 
 export default function Session7() {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const items = React.useMemo(() => [...posts, ...posts, ...posts], [])
+  const [posts, setPosts] = React.useState(() => getAllBlogPosts())
+  const items = React.useMemo(() => [...posts, ...posts, ...posts], [posts])
   const viewportRef = React.useRef(null)
   const [images, setImages] = React.useState({})
-  const [isDragging, setIsDragging] = React.useState(false)
-  const dragState = React.useRef({ startX: 0, startScroll: 0, pointerId: null })
+  const [isDragging] = React.useState(false)
 
   React.useEffect(() => {
     let alive = true
     ;(async () => {
+      const list = getAllBlogPosts()
+      setPosts(list)
       const entries = await Promise.all(
-        posts.map(async (p) => {
-          const url = await findImage({ query: p.query, orientation: 'landscape' })
+        list.map(async (p) => {
+          const override = p._override
+          const url = override?.image || (await findImage({ query: override?.title || p.query, orientation: 'landscape' }))
           return [p.id, url]
         })
       )
       if (alive) setImages(Object.fromEntries(entries))
     })()
     return () => { alive = false }
+  }, [])
+
+  // Update on localStorage changes (admin edits)
+  React.useEffect(() => {
+    const onStorage = () => setPosts(getAllBlogPosts())
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
   }, [])
 
   React.useEffect(() => {
@@ -152,32 +171,7 @@ export default function Session7() {
     return () => cancelAnimationFrame(id)
   }, [])
 
-  const onPointerDown = (e) => {
-    const vp = viewportRef.current
-    if (!vp) return
-    vp.setPointerCapture?.(e.pointerId)
-    dragState.current = { startX: e.clientX, startScroll: vp.scrollLeft, pointerId: e.pointerId }
-    setIsDragging(true)
-    e.preventDefault()
-  }
-  const onPointerMove = (e) => {
-    if (!isDragging) return
-    const vp = viewportRef.current
-    if (!vp) return
-    const dx = e.clientX - dragState.current.startX
-    vp.scrollLeft = dragState.current.startScroll - dx
-    const unitWidth = vp.scrollWidth / 3
-    if (vp.scrollLeft >= unitWidth * 2) vp.scrollLeft -= unitWidth
-    if (vp.scrollLeft <= 0) vp.scrollLeft += unitWidth
-  }
-  const endDrag = () => {
-    const vp = viewportRef.current
-    if (!vp) return
-    if (dragState.current.pointerId) {
-      try { vp.releasePointerCapture?.(dragState.current.pointerId) } catch {}
-    }
-    setIsDragging(false)
-  }
+  // Drag disabled
 
   return (
     <Box component="section" sx={{ position: 'relative', width: '100%', overflow: 'hidden', bgcolor: '#fff' }}>
@@ -199,13 +193,14 @@ export default function Session7() {
             <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 4%, rgba(255,255,255,0) 96%, rgba(255,255,255,1) 100%)' }} />
 
           {/* Viewport */}
-          <Box ref={viewportRef} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={endDrag} onPointerCancel={endDrag} sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'pan-y', width: '100%' }}>
+          <Box ref={viewportRef} sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: 'default', touchAction: 'pan-y', width: '100%' }}>
             <Box sx={{ display: 'flex', alignItems: 'stretch', gap: { xs: 2.5, md: 3 }, px: { xs: 1.5, md: 2 } }}>
               {items.map((post, idx) => {
-                const category = t(`session7.posts.${post.id}.category`)
-                const title = t(`session7.posts.${post.id}.title`)
-                const excerpt = t(`session7.posts.${post.id}.excerpt`)
-                const Icon = post.Icon
+                const override = post._override
+                const category = override?.category || t(`session7.posts.${post.id}.category`, override?.category || 'Blog')
+                const title = override?.title || t(`session7.posts.${post.id}.title`, override?.title || post.id)
+                const excerpt = override?.excerpt || t(`session7.posts.${post.id}.excerpt`, override?.excerpt || '')
+                const Icon = iconFor(post.id)
                 const image = images[post.id]
                 return (
                   <Box key={post.id + '-' + idx}>

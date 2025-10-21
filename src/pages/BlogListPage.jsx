@@ -8,32 +8,53 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid2'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import Pagination from '@mui/material/Pagination'
 import { fonts, colors } from '../theme/tokens.js'
 import { useTranslation } from 'react-i18next'
-import BLOG_POSTS from '../data/blogPosts.js'
 import { findImage } from '../lib/imageProvider.js'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useSearchParams } from 'react-router-dom'
+import Seo from '../components/Seo.jsx'
+import { getSiteUrl } from '../lib/content.js'
+import { getAllBlogPosts } from '../lib/content.js'
 
 export default function BlogListPage() {
   const { t } = useTranslation()
+  const site = getSiteUrl()
+  const [posts, setPosts] = React.useState(() => getAllBlogPosts())
   const [images, setImages] = React.useState({})
+  const [searchParams, setSearchParams] = useSearchParams()
+  const pageParam = searchParams.get('page')
+  const page = Math.max(1, parseInt(pageParam || '1', 10) || 1)
+  const pageSize = 6
+  const totalPages = Math.max(1, Math.ceil(posts.length / pageSize))
+  const currentPage = Math.min(page, totalPages)
+  const startIdx = (currentPage - 1) * pageSize
+  const pagePosts = posts.slice(startIdx, startIdx + pageSize)
   React.useEffect(() => {
     let alive = true
     ;(async () => {
+      const list = getAllBlogPosts()
       const entries = await Promise.all(
-        BLOG_POSTS.map(async (p) => {
-          const url = await findImage({ query: p.query, orientation: 'landscape' })
+        list.map(async (p) => {
+          const url = p._override?.image || (await findImage({ query: p._override?.title || p.query, orientation: 'landscape' }))
           return [p.id, url]
         })
       )
       if (alive) setImages(Object.fromEntries(entries))
     })()
+    const onStorage = () => { setPosts(getAllBlogPosts()) }
+    window.addEventListener('storage', onStorage)
     return () => { alive = false }
   }, [])
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Seo
+        title={t('seo.blog.title', 'Blog — Guará Travel')}
+        description={t('seo.blog.description', 'Stories, tips and inspiration for planning your Iguazu adventure.')}
+        canonical={`${site}/blog${currentPage > 1 ? `?page=${currentPage}` : ''}`}
+      />
       <Header />
 
       <Box component="section" sx={{ px: { xs: 2, sm: 3, md: 6 }, py: { xs: 6, md: 10 } }}>
@@ -45,10 +66,11 @@ export default function BlogListPage() {
         </Typography>
 
         <Grid container spacing={{ xs: 3, md: 4 }}>
-          {BLOG_POSTS.map((p) => {
-            const category = t(`session7.posts.${p.id}.category`)
-            const title = t(`session7.posts.${p.id}.title`)
-            const excerpt = t(`session7.posts.${p.id}.excerpt`)
+          {pagePosts.map((p) => {
+            const override = p._override
+            const category = override?.category || t(`session7.posts.${p.id}.category`)
+            const title = override?.title || t(`session7.posts.${p.id}.title`)
+            const excerpt = override?.excerpt || t(`session7.posts.${p.id}.excerpt`)
             const image = images[p.id]
             return (
               <Grid key={p.id} size={{ xs: 12, sm: 6, md: 4 }}>
@@ -67,6 +89,22 @@ export default function BlogListPage() {
             )
           })}
         </Grid>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+            <Pagination
+              count={totalPages}
+              page={currentPage}
+              color="primary"
+              onChange={(e, value) => {
+                if (value === 1) setSearchParams({})
+                else setSearchParams({ page: String(value) })
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+            />
+          </Box>
+        )}
       </Box>
 
       <Footer />

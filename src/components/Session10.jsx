@@ -1,10 +1,13 @@
 import React from 'react'
 import { Box, Button, Link, Typography } from '@mui/material'
 import { fonts, colors } from '../theme/tokens.js'
+import { CALENDLY_URL } from '../config/calendly.js'
+import CalendlyDialog from './CalendlyDialog.jsx'
 import { useTranslation } from 'react-i18next'
 
 export default function Session10() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const [calOpen, setCalOpen] = React.useState(false)
   return (
     <Box component="section" sx={{ position: 'relative', width: '100%', minHeight: { xs: '60vh', md: '70vh' }, overflow: 'hidden', display: 'grid', placeItems: 'center' }}>
       {/* Background image */}
@@ -31,8 +34,7 @@ export default function Session10() {
         {/* CTA */}
         <Box sx={{ mt: { xs: 3, md: 4 } }}>
           <Button
-            component="a"
-            href="#"
+            onClick={() => setCalOpen(true)}
             sx={{
               px: { xs: 3.5, md: 4 },
               py: { xs: 1.5, md: 1.75 },
@@ -61,7 +63,7 @@ export default function Session10() {
         </Box>
 
         {/* Sub legend with Calendly link (text + logo both react on hover) */}
-        <Link href="#" underline="none"
+  <Link href={`${CALENDLY_URL}?locale=${encodeURIComponent(i18n.language || '')}`} target="_blank" rel="noopener noreferrer" underline="none"
               sx={{
                 mt: { xs: 2, md: 2.5 },
                 display: 'inline-flex',
@@ -88,6 +90,7 @@ export default function Session10() {
           {t('session10.calendlyPrefix')}
           <Box component="img" src="/images/calendly.png" alt="Calendly" />
         </Link>
+  <CalendlyDialog open={calOpen} onClose={() => setCalOpen(false)} url={CALENDLY_URL} locale={i18n.language} />
       </Box>
     </Box>
   )

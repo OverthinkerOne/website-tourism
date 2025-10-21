@@ -85,6 +85,7 @@ export default function Header() {
                   onClose={handleCloseMenu}
                   items={[
                     { label: t('nav.private_guided_tours'), href: '/tours' },
+                    { label: t('nav.gastronomy', 'Gastronomy'), href: '/gastronomy' },
                     { label: t('nav.about_us'), href: '/about' },
                     { label: t('nav.gallery'), href: '/gallery' },
                     { label: t('nav.blog'), href: '/blog' },
@@ -96,6 +97,7 @@ export default function Header() {
                 <NavLinks
                   items={[
                     { label: t('nav.private_guided_tours'), href: '/tours' },
+                    { label: t('nav.gastronomy', 'Gastronomy'), href: '/gastronomy' },
                     { label: t('nav.about_us'), href: '/about' },
                     { label: t('nav.gallery'), href: '/gallery' },
                     { label: t('nav.blog'), href: '/blog' },

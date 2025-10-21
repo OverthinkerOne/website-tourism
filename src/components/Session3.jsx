@@ -4,9 +4,11 @@ import Collapse from '@mui/material/Collapse'
 import Typography from '@mui/material/Typography'
 import { fonts } from '../theme/tokens.js'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 export default function Session3() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [openSet, setOpenSet] = React.useState(new Set())
 
   const toggle = (idx) => {
@@ -139,6 +141,7 @@ export default function Session3() {
               <Box
                 component="button"
                 type="button"
+                onClick={() => navigate('/tours')}
                 aria-label={t('session3.right.card1.cta')}
                 style={{
                   all: 'unset',

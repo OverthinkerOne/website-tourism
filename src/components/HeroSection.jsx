@@ -6,12 +6,15 @@ import Button from '@mui/material/Button'
 import { alpha } from '@mui/material/styles'
 import { keyframes } from '@emotion/react'
 import { colors, fonts } from '../theme/tokens.js'
+import { CALENDLY_URL } from '../config/calendly.js'
+import CalendlyDialog from './CalendlyDialog.jsx'
 import { useTranslation } from 'react-i18next'
 
 export default function HeroSection() {
   const titleRef = React.useRef(null)
   const [titleWidth, setTitleWidth] = React.useState(null)
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const [calOpen, setCalOpen] = React.useState(false)
 
   const pulseGlow = keyframes`
     0% { opacity: .45; transform: scale(1); }
@@ -34,7 +37,7 @@ export default function HeroSection() {
   }, [t('hero.title')])
 
   return (
-    <Box component="section" sx={{ position: 'relative', height: '100vh', width: '100%', overflow: 'hidden' }}>
+  <Box component="section" sx={{ position: 'relative', height: '100vh', minHeight: 640, width: '100%', overflow: 'hidden' }}>
       {/* Background video */}
       <Box
         component="video"
@@ -75,8 +78,8 @@ export default function HeroSection() {
           px: 2,
           textAlign: 'center',
           boxSizing: 'border-box',
-          pb: { xs: '44px', md: '63px' },
-          transform: { xs: 'translateY(-20px)', md: 'translateY(-36px)', lg: 'translateY(-44px)' },
+          // Add a bit more bottom padding so content isn’t too close to the lower paper edge
+          pb: { xs: '84px', sm: '96px', md: '128px' },
         }}
       >
         <Box sx={{ display: 'inline-block', maxWidth: { xs: '100%', md: '90%' } }}>
@@ -155,6 +158,7 @@ export default function HeroSection() {
           {/* CTA Button (enhanced) */}
           <Button
             variant="contained"
+            onClick={() => setCalOpen(true)}
             sx={{
               mt: { xs: 3, md: 4 },
               px: { xs: 3.25, md: 4.25 },
@@ -237,6 +241,7 @@ export default function HeroSection() {
         }}
         aria-hidden
       />
+  <CalendlyDialog open={calOpen} onClose={() => setCalOpen(false)} url={CALENDLY_URL} locale={i18n.language} />
     </Box>
   )
 }

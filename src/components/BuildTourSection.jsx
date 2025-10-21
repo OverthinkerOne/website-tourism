@@ -39,6 +39,23 @@ export default function BuildTourSection() {
   // Always use day/month/year format as requested
   const dateFormat = 'DD/MM/YYYY'
 
+  const handleStart = React.useCallback(() => {
+    try {
+      const phone = '5545991120912' // same number used across the site
+      const hasValidDate = dayjs.isDayjs(date) && date.isValid()
+      const dateStr = hasValidDate ? date.format(dateFormat) : '-'
+      const durationCount = parseInt(duration, 10) || 0
+      const durationLabel = durationCount > 0 ? `${durationCount} ${durationCount === 1 ? 'day' : 'days'}` : '-'
+
+      // Single-paragraph English message
+      const message = `Hello! I'd like to build a custom tour. Travel date: ${dateStr}; Trip length: ${durationLabel}.`
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+      window.location.href = url
+    } catch (e) {
+      // no-op: in extremely old browsers fallback could be added
+    }
+  }, [date, duration])
+
   return (
     <Box component="section" sx={{ bgcolor: '#fff', minHeight: 226, display: 'grid', placeItems: 'center', overflowX: 'hidden', px: { xs: 1.5, sm: 2 }, py: { xs: 3, sm: 4 } }}>
       <Box
@@ -146,6 +163,7 @@ export default function BuildTourSection() {
           <Button
             variant="contained"
             color="primary"
+            onClick={handleStart}
             sx={{
               height: 48,
               px: { xs: 2.5, md: 4 },

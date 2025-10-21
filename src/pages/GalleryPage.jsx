@@ -13,9 +13,12 @@ import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import Video from 'yet-another-react-lightbox/plugins/video'
 import { useTranslation } from 'react-i18next'
+import Seo from '../components/Seo.jsx'
+import { getSiteUrl } from '../lib/content.js'
 
 export default function GalleryPage() {
   const { t } = useTranslation()
+  const site = getSiteUrl()
   const items = galleryMedia
   const [open, setOpen] = React.useState(false)
   const [index, setIndex] = React.useState(0)
@@ -25,6 +28,7 @@ export default function GalleryPage() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Seo title={t('seo.gallery.title', 'Gallery — Guará Travel')} description={t('seo.gallery.description', 'Explore our gallery of Iguazu Falls, Itaipu Dam, wildlife and experiences.')} canonical={`${site}/gallery`} />
       <Header />
 
       <Box component="section" sx={{ px: { xs: 2, sm: 3, md: 6 }, py: { xs: 6, md: 10 } }}>

@@ -15,8 +15,8 @@ export default function Footer() {
     textDecoration: 'none',
     opacity: 0.88,
     transition: 'color .18s ease, opacity .18s ease, transform .18s ease',
-    '&:hover': { color: '#fff', opacity: 1, transform: 'translateX(2px)' },
-    '&:focus-visible': { outline: 'none', color: '#fff', opacity: 1 },
+    '&:hover': { color: '#000', opacity: 1, transform: 'translateX(2px)' },
+    '&:focus-visible': { outline: 'none', color: '#000', opacity: 1 },
   }
 
   return (
@@ -26,8 +26,8 @@ export default function Footer() {
         component="nav"
         aria-label={t('footer.aria_main_nav')}
         sx={{
-          background: `linear-gradient(135deg, ${colors.accent} 0 50%, #000 50% 100%)`,
-          color: '#fff',
+          background: '#fff',
+          color: '#000',
           px: { xs: 2, sm: 3, md: 4, lg: 6 },
           py: { xs: 4, md: 6 },
         }}
@@ -38,24 +38,24 @@ export default function Footer() {
             gridTemplateColumns: {
               xs: '1fr',
               sm: '1fr 1fr',
-              md: '2fr 1fr 1fr 1.2fr',
+              md: '2fr 1fr 1.2fr',
             },
             gap: { xs: 24, sm: 28, md: 32 },
             alignItems: 'flex-start',
           }}
         >
           {/* Brand + description + socials */}
-          <Stack spacing={2}>
-            <Box component="img" src="/images/dark-logo.svg" alt={t('brand.logoAlt')} sx={{ height: sizes.logoHeight, width: 'auto' }} />
-            <Typography variant="body2" sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', color: 'rgba(255,255,255,0.85)' }}>
+          <Stack spacing={2} sx={{ alignItems: 'flex-start', textAlign: 'left' }}>
+            <Box component="img" src="/images/dark-logo.svg" alt={t('brand.logoAlt')} sx={{ display: 'block', height: sizes.logoHeight, width: 'auto' }} />
+            <Typography variant="body2" sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', color: 'rgba(0,0,0,0.85)' }}>
               {t('footer.description')}
             </Typography>
-            <SocialIcons sx={{ mt: 0.5 }} color="#fff" />
+            <SocialIcons sx={{ mt: 0.5 }} color="#000" />
           </Stack>
 
           {/* Explore */}
           <Stack spacing={1.25}>
-            <Typography component="h3" sx={{ fontFamily: fonts.headings, fontSize: 22, letterSpacing: 1, textTransform: 'uppercase', color: '#fff' }}>
+            <Typography component="h3" sx={{ fontFamily: fonts.headings, fontSize: 22, letterSpacing: 1, textTransform: 'uppercase', color: '#000' }}>
               {t('footer.explore')}
             </Typography>
             <Stack component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }} spacing={0.75}>
@@ -66,30 +66,19 @@ export default function Footer() {
             </Stack>
           </Stack>
 
-          {/* Resources */}
-          <Stack spacing={1.25}>
-            <Typography component="h3" sx={{ fontFamily: fonts.headings, fontSize: 22, letterSpacing: 1, textTransform: 'uppercase', color: '#fff' }}>
-              {t('footer.resources')}
-            </Typography>
-            <Stack component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }} spacing={0.75}>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('footer.links.faq')}</Typography></li>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('footer.links.plan_trip')}</Typography></li>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('footer.links.privacy')}</Typography></li>
-              <li><Typography component="a" href="#" sx={linkSx}>{t('footer.links.terms')}</Typography></li>
-            </Stack>
-          </Stack>
+          {/* Resources column removed (no pages available for those links yet) */}
 
           {/* Contact */}
           <Stack spacing={1.25}>
-            <Typography component="h3" sx={{ fontFamily: fonts.headings, fontSize: 22, letterSpacing: 1, textTransform: 'uppercase', color: '#fff' }}>
+            <Typography component="h3" sx={{ fontFamily: fonts.headings, fontSize: 22, letterSpacing: 1, textTransform: 'uppercase', color: '#000' }}>
               {t('footer.contact')}
             </Typography>
             <Stack spacing={1}>
-              <Typography variant="body2" sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', color: 'rgba(255,255,255,0.85)' }}>{t('footer.address')}</Typography>
+              <Typography variant="body2" sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', color: 'rgba(0,0,0,0.85)' }}>{t('footer.address')}</Typography>
               <Stack spacing={0.5}>
                 <Typography component="a" href="mailto:hello@guaratravel.com" sx={linkSx}>{t('footer.emailLabel')}: hello@guaratravel.com</Typography>
                 <Typography component="a" href="tel:+5545999999999" sx={linkSx}>{t('footer.phoneLabel')}: +55 45 99999-9999</Typography>
-                <Typography component="a" href="https://wa.me/5545999999999" target="_blank" rel="noopener noreferrer" sx={linkSx}>WhatsApp</Typography>
+                <Typography component="a" href="https://wa.me/5545991120912" target="_blank" rel="noopener noreferrer" sx={linkSx}>WhatsApp</Typography>
               </Stack>
             </Stack>
           </Stack>
@@ -99,10 +88,11 @@ export default function Footer() {
       {/* Bottom legal bar */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${colors.accent} 0 50%, #000 50% 100%)`,
-          color: '#fff',
+          background: '#fff',
+          color: '#000',
           px: { xs: 2, sm: 3, md: 4, lg: 6 },
           py: { xs: 1.5, md: 2 },
+          borderTop: '1px solid #eee',
         }}
       >
           <Stack direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'flex-start', sm: 'center' }} justifyContent="space-between" spacing={{ xs: 1, sm: 2 }}>
@@ -114,7 +104,7 @@ export default function Footer() {
           </Typography>
 
           <Stack direction="row" alignItems="center" spacing={1.25} sx={{ alignSelf: { xs: 'flex-end', sm: 'auto' } }}>
-            <Box component="img" src="/images/revo-white.svg" alt="RevoAds" title="RevoAds" sx={{ height: 16, width: 'auto', display: 'block' }} />
+            <Box component="img" src="/images/revo-black.svg" alt="RevoAds" title="RevoAds" sx={{ height: 16, width: 'auto', display: 'block' }} />
           </Stack>
         </Stack>
       </Box>
