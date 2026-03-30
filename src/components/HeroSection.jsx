@@ -16,6 +16,7 @@ export default function HeroSection() {
   const { t, i18n } = useTranslation()
   const [calOpen, setCalOpen] = React.useState(false)
   const [videoError, setVideoError] = React.useState(false)
+  const [videoLoaded, setVideoLoaded] = React.useState(false)
 
   const pulseGlow = keyframes`
     0% { opacity: .45; transform: scale(1); }
@@ -43,9 +44,34 @@ export default function HeroSection() {
     if (titleRef.current) setTitleWidth(titleRef.current.offsetWidth)
   }, [t('hero.title')])
 
+  // Timeout for video loading
+  React.useEffect(() => {
+    if (!videoLoaded && !videoError) {
+      const timer = setTimeout(() => {
+        if (!videoLoaded) {
+          console.warn('[Video] Video took too long to load, using fallback')
+          setVideoError(true)
+        }
+      }, 8000) // 8 second timeout
+      return () => clearTimeout(timer)
+    }
+  }, [videoLoaded, videoError])
+
   return (
   <Box component="section" sx={{ position: 'relative', height: '100vh', minHeight: 640, width: '100%', overflow: 'hidden' }}>
-      {/* Background video or fallback gradient */}
+      {/* Fallback: Animated gradient background (always shown as base) */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(-45deg, #1a472a, #2d5a3d, #0f3620, #1a472a)',
+          backgroundSize: '400% 400%',
+          animation: `${animatedGradient} 15s ease infinite`,
+          zIndex: 0,
+        }}
+      />
+
+      {/* Background video (overlay on top of gradient, if loads successfully) */}
       {!videoError && (
         <Box
           component="video"
@@ -53,38 +79,31 @@ export default function HeroSection() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
+          onCanPlay={() => {
+            console.log('[Video] Video can play')
+            setVideoLoaded(true)
+          }}
           onError={() => {
             console.error('[Video] Failed to load video')
             setVideoError(true)
           }}
-          onLoadedData={() => console.log('[Video] Video loaded successfully')}
+          onLoadedData={() => console.log('[Video] Video loaded')}
           sx={{
             position: 'absolute',
             inset: 0,
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            zIndex: 0,
+            zIndex: videoLoaded ? 1 : -1,
+            opacity: videoLoaded ? 1 : 0,
+            transition: 'opacity 0.5s ease-in-out',
           }}
         >
           <source src="/images/videos/14088619_3840_2160_60fps.mp4" type="video/mp4" />
+          <source src="/images/videos/14088619_3840_2160_60fps.webm" type="video/webm" />
           Your browser does not support the video tag.
         </Box>
-      )}
-      
-      {/* Fallback: Animated gradient background if video fails */}
-      {videoError && (
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(-45deg, #1a472a, #2d5a3d, #0f3620, #1a472a)',
-            backgroundSize: '400% 400%',
-            animation: `${animatedGradient} 15s ease infinite`,
-            zIndex: 0,
-          }}
-        />
       )}
 
       {/* Overlay */}
@@ -93,7 +112,7 @@ export default function HeroSection() {
           position: 'absolute',
           inset: 0,
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25))',
-          zIndex: 1,
+          zIndex: 2,
         }}
       />
 
