@@ -15,6 +15,7 @@ export default function HeroSection() {
   const [titleWidth, setTitleWidth] = React.useState(null)
   const { t, i18n } = useTranslation()
   const [calOpen, setCalOpen] = React.useState(false)
+  const [videoError, setVideoError] = React.useState(false)
 
   const pulseGlow = keyframes`
     0% { opacity: .45; transform: scale(1); }
@@ -38,23 +39,38 @@ export default function HeroSection() {
 
   return (
   <Box component="section" sx={{ position: 'relative', height: '100vh', minHeight: 640, width: '100%', overflow: 'hidden' }}>
-      {/* Background video */}
-      <Box
-        component="video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        src="/images/videos/14088619_3840_2160_60fps.mp4"
-        sx={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
-        }}
-      />
+      {/* Background video or fallback gradient */}
+      {!videoError && (
+        <Box
+          component="video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          src="/images/videos/14088619_3840_2160_60fps.mp4"
+          onError={() => setVideoError(true)}
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+      )}
+      
+      {/* Fallback gradient background if video fails */}
+      {videoError && (
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #0f3620 100%)',
+            zIndex: 0,
+          }}
+        />
+      )}
 
       {/* Overlay */}
       <Box
