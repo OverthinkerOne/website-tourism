@@ -17,11 +17,31 @@ export default function HeroSection() {
   const [calOpen, setCalOpen] = React.useState(false)
   const [videoError, setVideoError] = React.useState(false)
 
+  const pulseGlow = keyframes`
+    0% { opacity: .45; transform: scale(1); }
+    50% { opacity: .95; transform: scale(1.04); }
+    100% { opacity: .45; transform: scale(1); }
+  `
+
   const animatedGradient = keyframes`
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   `
+
+  React.useLayoutEffect(() => {
+    const measure = () => {
+      if (titleRef.current) setTitleWidth(titleRef.current.offsetWidth)
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [])
+
+  // Recalculate widths when text changes due to i18n switch
+  React.useEffect(() => {
+    if (titleRef.current) setTitleWidth(titleRef.current.offsetWidth)
+  }, [t('hero.title')])
 
   return (
   <Box component="section" sx={{ position: 'relative', height: '100vh', minHeight: 640, width: '100%', overflow: 'hidden' }}>
