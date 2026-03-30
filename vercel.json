@@ -3,10 +3,5 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
-  "outputDirectory": "dist",
-  "env": {
-    "VITE_CALENDLY_URL": "@calendly_url",
-    "VITE_PEXELS_API_KEY": "@pexels_api_key",
-    "VITE_SITE_URL": "@site_url"
-  }
+  "outputDirectory": "dist"
 }
