@@ -17,25 +17,11 @@ export default function HeroSection() {
   const [calOpen, setCalOpen] = React.useState(false)
   const [videoError, setVideoError] = React.useState(false)
 
-  const pulseGlow = keyframes`
-    0% { opacity: .45; transform: scale(1); }
-    50% { opacity: .95; transform: scale(1.04); }
-    100% { opacity: .45; transform: scale(1); }
+  const animatedGradient = keyframes`
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   `
-
-  React.useLayoutEffect(() => {
-    const measure = () => {
-      if (titleRef.current) setTitleWidth(titleRef.current.offsetWidth)
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
-  }, [])
-
-  // Recalculate widths when text changes due to i18n switch
-  React.useEffect(() => {
-    if (titleRef.current) setTitleWidth(titleRef.current.offsetWidth)
-  }, [t('hero.title')])
 
   return (
   <Box component="section" sx={{ position: 'relative', height: '100vh', minHeight: 640, width: '100%', overflow: 'hidden' }}>
@@ -47,8 +33,12 @@ export default function HeroSection() {
           muted
           loop
           playsInline
-          src="/images/videos/14088619_3840_2160_60fps.mp4"
-          onError={() => setVideoError(true)}
+          preload="auto"
+          onError={() => {
+            console.error('[Video] Failed to load video')
+            setVideoError(true)
+          }}
+          onLoadedData={() => console.log('[Video] Video loaded successfully')}
           sx={{
             position: 'absolute',
             inset: 0,
@@ -57,16 +47,21 @@ export default function HeroSection() {
             objectFit: 'cover',
             zIndex: 0,
           }}
-        />
+        >
+          <source src="/images/videos/14088619_3840_2160_60fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </Box>
       )}
       
-      {/* Fallback gradient background if video fails */}
+      {/* Fallback: Animated gradient background if video fails */}
       {videoError && (
         <Box
           sx={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #0f3620 100%)',
+            background: 'linear-gradient(-45deg, #1a472a, #2d5a3d, #0f3620, #1a472a)',
+            backgroundSize: '400% 400%',
+            animation: `${animatedGradient} 15s ease infinite`,
             zIndex: 0,
           }}
         />
