@@ -79,16 +79,18 @@ export default function HeroSection() {
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           onCanPlay={() => {
-            console.log('[Video] Video can play')
             setVideoLoaded(true)
           }}
           onError={() => {
-            console.error('[Video] Failed to load video')
             setVideoError(true)
           }}
-          onLoadedData={() => console.log('[Video] Video loaded')}
+          onLoadedMetadata={() => {
+            if (this?.currentTime === 0) {
+              this.play().catch(() => {})
+            }
+          }}
           sx={{
             position: 'absolute',
             inset: 0,
@@ -100,8 +102,7 @@ export default function HeroSection() {
             transition: 'opacity 0.5s ease-in-out',
           }}
         >
-          <source src="/images/videos/14088619_3840_2160_60fps.mp4" type="video/mp4" />
-          <source src="/images/videos/14088619_3840_2160_60fps.webm" type="video/webm" />
+          <source src="/images/videos/14088619_3840_2160_60fps_compressed.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </Box>
       )}
