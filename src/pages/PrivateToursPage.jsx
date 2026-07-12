@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid2'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { fonts, colors } from '../theme/tokens.js'
+import { CardCtaButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import TOURS from '../data/tours.js'
 import { findImage } from '../lib/imageProvider.js'
@@ -76,9 +77,14 @@ export default function PrivateToursPage() {
                     <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.25, borderRadius: 999, bgcolor: 'rgba(255,115,0,.12)', color: colors.accent, fontWeight: 700, fontSize: 12, textTransform: 'uppercase', letterSpacing: .6 }}>{country}</Box>
                     <Typography sx={{ mt: 1.25, fontWeight: 700, fontSize: 18 }}>{title}</Typography>
                     <Typography sx={{ color: 'text.secondary', mt: 0.75 }}>{override?.short || t(`tours.details.${tour.id}.short`, override?.short || tour.short || '')}</Typography>
-                    <Button component={RouterLink} to={`/tours/${tour.id}`} variant="contained" sx={{ mt: 2, bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>
-                      {t('tours.cta.viewDetails')}
-                    </Button>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                      <CardCtaButton
+                        component={RouterLink}
+                        to={`/tours/${tour.id}`}
+                      >
+                        {t('tours.cta.viewDetails')}
+                      </CardCtaButton>
+                    </Box>
                   </Box>
                 </Box>
               </Grid>

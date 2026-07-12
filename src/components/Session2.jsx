@@ -3,6 +3,7 @@ import { Box, Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { colors, fonts } from '../theme/tokens.js'
+import { AboutUsButton } from './GuaraButton.jsx'
 
 const images = [
   '/images/carousel-s2/SaveClip.App_476343054_18032969774569592_7526527612979803973_n.jpg',
@@ -184,35 +185,14 @@ export default function Session2() {
           </Box>
           {/* CTA inside the features container -> below the internal boxes */}
           <Box sx={{ display: 'grid', placeItems: 'center', mt: { xs: 3, md: 3 } }}>
-            <Button
+            <AboutUsButton
               component="a"
               href="/about"
               aria-label={t('nav.about_us')}
               endIcon={<ArrowForwardIosIcon sx={{ fontSize: 16 }} />}
-              sx={{
-                px: { xs: 2.75, md: 3.25 },
-                py: { xs: 1.1, md: 1.25 },
-                borderRadius: 999,
-                textTransform: 'uppercase',
-                letterSpacing: { xs: '0.14em', md: '0.18em' },
-                fontFamily: fonts.headings,
-                fontSize: { xs: 14, sm: 15, md: 16 },
-                fontWeight: 400,
-                color: '#fff',
-                background: 'linear-gradient(180deg, #FF8A33 0%, #FF7300 100%)',
-                boxShadow: '0 8px 18px rgba(255,115,0,0.40), 0 2px 8px rgba(0,0,0,0.16)',
-                transition: 'transform .18s ease, box-shadow .18s ease, background .18s ease',
-                '&:hover': {
-                  transform: 'translateY(-1px) scale(1.02)',
-                  background: 'linear-gradient(180deg, #FFA45F 0%, #FF6A00 100%)',
-                  boxShadow: '0 14px 30px rgba(255,115,0,0.60), 0 6px 14px rgba(0,0,0,0.22), 0 0 22px rgba(255,115,0,0.45)'
-                },
-                '&:active': { transform: 'translateY(0) scale(0.99)' },
-                '&:focus-visible': { outline: 'none', boxShadow: '0 0 0 3px rgba(255,115,0,0.35), 0 10px 22px rgba(0,0,0,0.28)' },
-              }}
             >
               {t('nav.about_us')}
-            </Button>
+            </AboutUsButton>
           </Box>
         </Box>
       </Box>

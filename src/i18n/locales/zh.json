@@ -22,6 +22,15 @@
       "services": "服务与设施",
       "tips": "提示",
       "info": "信息"
+    },
+    "labels": {
+      "hours": "营业时间: {{value}}",
+      "rating": "评分: {{value}}",
+      "from_person": "起价: {{price}} / 人",
+      "from_per_person": "每人 {{price}} 起",
+      "website": "官方网站",
+      "local_cuisine": "地方美食",
+      "check": "查看"
     }
   },
   "seo": {
@@ -45,9 +54,110 @@
       "sections": {
         "highlights": "亮点",
         "includes": "包含",
-        "tips": "小贴士"
+        "tips": "小贴士",
+        "itinerary": "行程安排",
+        "addons": "可选自费项目",
+        "notIncluded": "不包含"
+      },
+      "notIncluded": {
+        "ticketsMeals": "除非另有说明，否则不含国家公园门票与餐食",
+        "borderFees": "边境规费（如适用）"
       },
       "notFound": "未找到该行程。",
+      "meta_labels": {
+        "duration": "时长",
+        "level": "难易度",
+        "season": "最佳季节",
+        "family": "适合家庭"
+      },
+      "meta_values": {
+        "half_day": "半天",
+        "evening": "晚间",
+        "full_day": "整天",
+        "easy": "轻松",
+        "moderate": "中等",
+        "active": "活跃",
+        "all_year": "全年",
+        "yes": "是",
+        "teens_": "青少年+"
+      },
+      "features": {
+        "panoramic_viewpoints": "全景展台",
+        "national_park_access": "国家公园入园",
+        "private_transport": "私人专车",
+        "hotel_pickup": "酒店接送",
+        "cafe_stops_available": "可选咖啡馆小憩",
+        "golden_hour_friendly": "日出日落摄影佳地",
+        "night_light_show": "夜间灯光秀",
+        "photo_stops": "拍照点停留",
+        "guide_assistance": "向导协助",
+        "optional_dinner": "自选晚餐",
+        "flexible_timing": "弹性时间",
+        "upper___lower_circuits": "上下环线步道",
+        "border_crossing": "边境通关",
+        "devil_s_throat_walkway": "魔鬼喉步道",
+        "iconic_photo_angles": "标志性拍照点",
+        "food_court_available": "有餐饮区",
+        "speedboat_near_falls": "快艇湿身接近瀑布",
+        "jungle_4x4_ride": "丛林 4x4 越野",
+        "splash_proof_photos": "防水拍照",
+        "snack_options": "小吃选项",
+        "curated_shopping": "精选购物",
+        "trusted_stores_guidance": "诚信商铺指引",
+        "city_viewpoints": "城市观景点",
+        "coffee_breaks": "咖啡时间",
+        "scenic_viewpoints": "风景观光点",
+        "local_snacks": "本地特色小吃",
+        "flexible_schedule": "自由行进度"
+      },
+      "itinerary": {
+        "hotel_pickup": {
+          "title": "酒店接站",
+          "desc": "私人向导到您的酒店专属接送。"
+        },
+        "border_crossing": {
+          "title": "边境通关",
+          "desc": "协助办理签证文件，顺利通关进入目的地国家。"
+        },
+        "itaipu_by_night": {
+          "title": "伊泰普夜景",
+          "desc": "在导览讲解下观赏灯光璀璨的水坝并合影留念。"
+        },
+        "gran_aventura_boat": {
+          "title": "大冒险快艇",
+          "desc": "丛林四驱车越野加冲向瀑布基部的激爽快艇之旅。"
+        },
+        "national_park_trails": {
+          "title": "国家公园步道",
+          "desc": "步行于游览步道，直达最佳瀑布全景及魔鬼喉步道（若开放）。"
+        },
+        "photo_moments": {
+          "title": "定格美好瞬间",
+          "desc": "在标志性角度及隐秘好位进行拍照停留。"
+        },
+        "breaks_snacks": {
+          "title": "休憩与小吃",
+          "desc": "预留盥洗室、咖啡与品尝当地美食的时间。"
+        },
+        "return_transfer": {
+          "title": "送回酒店",
+          "desc": "送至您的酒店或指定下车点。"
+        }
+      },
+      "addons": {
+        "professional_photo_session": "专业摄影跟拍",
+        "flexible_start_time": "灵活出发时间",
+        "parque_das_aves": "飞鸟公园",
+        "helicopter_flight": "直升机观光",
+        "train_to_devils_throat": "魔鬼喉小火车",
+        "rain_poncho_kit": "雨衣装备包",
+        "dry_bag_rental": "防水袋租借",
+        "photo_video_pack": "照片与视频包",
+        "personal_shopper": "专属购物顾问",
+        "currency_exchange_stop": "外币兑换停留",
+        "zipline_park_nearby": "周边高空索道",
+        "drone_footage": "航拍记录（在允许的区域）"
+      },
       "details": {
         "br-iguacu-br": {
           "short": "从巴西侧欣赏伊瓜苏瀑布的全景。",

@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { alpha } from '@mui/material/styles'
 import { keyframes } from '@emotion/react'
+import { HeroCtaButton } from './GuaraButton.jsx'
 import { colors, fonts } from '../theme/tokens.js'
 import { CALENDLY_URL } from '../config/calendly.js'
 import CalendlyDialog from './CalendlyDialog.jsx'
@@ -19,11 +20,6 @@ export default function HeroSection() {
   const [videoLoaded, setVideoLoaded] = React.useState(false)
   const videoRef = React.useRef(null)
 
-  const pulseGlow = keyframes`
-    0% { opacity: .45; transform: scale(1); }
-    50% { opacity: .95; transform: scale(1.04); }
-    100% { opacity: .45; transform: scale(1); }
-  `
 
   const animatedGradient = keyframes`
     0% { background-position: 0% 50%; }
@@ -208,69 +204,23 @@ export default function HeroSection() {
           </Box>
 
           {/* CTA Button (enhanced) */}
-          <Button
-            variant="contained"
+          <HeroCtaButton
             onClick={() => setCalOpen(true)}
-            sx={{
-              mt: { xs: 3, md: 4 },
-              px: { xs: 3.25, md: 4.25 },
-              py: { xs: 2, md: 2.25 },
-              borderRadius: 999,
-              position: 'relative',
-              overflow: 'visible',
-              color: '#FFFFFF',
-              textTransform: 'none',
-              background: 'linear-gradient(180deg, #FF8A33 0%, #FF7300 100%)',
-              boxShadow: '0 12px 26px rgba(255,115,0,0.48), 0 6px 14px rgba(0,0,0,0.28)',
-              transition: 'transform .2s ease, box-shadow .2s ease, background .2s ease',
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                inset: 0,
-                borderRadius: 'inherit',
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 45%)',
-                pointerEvents: 'none',
-              },
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                inset: -18,
-                borderRadius: 'inherit',
-                background: 'radial-gradient(circle, rgba(255,115,0,0.65) 0%, rgba(255,115,0,0.0) 70%)',
-                filter: 'blur(18px)',
-                zIndex: -1,
-                pointerEvents: 'none',
-                animation: `${pulseGlow} 2.6s ease-in-out infinite`,
-              },
-              '&:hover': {
-                transform: 'translateY(-2px) scale(1.02)',
-                background: 'linear-gradient(180deg, #FFA45F 0%, #FF6A00 100%)',
-                boxShadow: '0 16px 34px rgba(255,115,0,0.60), 0 8px 18px rgba(0,0,0,0.30), 0 0 22px rgba(255,115,0,0.45)',
-              },
-              '&:active': {
-                transform: 'translateY(0) scale(0.99)',
-                boxShadow: '0 10px 22px rgba(255,115,0,0.46), 0 4px 12px rgba(0,0,0,0.26)'
-              },
-              '&:focus-visible': {
-                outline: 'none',
-                boxShadow: '0 0 0 3px rgba(255,115,0,0.35), 0 12px 26px rgba(255,115,0,0.45)'
-              },
-            }}
-            aria-label={t('hero.cta.ariaLabel')}
+            ariaLabel={t('hero.cta.ariaLabel')}
           >
             <Stack direction="row" alignItems="center" spacing={{ xs: 1.5, md: 2 }}>
               <Box sx={{ textAlign: 'left' }}>
                 <Typography sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 800, fontSize: 20, color: '#FFFFFF', textTransform: 'uppercase', lineHeight: 1 }}>
                   {t('hero.cta.title')}
                 </Typography>
-                <Typography sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 700, fontSize: 12, color: '#C2C2C2', textTransform: 'uppercase', lineHeight: 1, mt: 0.5 }}>
+                <Typography sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 700, fontSize: 12, color: '#FFFFFF', textTransform: 'uppercase', lineHeight: 1, mt: 0.5 }}>
                   {t('hero.cta.subtitle')}
                 </Typography>
               </Box>
               <Box component="img" src="/images/icons/calendar.svg" alt={t('hero.cta.iconAlt')}
                    sx={{ width: 28, height: 28 }} />
             </Stack>
-          </Button>
+          </HeroCtaButton>
         </Box>
       </Box>
 

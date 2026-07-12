@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Divider, InputLabel, MenuItem, Select, Typography } from '@mui/material'
+import { Box, Divider, InputLabel, MenuItem, Select, Typography } from '@mui/material'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -8,6 +8,7 @@ import 'dayjs/locale/en'
 import 'dayjs/locale/es'
 import 'dayjs/locale/zh'
 import { fonts, colors } from '../theme/tokens.js'
+import { BuildTourStartButton } from './GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import { keyframes } from '@emotion/react'
 
@@ -160,52 +161,11 @@ export default function BuildTourSection() {
   <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', md: 'block' }, borderColor: 'rgba(95,95,95,0.25)' }} />
 
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: { xs: 'auto', md: 220 }, width: { xs: '100%', md: 'auto' }, mt: { xs: 0.5, md: 0 } }}>
-          <Button
-            variant="contained"
-            color="primary"
+          <BuildTourStartButton
             onClick={handleStart}
-            sx={{
-              height: 48,
-              px: { xs: 2.5, md: 4 },
-              borderRadius: 2,
-              // vivid orange base
-              background: 'linear-gradient(180deg, #FF8A33 0%, #FF7300 100%)',
-              boxShadow: '0 8px 18px rgba(255,115,0,0.40), 0 2px 8px rgba(0,0,0,0.16)',
-              textTransform: 'uppercase',
-              letterSpacing: { xs: '0.12em', md: '0.2em' },
-              fontFamily: fonts.headings,
-              fontSize: { xs: 18, md: 24 },
-              fontWeight: 400,
-              color: '#FFF',
-              position: 'relative',
-              overflow: 'visible',
-              isolation: 'isolate',
-              // breathing outer glow
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                inset: -18,
-                borderRadius: 'inherit',
-                background: 'radial-gradient(circle, rgba(255,115,0,0.65) 0%, rgba(255,115,0,0.0) 70%)',
-                filter: 'blur(18px)',
-                zIndex: -2,
-                pointerEvents: 'none',
-                animation: `${pulseGlow} 2.4s ease-in-out infinite`,
-              },
-              '&:hover': {
-                background: 'linear-gradient(180deg, #FFA45F 0%, #FF6A00 100%)',
-                boxShadow: '0 14px 30px rgba(255,115,0,0.60), 0 6px 14px rgba(0,0,0,0.22), 0 0 22px rgba(255,115,0,0.45)',
-                transform: 'translateY(-1px) scale(1.02)',
-              },
-              '&:hover::after': {
-                opacity: 0.95,
-              },
-              transition: 'all 180ms ease',
-            }}
-            fullWidth
           >
             {t('buildTour.start')}
-          </Button>
+          </BuildTourStartButton>
         </Box>
       </Box>
     </Box>

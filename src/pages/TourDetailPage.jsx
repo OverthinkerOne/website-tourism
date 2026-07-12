@@ -14,6 +14,7 @@ import Chip from '@mui/material/Chip'
 import Stack from '@mui/material/Stack'
 import { alpha } from '@mui/material/styles'
 import { fonts, colors } from '../theme/tokens.js'
+import { PlanTripButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import TOURS from '../data/tours.js'
 import { findImage } from '../lib/imageProvider.js'
@@ -187,12 +188,17 @@ export default function TourDetailPage() {
   }
 
   const baseMeta = TOUR_META[tour.id] || { duration: 'Half-day', level: 'Easy', season: 'All year', family: 'Yes', features: [] }
+  const rawDuration = override?.duration || baseMeta.duration
+  const rawLevel = override?.level || baseMeta.level
+  const rawSeason = override?.season || baseMeta.season
+  const rawFamily = override?.family || baseMeta.family
+
   const meta = {
     ...baseMeta,
-    duration: override?.duration || baseMeta.duration,
-    level: override?.level || baseMeta.level,
-    season: override?.season || baseMeta.season,
-    family: override?.family || baseMeta.family,
+    duration: t(`tours.meta_values.${rawDuration.toLowerCase().replace(/[^a-z0-9]/g, '_')}`, rawDuration),
+    level: t(`tours.meta_values.${rawLevel.toLowerCase().replace(/[^a-z0-9]/g, '_')}`, rawLevel),
+    season: t(`tours.meta_values.${rawSeason.toLowerCase().replace(/[^a-z0-9]/g, '_')}`, rawSeason),
+    family: t(`tours.meta_values.${rawFamily.toLowerCase().replace(/[^a-z0-9]/g, '_')}`, rawFamily),
   }
 
   // Build a suggested itinerary with animated reveal
@@ -200,14 +206,46 @@ export default function TourDetailPage() {
   const isNight = tour.id === 'br-itaipu-night'
   const isBoat = tour.id === 'ar-gran-aventura'
   const itinerary = [
-    { icon: HailIcon, title: 'Hotel pickup', desc: 'Private pickup at your accommodation with our local guide.' },
-    hasBorder ? { icon: BorderAllIcon, title: 'Border crossing', desc: 'Assistance with documents and smooth crossing to the destination country.' } : null,
-    isNight ? { icon: NightlifeIcon, title: 'Itaipu by night', desc: 'Enjoy the illuminated dam with narrated highlights and photo stops.' } : null,
-    isBoat ? { icon: DirectionsBoatIcon, title: 'Gran Aventura boat', desc: 'Jungle 4x4 + speedboat approaching the falls for a thrilling splash.' } : null,
-    !isNight && !isBoat && tour.id.includes('iguacu') ? { icon: ParkIcon, title: 'National Park trails', desc: 'Walk boardwalks and platforms to the best viewpoints, including Devil’s Throat (when available).' } : null,
-    { icon: CameraAltIcon, title: 'Photo moments', desc: 'Guided stops at iconic angles and hidden vantage points.' },
-    { icon: RestaurantIcon, title: 'Breaks & snacks', desc: 'Time for restroom, coffee, and local bites as desired.' },
-    { icon: DirectionsBusIcon, title: 'Return transfer', desc: 'Drop-off at your hotel or preferred address.' },
+    {
+      icon: HailIcon,
+      title: t('tours.itinerary.hotel_pickup.title', 'Hotel pickup'),
+      desc: t('tours.itinerary.hotel_pickup.desc', 'Private pickup at your accommodation with our local guide.')
+    },
+    hasBorder ? {
+      icon: BorderAllIcon,
+      title: t('tours.itinerary.border_crossing.title', 'Border crossing'),
+      desc: t('tours.itinerary.border_crossing.desc', 'Assistance with documents and smooth crossing to the destination country.')
+    } : null,
+    isNight ? {
+      icon: NightlifeIcon,
+      title: t('tours.itinerary.itaipu_by_night.title', 'Itaipu by night'),
+      desc: t('tours.itinerary.itaipu_by_night.desc', 'Enjoy the illuminated dam with narrated highlights and photo stops.')
+    } : null,
+    isBoat ? {
+      icon: DirectionsBoatIcon,
+      title: t('tours.itinerary.gran_aventura_boat.title', 'Gran Aventura boat'),
+      desc: t('tours.itinerary.gran_aventura_boat.desc', 'Jungle 4x4 + speedboat approaching the falls for a thrilling splash.')
+    } : null,
+    !isNight && !isBoat && tour.id.includes('iguacu') ? {
+      icon: ParkIcon,
+      title: t('tours.itinerary.national_park_trails.title', 'National Park trails'),
+      desc: t('tours.itinerary.national_park_trails.desc', 'Walk boardwalks and platforms to the best viewpoints, including Devil’s Throat (when available).')
+    } : null,
+    {
+      icon: CameraAltIcon,
+      title: t('tours.itinerary.photo_moments.title', 'Photo moments'),
+      desc: t('tours.itinerary.photo_moments.desc', 'Guided stops at iconic angles and hidden vantage points.')
+    },
+    {
+      icon: RestaurantIcon,
+      title: t('tours.itinerary.breaks_snacks.title', 'Breaks & snacks'),
+      desc: t('tours.itinerary.breaks_snacks.desc', 'Time for restroom, coffee, and local bites as desired.')
+    },
+    {
+      icon: DirectionsBusIcon,
+      title: t('tours.itinerary.return_transfer.title', 'Return transfer'),
+      desc: t('tours.itinerary.return_transfer.desc', 'Drop-off at your hotel or preferred address.')
+    },
   ].filter(Boolean)
 
   // IntersectionObserver to reveal items smoothly
@@ -267,10 +305,10 @@ export default function TourDetailPage() {
 
             {/* Quick stats chips */}
             <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mb: 3 }}>
-              <Chip icon={<AccessTimeIcon />} label={`Duration: ${meta.duration}`} sx={{ bgcolor: alpha('#FF7300', 0.08), borderColor: alpha('#FF7300', 0.2), border: '1px solid', fontWeight: 600 }} />
-              <Chip icon={<HikingIcon />} label={`Level: ${meta.level}`} sx={{ bgcolor: alpha('#111', 0.04), borderColor: alpha('#111', 0.12), border: '1px solid' }} />
-              <Chip icon={<EventAvailableIcon />} label={`Best season: ${meta.season}`} sx={{ bgcolor: alpha('#0ea5e9', 0.08), borderColor: alpha('#0ea5e9', 0.2), border: '1px solid' }} />
-              <Chip icon={<FamilyRestroomIcon />} label={`Family: ${meta.family}`} sx={{ bgcolor: alpha('#22c55e', 0.08), borderColor: alpha('#22c55e', 0.2), border: '1px solid' }} />
+              <Chip icon={<AccessTimeIcon />} label={`${t('tours.meta_labels.duration', 'Duration')}: ${meta.duration}`} sx={{ bgcolor: alpha('#FF7300', 0.08), borderColor: alpha('#FF7300', 0.2), border: '1px solid', fontWeight: 600 }} />
+              <Chip icon={<HikingIcon />} label={`${t('tours.meta_labels.level', 'Level')}: ${meta.level}`} sx={{ bgcolor: alpha('#111', 0.04), borderColor: alpha('#111', 0.12), border: '1px solid' }} />
+              <Chip icon={<EventAvailableIcon />} label={`${t('tours.meta_labels.season', 'Best season')}: ${meta.season}`} sx={{ bgcolor: alpha('#0ea5e9', 0.08), borderColor: alpha('#0ea5e9', 0.2), border: '1px solid' }} />
+              <Chip icon={<FamilyRestroomIcon />} label={`${t('tours.meta_labels.family', 'Family')}: ${meta.family}`} sx={{ bgcolor: alpha('#22c55e', 0.08), borderColor: alpha('#22c55e', 0.2), border: '1px solid' }} />
             </Stack>
 
             {/* Features grid */}
@@ -279,7 +317,7 @@ export default function TourDetailPage() {
                 <Box key={i} sx={{ p: 2, borderRadius: 2, border: '1px solid', borderColor: '#eee', bgcolor: '#fff', transition: 'transform .2s ease, box-shadow .2s ease', boxShadow: '0 4px 12px rgba(0,0,0,0.04)', '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 10px 24px rgba(0,0,0,0.10)' } }}>
                   <Stack direction="row" spacing={1.5} alignItems="center">
                     {f.icon ? React.createElement(f.icon, { sx: { color: colors.accent } }) : null}
-                    <Typography sx={{ fontWeight: 600 }}>{f.label}</Typography>
+                    <Typography sx={{ fontWeight: 600 }}>{t(`tours.features.${f.label.toLowerCase().replace(/[^a-z0-9]/g, '_')}`, f.label)}</Typography>
                   </Stack>
                 </Box>
               ))}
@@ -297,15 +335,15 @@ export default function TourDetailPage() {
 
             {/* Itinerary timeline */}
             <Typography sx={{ fontFamily: fonts.headings, letterSpacing: 1, textTransform: 'uppercase', fontSize: 14, color: colors.accent, mb: 1.5 }}>{t('tours.sections.itinerary', 'Itinerary')}</Typography>
-            <Box sx={{ position: 'relative', pl: { xs: 1, md: 2 }, borderLeft: { xs: '2px solid #eee', md: '2px solid #eee' }, mb: 4 }}>
+            <Box sx={{ position: 'relative', borderLeft: '2px solid #eee', mb: 4 }}>
               {itinerary.map((step, idx) => {
                 const { ref, shown } = useReveal()
                 return (
-                  <Box key={idx} ref={ref} sx={{ position: 'relative', ml: { xs: 1, md: 2 }, py: 2, opacity: shown ? 1 : 0, transform: shown ? 'none' : 'translateY(12px)', transition: 'all .45s ease', transitionDelay: `${idx * 60}ms` }}>
-                    <Box sx={{ position: 'absolute', left: { xs: -22, md: -28 }, top: 14, width: 28, height: 28, borderRadius: '50%', background: alpha(colors.accent, 0.12), border: `2px solid ${alpha(colors.accent, 0.4)}`, display: 'grid', placeItems: 'center' }}>
+                  <Box key={idx} ref={ref} sx={{ position: 'relative', pl: { xs: 4, md: 5 }, py: 2, opacity: shown ? 1 : 0, transform: shown ? 'none' : 'translateY(12px)', transition: 'all .45s ease', transitionDelay: `${idx * 60}ms` }}>
+                    <Box sx={{ position: 'absolute', left: -15, top: 14, width: 28, height: 28, borderRadius: '50%', background: '#fff', border: `2px solid ${alpha(colors.accent, 0.6)}`, display: 'grid', placeItems: 'center', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
                       {step.icon ? React.createElement(step.icon, { sx: { fontSize: 16, color: colors.accent } }) : null}
                     </Box>
-                    <Typography sx={{ fontWeight: 700 }}>{step.title}</Typography>
+                    <Typography sx={{ fontWeight: 700, mb: 0.5 }}>{step.title}</Typography>
                     <Typography sx={{ color: 'text.secondary' }}>{step.desc}</Typography>
                   </Box>
                 )
@@ -348,9 +386,17 @@ export default function TourDetailPage() {
                     tour.id === 'ar-gran-aventura' ? [ { label: 'Dry bag rental', icon: DirectionsBoatIcon }, { label: 'Photo/video pack', icon: CameraAltIcon } ] :
                     tour.id === 'py-shopping-cde' ? [ { label: 'Personal shopper', icon: ShoppingBagIcon }, { label: 'Currency exchange stop', icon: ShoppingBagIcon } ] :
                     tour.id === 'py-saltos-monday' ? [ { label: 'Zipline park nearby', icon: ParkIcon }, { label: 'Drone footage (where allowed)', icon: CameraAltIcon } ] : []
-                  return [...extras, ...common].map((a, i) => (
-                    <Chip key={i} icon={a.icon ? React.createElement(a.icon) : <AddCircleOutlineIcon />} label={a.label} variant="outlined" sx={{ borderColor: alpha('#111', 0.18) }} />
-                  ))
+                  const addonKeyMap = {
+                    'train to devil’s throat': 'train_to_devils_throat',
+                    'drone footage (where allowed)': 'drone_footage'
+                  }
+                  return [...extras, ...common].map((a, i) => {
+                    const cleanLabel = a.label.toLowerCase()
+                    const addonKey = addonKeyMap[cleanLabel] || cleanLabel.replace(/[^a-z0-9]/g, '_')
+                    return (
+                      <Chip key={i} icon={a.icon ? React.createElement(a.icon) : <AddCircleOutlineIcon />} label={t(`tours.addons.${addonKey}`, a.label)} variant="outlined" sx={{ borderColor: alpha('#111', 0.18) }} />
+                    )
+                  })
                 })()}
               </Stack>
             </Box>
@@ -380,7 +426,11 @@ export default function TourDetailPage() {
                   </Stack>
                 )}
               </Stack>
-              <Button variant="contained" fullWidth onClick={() => setCalOpen(true)} sx={{ mt: 2, bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>{t('tours.cta.plan')}</Button>
+              <PlanTripButton
+                onClick={() => setCalOpen(true)}
+              >
+                {t('tours.cta.plan')}
+              </PlanTripButton>
               <Button component={RouterLink} to="/tours" fullWidth sx={{ mt: 1 }}>{t('tours.cta.backToList')}</Button>
             </Box>
           </Grid>
@@ -392,7 +442,12 @@ export default function TourDetailPage() {
       <CalendlyDialog open={calOpen} onClose={() => setCalOpen(false)} url={CALENDLY_URL} locale={i18n.language} />
       {/* Sticky CTA on mobile for better conversion */}
       <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 10, p: 1.25, background: 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.9) 40%, #fff 100%)', borderTop: '1px solid #eee' }}>
-        <Button fullWidth variant="contained" onClick={() => setCalOpen(true)} sx={{ bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>{t('tours.cta.plan')}</Button>
+        <PlanTripButton
+          mobile
+          onClick={() => setCalOpen(true)}
+        >
+          {t('tours.cta.plan')}
+        </PlanTripButton>
       </Box>
     </ThemeProvider>
   )

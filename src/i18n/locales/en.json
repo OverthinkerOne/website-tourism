@@ -32,8 +32,101 @@
       "borderFees": "Border fees, if applicable"
     },
     "borderNotice": "Border crossing: bring passport/ID as required. We help with documents and timing.",
-    "notFound": "We couldn’t find this tour."
-    ,
+    "notFound": "We couldn’t find this tour.",
+    "meta_labels": {
+      "duration": "Duration",
+      "level": "Level",
+      "season": "Best season",
+      "family": "Family"
+    },
+    "meta_values": {
+      "half_day": "Half-day",
+      "evening": "Evening",
+      "full_day": "Full-day",
+      "easy": "Easy",
+      "moderate": "Moderate",
+      "active": "Active",
+      "all_year": "All year",
+      "yes": "Yes",
+      "teens_": "Teens+"
+    },
+    "features": {
+      "panoramic_viewpoints": "Panoramic viewpoints",
+      "national_park_access": "National Park access",
+      "private_transport": "Private transport",
+      "hotel_pickup": "Hotel pickup",
+      "cafe_stops_available": "Cafe stops available",
+      "golden_hour_friendly": "Golden hour friendly",
+      "night_light_show": "Night light show",
+      "photo_stops": "Photo stops",
+      "guide_assistance": "Guide assistance",
+      "optional_dinner": "Optional dinner",
+      "flexible_timing": "Flexible timing",
+      "upper___lower_circuits": "Upper & lower circuits",
+      "border_crossing": "Border crossing",
+      "devil_s_throat_walkway": "Devil’s Throat walkway",
+      "iconic_photo_angles": "Iconic photo angles",
+      "food_court_available": "Food court available",
+      "speedboat_near_falls": "Speedboat near falls",
+      "jungle_4x4_ride": "Jungle 4x4 ride",
+      "splash_proof_photos": "Splash-proof photos",
+      "snack_options": "Snack options",
+      "curated_shopping": "Curated shopping",
+      "trusted_stores_guidance": "Trusted stores guidance",
+      "city_viewpoints": "City viewpoints",
+      "coffee_breaks": "Coffee breaks",
+      "scenic_viewpoints": "Scenic viewpoints",
+      "local_snacks": "Local snacks",
+      "flexible_schedule": "Flexible schedule"
+    },
+    "itinerary": {
+      "hotel_pickup": {
+        "title": "Hotel pickup",
+        "desc": "Private pickup at your accommodation with our local guide."
+      },
+      "border_crossing": {
+        "title": "Border crossing",
+        "desc": "Assistance with documents and smooth crossing to the destination country."
+      },
+      "itaipu_by_night": {
+        "title": "Itaipu by night",
+        "desc": "Enjoy the illuminated dam with narrated highlights and photo stops."
+      },
+      "gran_aventura_boat": {
+        "title": "Gran Aventura boat",
+        "desc": "Jungle 4x4 + speedboat approaching the falls for a thrilling splash."
+      },
+      "national_park_trails": {
+        "title": "National Park trails",
+        "desc": "Walk boardwalks and platforms to the best viewpoints, including Devil’s Throat (when available)."
+      },
+      "photo_moments": {
+        "title": "Photo moments",
+        "desc": "Guided stops at iconic angles and hidden vantage points."
+      },
+      "breaks_snacks": {
+        "title": "Breaks & snacks",
+        "desc": "Time for restroom, coffee, and local bites as desired."
+      },
+      "return_transfer": {
+        "title": "Return transfer",
+        "desc": "Drop-off at your hotel or preferred address."
+      }
+    },
+    "addons": {
+      "professional_photo_session": "Professional photo session",
+      "flexible_start_time": "Flexible start time",
+      "parque_das_aves": "Parque das Aves",
+      "helicopter_flight": "Helicopter flight",
+      "train_to_devils_throat": "Train to Devil’s Throat",
+      "rain_poncho_kit": "Rain poncho kit",
+      "dry_bag_rental": "Dry bag rental",
+      "photo_video_pack": "Photo/video pack",
+      "personal_shopper": "Personal shopper",
+      "currency_exchange_stop": "Currency exchange stop",
+      "zipline_park_nearby": "Zipline park nearby",
+      "drone_footage": "Drone footage (where allowed)"
+    },
     "details": {
       "br-iguacu-br": {
         "short": "Panoramic views of the Iguazu Falls from Brazil.",
@@ -205,6 +298,15 @@
       "services": "Services & amenities",
       "tips": "Tips",
       "info": "Information"
+    },
+    "labels": {
+      "hours": "Hours: {{value}}",
+      "rating": "Rating: {{value}}",
+      "from_person": "From: {{price}} / person",
+      "from_per_person": "From {{price}} per person",
+      "website": "Website",
+      "local_cuisine": "Local cuisine",
+      "check": "Check"
     }
   },
   "seo": {

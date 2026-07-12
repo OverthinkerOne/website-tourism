@@ -1,6 +1,10 @@
 // List of gallery media pulled from public/images/gallery
 // type: 'image' | 'video'
 export const galleryMedia = [
+  { src: '/images/gallery/user_gallery_1.jpg', type: 'image' },
+  { src: '/images/gallery/user_gallery_2.jpg', type: 'image' },
+  { src: '/images/gallery/user_gallery_3.jpg', type: 'image' },
+  { src: '/images/gallery/user_gallery_4.jpg', type: 'image' },
   { src: '/images/gallery/SaveClip.App_419075554_200568063077869_408598607113179673_n.jpg', type: 'image' },
   { src: '/images/gallery/SaveClip.App_419090533_687724553442877_4463961815592355842_n.jpg', type: 'image' },
   { src: '/images/gallery/SaveClip.App_419248218_7477442825633876_5195603226469067472_n.jpg', type: 'image' },

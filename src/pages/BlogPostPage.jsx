@@ -14,6 +14,7 @@ import Stack from '@mui/material/Stack'
 import Divider from '@mui/material/Divider'
 import { alpha } from '@mui/material/styles'
 import { fonts, colors } from '../theme/tokens.js'
+import { PlanTripButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import { findImage } from '../lib/imageProvider.js'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
@@ -214,7 +215,11 @@ export default function BlogPostPage() {
             <Box sx={{ p: 2.5, borderRadius: 2, border: '1px solid #eee', bgcolor: '#fff', boxShadow: '0 6px 18px rgba(0,0,0,0.06)', position: { md: 'sticky' }, top: { md: 24 } }}>
               <Typography sx={{ fontWeight: 700, mb: 1.5 }}>{t('blog.sidebar.title')}</Typography>
               <Typography sx={{ color: 'text.secondary' }}>{t('blog.sidebar.desc')}</Typography>
-              <Button variant="contained" fullWidth onClick={() => setCalOpen(true)} sx={{ mt: 2, bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>{t('tours.cta.plan')}</Button>
+              <PlanTripButton
+                onClick={() => setCalOpen(true)}
+              >
+                {t('tours.cta.plan')}
+              </PlanTripButton>
               <Button component={RouterLink} to="/blog" fullWidth sx={{ mt: 1 }}>{t('blog.cta.backToList')}</Button>
 
               {/* Related posts */}

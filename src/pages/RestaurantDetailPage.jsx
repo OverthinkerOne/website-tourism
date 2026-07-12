@@ -14,6 +14,7 @@ import Chip from '@mui/material/Chip'
 import Stack from '@mui/material/Stack'
 import { alpha } from '@mui/material/styles'
 import { fonts, colors } from '../theme/tokens.js'
+import { PlanTripButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import { findImage } from '../lib/imageProvider.js'
 import Seo from '../components/Seo.jsx'
@@ -129,11 +130,11 @@ export default function RestaurantDetailPage() {
 
             {/* Quick chips */}
             <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mb: 3 }}>
-              <Chip icon={<RestaurantMenuIcon />} label={cuisine.join(' • ') || 'Local cuisine'} sx={{ bgcolor: alpha('#111', 0.04), borderColor: alpha('#111', 0.12), border: '1px solid' }} />
-              <Chip icon={<AccessTimeIcon />} label={`Hours: ${openingHours || 'Check'}`} sx={{ bgcolor: alpha('#0ea5e9', 0.08), borderColor: alpha('#0ea5e9', 0.2), border: '1px solid' }} />
-              <Chip icon={<StarIcon />} label={`Rating: ${rating ?? '—'}`} sx={{ bgcolor: alpha('#22c55e', 0.08), borderColor: alpha('#22c55e', 0.2), border: '1px solid' }} />
+              <Chip icon={<RestaurantMenuIcon />} label={cuisine.join(' • ') || t('gastronomy.labels.local_cuisine', 'Local cuisine')} sx={{ bgcolor: alpha('#111', 0.04), borderColor: alpha('#111', 0.12), border: '1px solid' }} />
+              <Chip icon={<AccessTimeIcon />} label={t('gastronomy.labels.hours', 'Hours: {{value}}', { value: openingHours || t('gastronomy.labels.check', 'Check') })} sx={{ bgcolor: alpha('#0ea5e9', 0.08), borderColor: alpha('#0ea5e9', 0.2), border: '1px solid' }} />
+              <Chip icon={<StarIcon />} label={t('gastronomy.labels.rating', 'Rating: {{value}}', { value: rating ?? '—' })} sx={{ bgcolor: alpha('#22c55e', 0.08), borderColor: alpha('#22c55e', 0.2), border: '1px solid' }} />
               {price ? (
-                <Chip icon={<MonetizationOnIcon />} label={`From: ${price} / person`} sx={{ bgcolor: alpha('#FF7300', 0.08), borderColor: alpha('#FF7300', 0.2), border: '1px solid', fontWeight: 600 }} />
+                <Chip icon={<MonetizationOnIcon />} label={t('gastronomy.labels.from_person', 'From: {{price}} / person', { price })} sx={{ bgcolor: alpha('#FF7300', 0.08), borderColor: alpha('#FF7300', 0.2), border: '1px solid', fontWeight: 600 }} />
               ) : null}
             </Stack>
 
@@ -186,7 +187,7 @@ export default function RestaurantDetailPage() {
                 {price ? (
                   <Stack direction="row" spacing={1.25} alignItems="center">
                     <MonetizationOnIcon sx={{ color: colors.accent }} />
-                    <Typography>{`From ${price} per person`}</Typography>
+                    <Typography>{t('gastronomy.labels.from_per_person', 'From {{price}} per person', { price })}</Typography>
                   </Stack>
                 ) : null}
                 {address && (
@@ -211,7 +212,7 @@ export default function RestaurantDetailPage() {
               <Divider sx={{ my: 2 }} />
               <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
                 {website && (
-                  <Button href={website} target="_blank" rel="noopener" variant="outlined" startIcon={<PublicIcon />}>Site</Button>
+                  <Button href={website} target="_blank" rel="noopener" variant="outlined" startIcon={<PublicIcon />}>{t('gastronomy.labels.website', 'Website')}</Button>
                 )}
                 {instagram && (
                   <Button href={instagram} target="_blank" rel="noopener" variant="outlined" startIcon={<InstagramIcon />}>Instagram</Button>
@@ -232,7 +233,11 @@ export default function RestaurantDetailPage() {
                   />
                 </Box>
               ) : null}
-              <Button variant="contained" fullWidth onClick={() => setCalOpen(true)} sx={{ mt: 2, bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>{t('tours.cta.plan', 'Plan your trip')}</Button>
+              <PlanTripButton
+                onClick={() => setCalOpen(true)}
+              >
+                {t('tours.cta.plan', 'Plan your trip')}
+              </PlanTripButton>
               <Button component={RouterLink} to="/gastronomy" fullWidth sx={{ mt: 2 }}>{t('gastronomy.cta.backToList', 'Back to list')}</Button>
             </Box>
           </Grid>
@@ -244,7 +249,12 @@ export default function RestaurantDetailPage() {
       <CalendlyDialog open={calOpen} onClose={() => setCalOpen(false)} url={CALENDLY_URL} locale={i18n.language} />
       {/* Sticky CTA on mobile for better conversion */}
       <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 10, p: 1.25, background: 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.9) 40%, #fff 100%)', borderTop: '1px solid #eee' }}>
-        <Button fullWidth variant="contained" onClick={() => setCalOpen(true)} sx={{ bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>{t('tours.cta.plan', 'Plan your trip')}</Button>
+        <PlanTripButton
+          mobile
+          onClick={() => setCalOpen(true)}
+        >
+          {t('tours.cta.plan', 'Plan your trip')}
+        </PlanTripButton>
       </Box>
     </ThemeProvider>
   )

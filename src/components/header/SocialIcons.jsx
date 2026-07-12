@@ -4,9 +4,9 @@ import Stack from '@mui/material/Stack'
 import { sizes, colors } from '../../theme/tokens.js'
 
 export default function SocialIcons({ variant = 'desktop', onItemClick, sx, color = colors.textPrimary }) {
-  // Show only networks with valid links
   const names = ['facebook', 'instagram', 'whatsapp']
   const isMenu = variant === 'menu'
+
   const hrefFor = (name) => {
     if (name === 'facebook') return 'https://www.facebook.com/profile.php?id=61582651620609'
     if (name === 'instagram') return 'https://www.instagram.com/paulo.iguassu/'
@@ -15,104 +15,125 @@ export default function SocialIcons({ variant = 'desktop', onItemClick, sx, colo
   }
 
   return (
-    <Stack direction="row" alignItems="center" spacing={isMenu ? 2 : 1.5} sx={sx}>
-      {names.map((name) => (
-        name === 'get-your-guide' ? (
-          isMenu ? (
+    <Stack
+      component="ul"
+      direction="row"
+      alignItems="center"
+      spacing={0}
+      sx={{
+        listStyle: 'none',
+        p: 0,
+        m: 0,
+        display: 'inline-flex',
+        ...sx
+      }}
+    >
+      {names.map((name) => {
+        const brandColor =
+          name === 'facebook'
+            ? '#1877f2'
+            : name === 'instagram'
+            ? '#e4405f'
+            : '#25d366' // WhatsApp green color
+
+        const tooltipText = name.charAt(0).toUpperCase() + name.slice(1)
+
+        return (
+          <Box
+            key={name}
+            component="li"
+            sx={{ display: 'inline-block', p: 0, m: 0 }}
+          >
             <Box
-              key={name}
               component="a"
-              href="#"
+              href={hrefFor(name)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={name}
               onClick={onItemClick}
-              sx={{ display: 'inline-block', lineHeight: 0 }}
+              sx={{
+                position: 'relative',
+                background: 'transparent',
+                borderRadius: '50%',
+                mx: isMenu ? '8px' : '4px',
+                width: isMenu ? '40px' : '36px',
+                height: isMenu ? '40px' : '36px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                boxShadow: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                textDecoration: 'none',
+                '&:hover': {
+                  background: brandColor,
+                  boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
+                  transform: 'translateY(-2px)',
+                  '& .tooltip': {
+                    top: '-42px',
+                    opacity: 1,
+                    visibility: 'visible',
+                  },
+                  '& .icon-mask': {
+                    bgcolor: '#ffffff',
+                  }
+                }
+              }}
             >
+              {/* Tooltip (Only on desktop header/footer to avoid mobile clutter) */}
+              {!isMenu && (
+                <Box
+                  className="tooltip"
+                  sx={{
+                    position: 'absolute',
+                    top: 0,
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    background: brandColor,
+                    color: '#ffffff',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.08)',
+                    opacity: 0,
+                    visibility: 'hidden',
+                    pointerEvents: 'none',
+                    transition: 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                    whiteSpace: 'nowrap',
+                    zIndex: 10,
+                    // Triangle pointer
+                    '&::before': {
+                      position: 'absolute',
+                      content: '""',
+                      height: '6px',
+                      width: '6px',
+                      background: brandColor,
+                      bottom: '-3px',
+                      left: '50%',
+                      transform: 'translate(-50%) rotate(45deg)',
+                      transition: 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                    }
+                  }}
+                >
+                  {tooltipText}
+                </Box>
+              )}
+
+              {/* Icon mask */}
               <Box
-                component="img"
-                src={`/images/icons/${name}.svg`}
-                alt={name}
-                sx={{ height: sizes.iconSize * 2.2, width: 'auto', opacity: 0.95 }}
+                className="icon-mask"
+                sx={{
+                  width: isMenu ? '20px' : '18px',
+                  height: isMenu ? '20px' : '18px',
+                  bgcolor: color,
+                  mask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
+                  WebkitMask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
+                  transition: 'all 0.3s ease-in-out',
+                }}
               />
             </Box>
-          ) : (
-            <Box
-              key={name}
-              component="img"
-              src={`/images/icons/${name}.svg`}
-              alt={name}
-              sx={{
-                height: sizes.iconSize * 3,
-                width: 'auto',
-                opacity: 0.95,
-                cursor: 'pointer',
-                transition: 'transform .2s ease, filter .2s ease, opacity .2s ease',
-                willChange: 'transform, filter',
-                '&:hover': {
-                  transform: 'translateY(-1px) scale(1.06)',
-                  opacity: 1,
-                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.12))',
-                },
-                '&:active': { transform: 'translateY(0) scale(0.98)' },
-              }}
-            />
-          )
-        ) : (
-          isMenu ? (
-            <Box
-              key={name}
-              component="a"
-              href={hrefFor(name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={name}
-              onClick={onItemClick}
-              sx={{
-                width: sizes.iconSize * 1.4,
-                height: sizes.iconSize * 1.4,
-                display: 'inline-block',
-                backgroundColor: color,
-                mask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
-                WebkitMask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
-                transition: 'background-color .2s ease',
-                '&:hover': { backgroundColor: colors.accent },
-              }}
-            />
-          ) : (
-            <Box
-              key={name}
-              component="a"
-              href={hrefFor(name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              role="img"
-              aria-label={name}
-              sx={{
-                display: 'inline-block',
-                width: sizes.iconSize,
-                height: sizes.iconSize,
-                backgroundColor: color,
-                mask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
-                WebkitMask: `url(/images/icons/${name}.svg) no-repeat center / contain`,
-                opacity: 0.95,
-                cursor: 'pointer',
-                transition: 'transform .2s ease, filter .2s ease, opacity .2s ease, background-color .2s ease',
-                willChange: 'transform, filter, background-color',
-                '&:hover': {
-                  transform: 'translateY(-1px) scale(1.06)',
-                  opacity: 1,
-                  backgroundColor: colors.accent,
-                  filter: `drop-shadow(0 2px 4px rgba(0,0,0,0.12)) drop-shadow(0 0 6px ${colors.accentGlow2})`,
-                },
-                '&:active': { transform: 'translateY(0) scale(0.98)' },
-                '&:focus-visible': {
-                  outline: 'none',
-                  backgroundColor: colors.accent,
-                  filter: `drop-shadow(0 0 0 rgba(0,0,0,0)) drop-shadow(0 0 6px ${colors.accentGlow2})`,
-                },
-              }}
-            />
-          )
+          </Box>
         )
-      ))}
+      })}
     </Stack>
   )
 }

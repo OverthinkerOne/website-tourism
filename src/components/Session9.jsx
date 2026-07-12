@@ -62,7 +62,8 @@ function TestimonialCard({ name, country, title, text, tags, rating, date, verif
         '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 16px 40px rgba(0,0,0,0.16)' },
         display: 'flex',
         flexDirection: 'column',
-        height: '100%'
+        height: '100%',
+        pb: 2.5
       }}
     >
       {/* Header */}
@@ -148,12 +149,14 @@ export default function Session9() {
     return () => window.removeEventListener('resize', onResize)
   }, [recenter])
 
+  const isHoveredRef = React.useRef(false)
+
   React.useEffect(() => {
     let rafId
     const step = () => {
       const vp = viewportRef.current
       if (!vp) return
-      if (!isDragging) vp.scrollLeft += 0.6
+      if (!isDragging && !isHoveredRef.current) vp.scrollLeft += 0.6
       const unitWidth = vp.scrollWidth / 3
       if (vp.scrollLeft >= unitWidth * 2) vp.scrollLeft -= unitWidth
       if (vp.scrollLeft <= 0) vp.scrollLeft += unitWidth
@@ -173,8 +176,8 @@ export default function Session9() {
   // Drag disabled
 
   return (
-    <Box component="section" sx={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', bgcolor: '#fff' }}>
-      <Box sx={{ position: 'relative', zIndex: 1, width: 'min(1300px, 96vw)', mx: 'auto', py: { xs: 4, md: 6 }, color: '#000', height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Box component="section" sx={{ position: 'relative', width: '100%', py: { xs: 6, md: 10 }, overflow: 'hidden', bgcolor: '#fff' }}>
+      <Box sx={{ position: 'relative', zIndex: 1, width: 'min(1300px, 96vw)', mx: 'auto', color: '#000', display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ textAlign: 'center', maxWidth: 1000, mx: 'auto', px: 2 }}>
           <Typography component="h2" sx={{ m: 0, fontFamily: fonts.headings, fontWeight: 400, fontSize: { xs: 30, md: 44 }, lineHeight: 1.08, textTransform: 'uppercase', color: '#000' }}>
             {t('session9.title', 'Real and Independent Traveller Feedback')}
@@ -185,13 +188,18 @@ export default function Session9() {
         </Box>
 
         {/* Carousel */}
-        <Box sx={{ mt: { xs: 2, md: 3 }, position: 'relative', flexGrow: 1, minHeight: 0, display: 'flex' }}>
+        <Box sx={{ mt: { xs: 4, md: 6 }, position: 'relative', display: 'flex' }}>
           {/* Edge fade */}
           <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 4%, rgba(255,255,255,0) 96%, rgba(255,255,255,1) 100%)' }} />
 
           {/* Viewport */}
-          <Box ref={viewportRef} sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: 'default', touchAction: 'pan-y', height: '100%', width: '100%' }}>
-            <Box sx={{ display: 'flex', alignItems: 'stretch', gap: { xs: 2.5, md: 3 }, px: { xs: 1.5, md: 2 }, height: '100%' }}>
+          <Box
+            ref={viewportRef}
+            onMouseEnter={() => { isHoveredRef.current = true }}
+            onMouseLeave={() => { isHoveredRef.current = false }}
+            sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: 'default', touchAction: 'pan-y', width: '100%', py: 2 }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'stretch', gap: { xs: 2.5, md: 3 }, px: { xs: 1.5, md: 2 } }}>
               {items.map((meta, idx) => {
                 const verifiedLabel = t('session9.verified', 'Verified')
                 const isDyn = meta && Object.prototype.hasOwnProperty.call(meta, 'name') // dynamic entries have concrete fields
@@ -203,7 +211,7 @@ export default function Session9() {
                 const rating = isDyn ? (Number(meta.rating) || 5) : Number(t(`session9.items.${meta.id}.rating`, '5'))
                 const date = isDyn ? (meta.date || '') : t(`session9.items.${meta.id}.date`, '')
                 return (
-                  <Box key={(meta.id || 't') + '-' + idx} sx={{ height: '100%' }}>
+                  <Box key={(meta.id || 't') + '-' + idx} sx={{ display: 'flex' }}>
                     <TestimonialCard
                       name={name}
                       country={country}

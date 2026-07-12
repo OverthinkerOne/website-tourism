@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import { fonts, colors } from '../theme/tokens.js'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { CardCtaButton } from './GuaraButton.jsx'
 import LandscapeIcon from '@mui/icons-material/Landscape'
 import NightlifeIcon from '@mui/icons-material/Nightlife'
 import LocalMallIcon from '@mui/icons-material/LocalMall'
@@ -60,7 +61,7 @@ function TourCard({ tour }) {
         <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0))' }} />
         <Box sx={{ position: 'absolute', top: 8, left: 8, bgcolor: 'rgba(255,255,255,0.92)', borderRadius: 1.5, px: 1, py: 0.5, display: 'inline-flex', alignItems: 'center', gap: 0.75 }}>
           {Icon ? <Icon sx={{ fontSize: 18, color: colors.accent }} /> : <LandscapeIcon sx={{ fontSize: 18, color: colors.accent }} />}
-          <Typography sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 700, fontSize: 12, color: '#111' }}>Tour</Typography>
+          <Typography sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 700, fontSize: 12, color: '#111' }}>{t('session6.tourTag', 'Tour')}</Typography>
         </Box>
       </Box>
 
@@ -94,23 +95,12 @@ function TourCard({ tour }) {
       </Box>
 
       {/* 4) Button */}
-      <Box sx={{ px: 2, pb: 2 }}>
-        <Button
-          variant="contained"
-          disableElevation
+      <Box sx={{ px: 2, pb: 2, display: 'flex', justifyContent: 'center' }}>
+        <CardCtaButton
           onClick={(e) => { e.preventDefault(); navigate(`/tours/${id}`) }}
-          sx={{
-            width: '100%',
-            bgcolor: colors.accent,
-            color: '#fff',
-            fontFamily: 'Kumbh Sans, system-ui, sans-serif',
-            fontWeight: 700,
-            textTransform: 'none',
-            '&:hover': { bgcolor: '#ff7f14' },
-          }}
         >
           {t('session6.viewDetails')}
-        </Button>
+        </CardCtaButton>
       </Box>
     </Box>
   )
@@ -170,13 +160,15 @@ export default function Session6() {
     return () => cancelAnimationFrame(id)
   }, [])
 
+  const isHoveredRef = React.useRef(false)
+
   // Auto-scroll when not dragging
   React.useEffect(() => {
     let rafId
     const step = () => {
       const vp = viewportRef.current
       if (!vp) return
-      if (!isDragging) vp.scrollLeft += 0.8
+      if (!isDragging && !isHoveredRef.current) vp.scrollLeft += 0.8
       const unitWidth = vp.scrollWidth / 3
       if (vp.scrollLeft >= unitWidth * 2) vp.scrollLeft -= unitWidth
       if (vp.scrollLeft <= 0) vp.scrollLeft += unitWidth
@@ -223,7 +215,12 @@ export default function Session6() {
           />
 
           {/* Carousel viewport */}
-          <Box ref={viewportRef} sx={{ overflow: 'hidden', cursor: 'default' }}>
+          <Box
+            ref={viewportRef}
+            onMouseEnter={() => { isHoveredRef.current = true }}
+            onMouseLeave={() => { isHoveredRef.current = false }}
+            sx={{ overflow: 'hidden', cursor: 'default' }}
+          >
             <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 2.5, md: 3 }, px: { xs: 1.5, md: 2 }, height: '100%' }}>
               {items.map((tour, idx) => {
                 const override = getTourOverride(tour.id) || tour._override

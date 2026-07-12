@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography'
 import { useTranslation } from 'react-i18next'
 import { sizes, colors, fonts } from '../theme/tokens.js'
 import SocialIcons from './header/SocialIcons.jsx'
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -73,12 +75,21 @@ export default function Footer() {
             <Typography component="h3" sx={{ fontFamily: fonts.headings, fontSize: 22, letterSpacing: 1, textTransform: 'uppercase', color: '#000' }}>
               {t('footer.contact')}
             </Typography>
-            <Stack spacing={1}>
+            <Stack spacing={1.5}>
               <Typography variant="body2" sx={{ fontFamily: 'Kumbh Sans, system-ui, sans-serif', color: 'rgba(0,0,0,0.85)' }}>{t('footer.address')}</Typography>
-              <Stack spacing={0.5}>
-                <Typography component="a" href="mailto:hello@guaratravel.com" sx={linkSx}>{t('footer.emailLabel')}: hello@guaratravel.com</Typography>
-                <Typography component="a" href="tel:+5545999999999" sx={linkSx}>{t('footer.phoneLabel')}: +55 45 99999-9999</Typography>
-                <Typography component="a" href="https://wa.me/5545991120912" target="_blank" rel="noopener noreferrer" sx={linkSx}>WhatsApp</Typography>
+              <Stack spacing={1.25}>
+                <Stack direction="row" spacing={1.25} alignItems="center">
+                  <LocalPhoneIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
+                  <Typography component="a" href="tel:+5545991120912" sx={linkSx}>
+                    🇧🇷 +55 (45) 9 9112-0912
+                  </Typography>
+                </Stack>
+                <Stack direction="row" spacing={1.25} alignItems="center">
+                  <WhatsAppIcon sx={{ fontSize: 18, color: '#25D366' }} />
+                  <Typography component="a" href="https://wa.me/5545991120912" target="_blank" rel="noopener noreferrer" sx={linkSx}>
+                    WhatsApp
+                  </Typography>
+                </Stack>
               </Stack>
             </Stack>
           </Stack>

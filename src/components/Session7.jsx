@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { useNavigate } from 'react-router-dom'
 import { getAllBlogPosts } from '../lib/content.js'
+import { CardCtaButton } from './GuaraButton.jsx'
 
 const iconFor = (id) => {
   switch (id) {
@@ -84,10 +85,12 @@ function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel, id }) 
       </Box>
 
       {/* Button (no navigation yet) */}
-      <Box sx={{ px: 2, pb: 1.25, mt: 'auto' }}>
-        <Button variant="contained" disableElevation onClick={() => navigate(`/blog/${id}`)} sx={{ width: '100%', bgcolor: colors.accent, color: '#fff', fontFamily: 'Kumbh Sans, system-ui, sans-serif', fontWeight: 700, textTransform: 'none', '&:hover': { bgcolor: '#ff7f14' } }}>
+      <Box sx={{ px: 2, pb: 1.25, mt: 'auto', display: 'flex', justifyContent: 'center' }}>
+        <CardCtaButton
+          onClick={() => navigate(`/blog/${id}`)}
+        >
           {readMoreLabel}
-        </Button>
+        </CardCtaButton>
       </Box>
     </Box>
   )
@@ -145,12 +148,14 @@ export default function Session7() {
     return () => window.removeEventListener('resize', handler)
   }, [])
 
+  const isHoveredRef = React.useRef(false)
+
   React.useEffect(() => {
     let rafId
     const step = () => {
       const vp = viewportRef.current
       if (!vp) return
-      if (!isDragging) vp.scrollLeft += 0.7
+      if (!isDragging && !isHoveredRef.current) vp.scrollLeft += 0.7
       const unitWidth = vp.scrollWidth / 3
       if (vp.scrollLeft >= unitWidth * 2) vp.scrollLeft -= unitWidth
       if (vp.scrollLeft <= 0) vp.scrollLeft += unitWidth
@@ -193,7 +198,12 @@ export default function Session7() {
             <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 4%, rgba(255,255,255,0) 96%, rgba(255,255,255,1) 100%)' }} />
 
           {/* Viewport */}
-          <Box ref={viewportRef} sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: 'default', touchAction: 'pan-y', width: '100%' }}>
+          <Box
+            ref={viewportRef}
+            onMouseEnter={() => { isHoveredRef.current = true }}
+            onMouseLeave={() => { isHoveredRef.current = false }}
+            sx={{ overflowX: 'hidden', overflowY: 'visible', cursor: 'default', touchAction: 'pan-y', width: '100%' }}
+          >
             <Box sx={{ display: 'flex', alignItems: 'stretch', gap: { xs: 2.5, md: 3 }, px: { xs: 1.5, md: 2 } }}>
               {items.map((post, idx) => {
                 const override = post._override

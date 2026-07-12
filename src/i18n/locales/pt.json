@@ -22,6 +22,15 @@
       "services": "Serviços e comodidades",
       "tips": "Dicas",
       "info": "Informação"
+    },
+    "labels": {
+      "hours": "Funcionamento: {{value}}",
+      "rating": "Avaliação: {{value}}",
+      "from_person": "A partir de: {{price}} / pessoa",
+      "from_per_person": "A partir de {{price}} por pessoa",
+      "website": "Site",
+      "local_cuisine": "Cozinha local",
+      "check": "Consultar"
     }
   },
   "seo": {
@@ -68,6 +77,100 @@
     },
     "borderNotice": "Travessia de fronteira: leve passaporte/RG conforme exigido. Ajudamos com documentos e horários.",
     "notFound": "Não encontramos este passeio.",
+    "meta_labels": {
+      "duration": "Duração",
+      "level": "Dificuldade",
+      "season": "Melhor época",
+      "family": "Família"
+    },
+    "meta_values": {
+      "half_day": "Meio dia",
+      "evening": "Noturno",
+      "full_day": "Dia inteiro",
+      "easy": "Fácil",
+      "moderate": "Moderado",
+      "active": "Ativo",
+      "all_year": "Ano todo",
+      "yes": "Sim",
+      "teens_": "Adolescentes+"
+    },
+    "features": {
+      "panoramic_viewpoints": "Mirantes panorâmicos",
+      "national_park_access": "Acesso ao Parque Nacional",
+      "private_transport": "Transporte privativo",
+      "hotel_pickup": "Pickup no hotel",
+      "cafe_stops_available": "Opção de paradas para café",
+      "golden_hour_friendly": "Ideal no pôr/nascer do sol",
+      "night_light_show": "Show de luzes noturno",
+      "photo_stops": "Paradas para fotos",
+      "guide_assistance": "Acompanhamento de guia",
+      "optional_dinner": "Jantar opcional",
+      "flexible_timing": "Horários flexíveis",
+      "upper___lower_circuits": "Circuitos superior e inferior",
+      "border_crossing": "Travessia de fronteira",
+      "devil_s_throat_walkway": "Passarela da Garganta do Diabo",
+      "iconic_photo_angles": "Ângulos icônicos para fotos",
+      "food_court_available": "Praça de alimentação disponível",
+      "speedboat_near_falls": "Lancha próxima às quedas",
+      "jungle_4x4_ride": "Trilha 4x4 na selva",
+      "splash_proof_photos": "Fotos com capa de chuva",
+      "snack_options": "Opções de lanches",
+      "curated_shopping": "Compras curadas",
+      "trusted_stores_guidance": "Guia de lojas confiáveis",
+      "city_viewpoints": "Mirantes da cidade",
+      "coffee_breaks": "Paradas para café",
+      "scenic_viewpoints": "Pontos panorâmicos",
+      "local_snacks": "Lanches locais",
+      "flexible_schedule": "Cronograma flexível"
+    },
+    "itinerary": {
+      "hotel_pickup": {
+        "title": "Pickup no hotel",
+        "desc": "Buscamos você em seu hotel com nosso guia local em transporte privativo."
+      },
+      "border_crossing": {
+        "title": "Travessia de fronteira",
+        "desc": "Assistência com documentos e trâmite ágil na aduana do país de destino."
+      },
+      "itaipu_by_night": {
+        "title": "Itaipu iluminada",
+        "desc": "Aproveite a usina iluminada com explicações históricas e paradas para fotos."
+      },
+      "gran_aventura_boat": {
+        "title": "Barco Gran Aventura",
+        "desc": "Trecho 4x4 na selva + lancha rápida se aproximando das quedas para um banho inesquecível."
+      },
+      "national_park_trails": {
+        "title": "Trilhas do Parque Nacional",
+        "desc": "Caminhe pelas passarelas até os melhores mirantes, incluindo a Garganta do Diabo (quando disponível)."
+      },
+      "photo_moments": {
+        "title": "Momentos fotográficos",
+        "desc": "Paradas guiadas nos melhores ângulos e mirantes menos conhecidos."
+      },
+      "breaks_snacks": {
+        "title": "Intervalo para lanche",
+        "desc": "Tempo livre para banheiro, café e experimentar delícias locais."
+      },
+      "return_transfer": {
+        "title": "Retorno ao hotel",
+        "desc": "Desembarque confortável diretamente em seu hotel ou endereço preferido."
+      }
+    },
+    "addons": {
+      "professional_photo_session": "Sessão de fotos profissional",
+      "flexible_start_time": "Horário de início flexível",
+      "parque_das_aves": "Parque das Aves",
+      "helicopter_flight": "Voo de helicóptero",
+      "train_to_devils_throat": "Trem para a Garganta do Diabo",
+      "rain_poncho_kit": "Kit com capa de chuva",
+      "dry_bag_rental": "Aluguel de bolsa estanque",
+      "photo_video_pack": "Pacote de fotos/vídeos",
+      "personal_shopper": "Personal shopper",
+      "currency_exchange_stop": "Parada para câmbio",
+      "zipline_park_nearby": "Circuito de tirolesa próximo",
+      "drone_footage": "Imagens de drone (onde permitido)"
+    },
     "details": {
       "br-iguacu-br": {
         "short": "Vistas panorâmicas das Cataratas do Iguaçu no Brasil.",

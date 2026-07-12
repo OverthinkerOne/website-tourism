@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Pagination from '@mui/material/Pagination'
 import { fonts, colors } from '../theme/tokens.js'
+import { CardCtaButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import { findImage } from '../lib/imageProvider.js'
 import { Link as RouterLink, useSearchParams } from 'react-router-dom'
@@ -80,9 +81,14 @@ export default function BlogListPage() {
                     <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.25, borderRadius: 999, bgcolor: 'rgba(255,115,0,.12)', color: colors.accent, fontWeight: 700, fontSize: 12, textTransform: 'uppercase', letterSpacing: .6 }}>{category}</Box>
                     <Typography sx={{ mt: 1.25, fontWeight: 800, fontSize: 18 }}>{title}</Typography>
                     <Typography sx={{ color: 'text.secondary', mt: 0.75 }}>{excerpt}</Typography>
-                    <Button component={RouterLink} to={`/blog/${p.id}`} variant="contained" sx={{ mt: 2, bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>
-                      {t('blog.cta.readMore')}
-                    </Button>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                      <CardCtaButton
+                        component={RouterLink}
+                        to={`/blog/${p.id}`}
+                      >
+                        {t('blog.cta.readMore')}
+                      </CardCtaButton>
+                    </Box>
                   </Box>
                 </Box>
               </Grid>

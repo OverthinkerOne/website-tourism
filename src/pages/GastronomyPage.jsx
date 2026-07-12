@@ -11,6 +11,7 @@ import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
 import Stack from '@mui/material/Stack'
 import { fonts, colors } from '../theme/tokens.js'
+import { CardCtaButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import { findImage } from '../lib/imageProvider.js'
 import { Link as RouterLink } from 'react-router-dom'
@@ -88,9 +89,14 @@ export default function GastronomyPage() {
                       ))}
                     </Stack>
                     <Typography sx={{ color: 'text.secondary', mt: 0.75 }}>{override?.short || r.short || ''}</Typography>
-                    <Button component={RouterLink} to={`/gastronomy/${r.id}`} variant="contained" sx={{ mt: 2, bgcolor: colors.accent, '&:hover': { bgcolor: '#ff7f14' } }}>
-                      {t('gastronomy.cta.viewDetails', 'View details')}
-                    </Button>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                      <CardCtaButton
+                        component={RouterLink}
+                        to={`/gastronomy/${r.id}`}
+                      >
+                        {t('gastronomy.cta.viewDetails', 'View details')}
+                      </CardCtaButton>
+                    </Box>
                   </Box>
                 </Box>
               </Grid>
