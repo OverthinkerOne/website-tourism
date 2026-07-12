@@ -17,6 +17,7 @@ export default function HeroSection() {
   const [calOpen, setCalOpen] = React.useState(false)
   const [videoError, setVideoError] = React.useState(false)
   const [videoLoaded, setVideoLoaded] = React.useState(false)
+  const videoRef = React.useRef(null)
 
   const pulseGlow = keyframes`
     0% { opacity: .45; transform: scale(1); }
@@ -74,15 +75,19 @@ export default function HeroSection() {
       {/* Background video (overlay on top of gradient, if loads successfully) */}
       {!videoError && (
         <Box
+          ref={videoRef}
           component="video"
-          src="/images/videos/14088619_3840_2160_60fps_compressed.mp4"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
-          onCanPlay={() => setVideoLoaded(true)}
-          onLoadedData={() => setVideoLoaded(true)}
+          preload="auto"
+          poster="/images/macuco.jpeg"
+          onLoadedMetadata={(event) => {
+            setVideoLoaded(true)
+            event.currentTarget.play().catch(() => {})
+          }}
+          onCanPlayThrough={() => setVideoLoaded(true)}
           onError={() => {
             console.error('[Video] Failed to load video')
             setVideoError(true)
@@ -93,11 +98,14 @@ export default function HeroSection() {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            backgroundColor: '#0f3620',
             zIndex: videoLoaded ? 1 : -1,
             opacity: videoLoaded ? 1 : 0,
             transition: 'opacity 0.5s ease-in-out',
           }}
-        />
+        >
+          <source src="/images/videos/14088619_3840_2160_60fps_compressed.mp4" type="video/mp4" />
+        </Box>
       )}
 
       {/* Overlay */}

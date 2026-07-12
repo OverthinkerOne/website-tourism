@@ -1,12 +1,35 @@
 {
   "nav": {
     "private_guided_tours": "프라이빗 가이드 투어",
+    "gastronomy": "미식",
     "about_us": "회사 소개",
     "gallery": "갤러리",
     "blog": "블로그",
     "menu": "메뉴"
   },
   "brand": { "logoAlt": "로고" },
+  "gastronomy": {
+    "list": {
+      "title": "로컬 미식",
+      "subtitle": "여행 중 시도해볼 엄선된 레스토랑과 카페입니다."
+    },
+    "cta": {
+      "viewDetails": "상세 보기",
+      "backToList": "목록으로 돌아가기"
+    },
+    "sections": {
+      "highlights": "시그니처 요리",
+      "services": "서비스 및 시설",
+      "tips": "팁",
+      "info": "정보"
+    }
+  },
+  "seo": {
+    "gastronomy": {
+      "title": "미식 — 지역 최고의 레스토랑",
+      "description": "트리플 프론티어 전역의 엄선된 레스토랑과 로컬 음식입니다."
+    }
+  },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "당신의 다음 모험이 기다리고 있습니다",

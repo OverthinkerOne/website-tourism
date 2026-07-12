@@ -1,12 +1,35 @@
 {
   "nav": {
     "private_guided_tours": "私人导览",
+    "gastronomy": "美食",
     "about_us": "关于我们",
     "gallery": "画廊",
     "blog": "博客",
     "menu": "菜单"
   },
   "brand": { "logoAlt": "标志" },
+  "gastronomy": {
+    "list": {
+      "title": "本地美食",
+      "subtitle": "我们精选的餐厅和咖啡馆，供您在旅行中尝试。"
+    },
+    "cta": {
+      "viewDetails": "查看详情",
+      "backToList": "返回列表"
+    },
+    "sections": {
+      "highlights": "招牌菜",
+      "services": "服务与设施",
+      "tips": "提示",
+      "info": "信息"
+    }
+  },
+  "seo": {
+    "gastronomy": {
+      "title": "美食 — 该地区最佳餐厅",
+      "description": "我们在三国边界区精选的餐厅和当地美食。"
+    }
+  },
     "tours": {
       "list": {
         "title": "私人导览行程",

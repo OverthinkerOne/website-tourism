@@ -1,12 +1,35 @@
 {
   "nav": {
     "private_guided_tours": "Private geführte Touren",
+    "gastronomy": "Gastronomie",
     "about_us": "Über uns",
     "gallery": "Galerie",
     "blog": "Blog",
     "menu": "Menü"
   },
   "brand": { "logoAlt": "Logo" },
+  "gastronomy": {
+    "list": {
+      "title": "Lokale Gastronomie",
+      "subtitle": "Unsere Auswahl an Restaurants und Cafés, die Sie auf Ihrer Reise ausprobieren sollten."
+    },
+    "cta": {
+      "viewDetails": "Weitere Informationen",
+      "backToList": "Zurück zur Liste"
+    },
+    "sections": {
+      "highlights": "Signature-Gerichte",
+      "services": "Dienstleistungen und Annehmlichkeiten",
+      "tips": "Tipps",
+      "info": "Information"
+    }
+  },
+  "seo": {
+    "gastronomy": {
+      "title": "Gastronomie — Die besten Restaurants der Region",
+      "description": "Unsere Auswahl an Restaurants und lokalen Geschmäckern in der gesamten Dreiländerecke."
+    }
+  },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "DEIN NÄCHSTES ABENTEUER ERWARTET DICH",

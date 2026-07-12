@@ -1,6 +1,7 @@
 {
   "nav": {
     "private_guided_tours": "Private guided tours",
+    "gastronomy": "Gastronomy",
     "about_us": "About us",
     "gallery": "Gallery",
     "blog": "Blog",
@@ -190,8 +191,28 @@
       }
     }
   }
-  ,
-  "session4": {
+  ,  "gastronomy": {
+    "list": {
+      "title": "Local gastronomy",
+      "subtitle": "Our curated list of restaurants and cafés to try on your trip."
+    },
+    "cta": {
+      "viewDetails": "View details",
+      "backToList": "Back to list"
+    },
+    "sections": {
+      "highlights": "Signature dishes",
+      "services": "Services & amenities",
+      "tips": "Tips",
+      "info": "Information"
+    }
+  },
+  "seo": {
+    "gastronomy": {
+      "title": "Gastronomy — Best Restaurants in the Region",
+      "description": "Our curated selection of restaurants and local flavors across the Triple Frontier."
+    }
+  },  "session4": {
     "title": "LET US GUIDE YOU",
     "accordion": {
       "step1": "Tell us about your trip and your preferences.",

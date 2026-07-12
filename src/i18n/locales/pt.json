@@ -1,12 +1,35 @@
 {
   "nav": {
     "private_guided_tours": "Passeios guiados privados",
+    "gastronomy": "Gastronomia",
     "about_us": "Sobre nós",
     "gallery": "Galeria",
     "blog": "Blog",
     "menu": "Menu"
   },
   "brand": { "logoAlt": "logo" },
+  "gastronomy": {
+    "list": {
+      "title": "Gastronomia local",
+      "subtitle": "Nossa seleção de restaurantes e cafés para experimentar na sua viagem."
+    },
+    "cta": {
+      "viewDetails": "Ver detalhes",
+      "backToList": "Voltar à lista"
+    },
+    "sections": {
+      "highlights": "Pratos assinatura",
+      "services": "Serviços e comodidades",
+      "tips": "Dicas",
+      "info": "Informação"
+    }
+  },
+  "seo": {
+    "gastronomy": {
+      "title": "Gastronomia — Melhores Restaurantes da Região",
+      "description": "Nossa seleção de restaurantes e sabores locais por toda a Tríplice Fronteira."
+    }
+  },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "SUA PRÓXIMA AVENTURA TE AGUARDA",

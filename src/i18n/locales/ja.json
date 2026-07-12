@@ -1,12 +1,35 @@
 {
   "nav": {
     "private_guided_tours": "プライベートガイドツアー",
+    "gastronomy": "グルメ",
     "about_us": "私たちについて",
     "gallery": "ギャラリー",
     "blog": "ブログ",
     "menu": "メニュー"
   },
   "brand": { "logoAlt": "ロゴ" },
+  "gastronomy": {
+    "list": {
+      "title": "地元のグルメ",
+      "subtitle": "旅行で試すべき厳選レストランとカフェ。"
+    },
+    "cta": {
+      "viewDetails": "詳細を表示",
+      "backToList": "リストに戻る"
+    },
+    "sections": {
+      "highlights": "シグネチャーディッシュ",
+      "services": "サービスと設備",
+      "tips": "ティップス",
+      "info": "情報"
+    }
+  },
+  "seo": {
+    "gastronomy": {
+      "title": "グルメ — 地域最高のレストラン",
+      "description": "トリプル・フロンティア全体で厳選されたレストランとローカルフレーバーです。"
+    }
+  },
   "hero": {
     "title": "IGUASSU FALLS EXPERIENCE",
     "subtitle": "次の冒険があなたを待っています",
