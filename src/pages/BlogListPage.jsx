@@ -13,13 +13,14 @@ import { fonts, colors } from '../theme/tokens.js'
 import { CardCtaButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import { findImage } from '../lib/imageProvider.js'
-import { Link as RouterLink, useSearchParams } from 'react-router-dom'
+import { Link as RouterLink, useSearchParams, useNavigate } from 'react-router-dom'
 import Seo from '../components/Seo.jsx'
 import { getSiteUrl } from '../lib/content.js'
 import { getAllBlogPosts } from '../lib/content.js'
 
 export default function BlogListPage() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const site = getSiteUrl()
   const [posts, setPosts] = React.useState(() => getAllBlogPosts())
   const [images, setImages] = React.useState({})
@@ -75,17 +76,42 @@ export default function BlogListPage() {
             const image = images[p.id]
             return (
               <Grid key={p.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                <Box sx={{ borderRadius: 2, overflow: 'hidden', border: '1px solid #eee', bgcolor: '#fff', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <Box
+                  onClick={() => navigate(`/blog/${p.id}`)}
+                  sx={{
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    border: '1px solid #eee',
+                    bgcolor: '#fff',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    cursor: 'pointer',
+                    transition: 'transform 220ms ease, box-shadow 220ms ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 16px 40px rgba(0,0,0,0.18)',
+                      '& .card-cta-btn': {
+                        borderColor: colors.accent,
+                        borderWidth: '2px',
+                        bgcolor: 'transparent',
+                        color: '#fff',
+                        boxShadow: `0 6px 20px rgba(255,115,0,0.35)`,
+                        '&::after': {
+                          visibility: 'visible',
+                          transform: 'scale(100) translateX(2px)',
+                        }
+                      }
+                    }
+                  }}
+                >
                   <Box component="img" src={image} alt="" sx={{ width: '100%', height: 220, objectFit: 'cover', display: 'block', bgcolor: '#000' }} />
                   <Box sx={{ p: 2 }}>
                     <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.25, borderRadius: 999, bgcolor: 'rgba(255,115,0,.12)', color: colors.accent, fontWeight: 700, fontSize: 12, textTransform: 'uppercase', letterSpacing: .6 }}>{category}</Box>
                     <Typography sx={{ mt: 1.25, fontWeight: 800, fontSize: 18 }}>{title}</Typography>
                     <Typography sx={{ color: 'text.secondary', mt: 0.75 }}>{excerpt}</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                      <CardCtaButton
-                        component={RouterLink}
-                        to={`/blog/${p.id}`}
-                      >
+                      <CardCtaButton>
                         {t('blog.cta.readMore')}
                       </CardCtaButton>
                     </Box>

@@ -36,8 +36,6 @@ export default function SocialIcons({ variant = 'desktop', onItemClick, sx, colo
             ? '#e4405f'
             : '#25d366' // WhatsApp green color
 
-        const tooltipText = name.charAt(0).toUpperCase() + name.slice(1)
-
         return (
           <Box
             key={name}
@@ -69,54 +67,12 @@ export default function SocialIcons({ variant = 'desktop', onItemClick, sx, colo
                   background: brandColor,
                   boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
                   transform: 'translateY(-2px)',
-                  '& .tooltip': {
-                    top: '-42px',
-                    opacity: 1,
-                    visibility: 'visible',
-                  },
                   '& .icon-mask': {
                     bgcolor: '#ffffff',
                   }
                 }
               }}
             >
-              {/* Tooltip (Only on desktop header/footer to avoid mobile clutter) */}
-              {!isMenu && (
-                <Box
-                  className="tooltip"
-                  sx={{
-                    position: 'absolute',
-                    top: 0,
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    background: brandColor,
-                    color: '#ffffff',
-                    padding: '4px 8px',
-                    borderRadius: '4px',
-                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.08)',
-                    opacity: 0,
-                    visibility: 'hidden',
-                    pointerEvents: 'none',
-                    transition: 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-                    whiteSpace: 'nowrap',
-                    zIndex: 10,
-                    // Triangle pointer
-                    '&::before': {
-                      position: 'absolute',
-                      content: '""',
-                      height: '6px',
-                      width: '6px',
-                      background: brandColor,
-                      bottom: '-3px',
-                      left: '50%',
-                      transform: 'translate(-50%) rotate(45deg)',
-                      transition: 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-                    }
-                  }}
-                >
-                  {tooltipText}
-                </Box>
-              )}
 
               {/* Icon mask */}
               <Box

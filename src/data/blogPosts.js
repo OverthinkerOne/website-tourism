@@ -10,7 +10,7 @@ const BLOG_POSTS = [
       title: 'Sky of the Falls: astrotourism, Guarani knowledge and nature',
       excerpt: 'An exclusive night experience in Iguaçu National Park, blending science, Guarani culture and a star-studded sky.',
       date: '18/07/2025',
-      image: '/images/blog/ceudascataratas.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/ceudascataratas.jpg',
       tags: ['Adventure', 'Experiences', 'Night'],
       body: [
         'A night to slow down: lying on deck chairs with blankets and cushions at a reserved viewpoint, you gaze at a dark, vibrant sky to the sound of the Falls in the distance.',
@@ -33,7 +33,7 @@ const BLOG_POSTS = [
       title: 'Waters Show at Wonder Park: lights, music and 3D magic',
       excerpt: 'A nighttime fountain show with 3D cinema moments—family-friendly, emotional and uniquely Iguazu.',
       date: '31/10/2024',
-      image: '/images/blog/showdasaguas.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/showdasaguas.jpg',
       tags: ['Night', 'Family', 'Show'],
       body: [
         'A choreographed fountain spectacle with a cinema twist: music that marked generations syncs with projections and light for an immersive evening scene.',
@@ -68,7 +68,7 @@ const BLOG_POSTS = [
       title: 'Patanegra — Gourmet Market in Puerto Iguazú',
       excerpt: 'A cozy spot for curated wines, craft beers and refined bites—great for a relaxed evening across the border.',
       date: '10/10/2024',
-      image: '/images/blog/patanegra.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/patanegra.jpg',
       tags: ['Food', 'Wine', 'Argentina'],
       body: [
         'Part wine market, part tasting lounge, Patanegra pairs a welcoming vibe with a high-quality selection—a smart end to a day of sights.',
@@ -86,7 +86,7 @@ const BLOG_POSTS = [
       title: 'Adventures in Iguazu: from falls spray to skydive views',
       excerpt: 'Five ways to boost adrenaline in Foz: Macuco boat + rappelling, skydive, Poço Preto by bike, helicopter flight and a gentle end at Birds Park.',
       date: '05/09/2024',
-      image: '/images/blog/aventurasemfoz.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/aventurasemfoz.jpg',
       tags: ['Adventure', 'Nature', 'Aerial'],
       body: [
         'Start with Macuco Safari and a canyon rappel by the Macuco fall—pure rush followed by a boat ride to feel the spray from the giants.',
@@ -104,7 +104,7 @@ const BLOG_POSTS = [
       title: 'La Aripuca: culture, forest and a colossal wooden landmark',
       excerpt: 'An agro-ecotourism park in Puerto Iguazú featuring a 500-ton wooden monument, Guarani culture and environmental storytelling.',
       date: '03/09/2024',
-      image: '/images/blog/la-aripuca.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/la-aripuca.jpg',
       tags: ['Culture', 'Argentina', 'Nature'],
       body: [
         'The “Gran Aripuca” turns rescued native logs into a towering symbol for preservation, telling a story of forest value and care.',
@@ -122,7 +122,7 @@ const BLOG_POSTS = [
       title: 'Birdwatching Foz: a new birdwatching experience',
       excerpt: 'Guided routes across Brazil, Paraguay and Argentina to watch birds and experience nature with calm and attention.',
       date: '15/07/2025',
-      image: '/images/blog/birdwatchingfoz.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/birdwatchingfoz.jpg',
       tags: ['Nature', 'Photography', 'Birds'],
       body: [
         'With more than 400 recorded species, Foz do Iguaçu and its surroundings are a paradise for those who love silence, binoculars and great photos in the forest.',
@@ -144,7 +144,7 @@ const BLOG_POSTS = [
       title: 'São João Circuit',
       excerpt: 'A 1.9 km trail that blends river swims, a waterfall and history in Iguaçu National Park.',
       date: '07/07/2025',
-      image: '/images/blog/circuitosaojoao.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/circuitosaojoao.jpg',
       tags: ['Trail', 'Nature', 'History'],
       body: [
         'Inaugurated in July 2025, the São João Circuit is a 1.9 km trail that combines preserved Atlantic Forest, crystal-clear water and a dash of history.',
@@ -165,7 +165,7 @@ const BLOG_POSTS = [
       title: 'Pedal the Wonders: Cycleway of the Falls and Bike Iguaçu',
       excerpt: 'An 11.6 km paved cycling route in the heart of the Atlantic Forest, with bike rental and full contact with nature.',
       date: '02/06/2025',
-      image: '/images/blog/cicloviacataratas.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/cicloviacataratas.jpg',
       tags: ['Bike', 'Adventure', 'Sustainability'],
       body: [
         'Inaugurated at the end of May, the Cycleway of the Falls offers 11.6 km of paved route immersed in the Atlantic Forest, linking the Visitor Center to the start of the Falls Trail.',
@@ -186,7 +186,7 @@ const BLOG_POSTS = [
       title: 'Parque das Aves Conecta',
       excerpt: 'An immersive activity led by environmental educators, with interaction and learning about local biodiversity.',
       date: '07/05/2025',
-      image: '/images/blog/conecta.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/conecta.jpg',
       tags: ['Birds', 'Conservation', 'Family'],
       body: [
         'An immersive activity led by environmental educators, about 3 hours long, that brings visitors closer to the Atlantic Forest’s biodiversity.',
@@ -208,7 +208,7 @@ const BLOG_POSTS = [
       title: 'Iguassu Secret Falls: trails, natural pools and forest vibes',
       excerpt: 'Choose from full-day, half-day, single-trail or full-moon luau to explore hidden waterfalls with bilingual guides and safety built in.',
       date: '07/03/2025',
-      image: '/images/blog/iguassu-secret-falls.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/iguassu-secret-falls.jpg',
       tags: ['Nature', 'Adventure', 'Waterfalls'],
       body: [
         'Beyond the famous Falls, Foz hides a network of pristine creeks and waterfalls. Iguassu Secret Falls turns this into curated routes that swap crowds for forest calm and clear water.',
@@ -228,7 +228,7 @@ const BLOG_POSTS = [
       title: 'Flavio Fusco in Iguazu: a 4-day highlight reel',
       excerpt: 'A creator’s itinerary through Wonder Park, shopping in Paraguay, Brazilian Falls with Macuco boat, helicopter flyover and sunset at the Three Borders Landmark.',
       date: '29/01/2025',
-      image: '/images/blog/flaviofusco.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/flaviofusco.jpg',
       tags: ['Itinerary', 'Adventure', 'City'],
       body: [
         'With logistics organized end-to-end, Flavio explored Foz do Iguaçu like a pro: hotel transfers, timed entries and a route that balanced thrill, culture and good food.',
@@ -248,7 +248,7 @@ const BLOG_POSTS = [
       title: 'Top experiences at Belmond Hotel das Cataratas',
       excerpt: 'From garden picnics with waterfall views to sunrise on the tower, lunar rainbows, the Cataratas Spa and dreamy weddings inside the National Park.',
       date: '16/01/2025',
-      image: '/images/blog/experienciasbelmond.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/experienciasbelmond.jpg',
       tags: ['Luxury', 'Experiences', 'Wellness'],
       body: [
         'Staying inside Iguaçu National Park changes everything. As the only hotel within the park, Belmond gives you rare quiet hours and postcard views with fewer people.',
@@ -268,7 +268,7 @@ const BLOG_POSTS = [
       title: 'Ytepopo Trail: along the Iguaçu River to the falls',
       excerpt: 'A 5 km nature walk (about 1h40) that follows the river’s course through Atlantic Forest, connecting with the Bananeiras path at the end.',
       date: '07/11/2024',
-      image: '/images/blog/trilha-ytepopo.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/trilha-ytepopo.jpg',
       tags: ['Trail', 'Nature', 'Family'],
       body: [
         'A new route inside the park, the Ytepopo Trail traces the Iguaçu River through lush Atlantic Forest all the way toward the great drop.',
@@ -287,7 +287,7 @@ const BLOG_POSTS = [
       title: 'Lumina Park: an immersive night trail of light and sound',
       excerpt: 'An 800 m illuminated path with original soundtrack and nine themed scenes — a photogenic, family-friendly night experience at Wonder Park.',
       date: '04/11/2024',
-      image: '/images/blog/lumina-park.jpg',
+      image: 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/lumina-park.jpg',
       tags: ['Family', 'Night', 'Photography'],
       body: [
         'Designed by a top-tier lighting director, Lumina Park blends forest atmosphere with cutting-edge effects to craft a serene night walk in nature.',

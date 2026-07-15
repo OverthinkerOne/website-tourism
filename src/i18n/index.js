@@ -23,7 +23,7 @@ i18n
   supportedLngs: ['en', 'es', 'zh', 'pt'],
     interpolation: { escapeValue: false },
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage'],
       caches: ['localStorage'],
     },
   })

@@ -78,7 +78,6 @@ export default function HeroSection() {
           loop
           playsInline
           preload="auto"
-          poster="/images/macuco.jpeg"
           onLoadedMetadata={(event) => {
             setVideoLoaded(true)
             event.currentTarget.play().catch(() => {})

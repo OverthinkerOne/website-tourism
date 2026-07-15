@@ -14,12 +14,12 @@ const TOUR_IMAGES = {
   // Night lights from tour-sec
   'br-itaipu-night': '/images/tour-sec/itaipu-night-lights.jpg',
   // For now, pick coherent images from gallery for Panoramic and Refuge (can be swapped if you add /tour-sec variants)
-  'br-itaipu-panoramico': '/images/gallery/SaveClip.App_419493917_1095094421816187_4659197450807997565_n.jpg',
+  'br-itaipu-panoramico': 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Galeria/SaveClip.App_419493917_1095094421816187_4659197450807997565_n.jpg',
   // Biological Refuge: use jaguar image from gallery
-  'br-itaipu-refugio': '/images/gallery/jaguar.jpg',
+  'br-itaipu-refugio': 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Galeria/jaguar.jpg',
 
   // Macuco Safari (Brazilian boat)
-  'br-macuco-safari': '/images/macuco.jpeg',
+  'br-macuco-safari': 'https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Galeria/FOTO%20MACUCO%20(42).jpg',
 
   // Ciudad del Este shopping (use specific asset from tour-sec)
   'py-shopping-cde': '/images/tour-sec/ciudad-del-este.jpeg',

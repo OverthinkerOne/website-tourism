@@ -7,7 +7,6 @@ import { AboutUsButton } from './GuaraButton.jsx'
 
 const images = [
   '/images/carousel-s2/SaveClip.App_476343054_18032969774569592_7526527612979803973_n.jpg',
-  '/images/carousel-s2/SaveClip.App_484814131_18037139819569592_3245375217564991692_n.jpg',
   '/images/carousel-s2/SaveClip.App_485270468_18037646876569592_7826056654123938580_n.jpg',
   '/images/carousel-s2/SaveClip.App_486090904_18037646765569592_8273965451699820646_n.jpg',
 ]

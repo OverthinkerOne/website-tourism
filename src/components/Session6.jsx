@@ -28,6 +28,7 @@ function TourCard({ tour }) {
   const { id, country, title, Icon, image } = tour
   return (
     <Box
+      onClick={() => navigate(`/tours/${id}`)}
       sx={{
         flex: '0 0 auto',
         width: { xs: 260, sm: 300, md: 340, lg: 380 },
@@ -37,7 +38,22 @@ function TourCard({ tour }) {
         overflow: 'hidden',
         boxShadow: '0 6px 18px rgba(0,0,0,0.08)',
         transition: 'transform 220ms ease, box-shadow 220ms ease',
-        '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 16px 40px rgba(0,0,0,0.18)' },
+        cursor: 'pointer',
+        '&:hover': { 
+          transform: 'translateY(-6px)', 
+          boxShadow: '0 16px 40px rgba(0,0,0,0.18)',
+          '& .card-cta-btn': {
+            borderColor: colors.accent,
+            borderWidth: '2px',
+            bgcolor: 'transparent',
+            color: '#fff',
+            boxShadow: `0 6px 20px rgba(255,115,0,0.35)`,
+            '&::after': {
+              visibility: 'visible',
+              transform: 'scale(100) translateX(2px)',
+            }
+          }
+        },
         display: 'flex',
         flexDirection: 'column',
       }}
@@ -96,9 +112,7 @@ function TourCard({ tour }) {
 
       {/* 4) Button */}
       <Box sx={{ px: 2, pb: 2, display: 'flex', justifyContent: 'center' }}>
-        <CardCtaButton
-          onClick={(e) => { e.preventDefault(); navigate(`/tours/${id}`) }}
-        >
+        <CardCtaButton>
           {t('session6.viewDetails')}
         </CardCtaButton>
       </Box>

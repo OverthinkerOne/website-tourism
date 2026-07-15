@@ -14,12 +14,13 @@ import { fonts, colors } from '../theme/tokens.js'
 import { CardCtaButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import { findImage } from '../lib/imageProvider.js'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import { getAllRestaurants, getRestaurantOverride, getSiteUrl } from '../lib/content.js'
 import Seo from '../components/Seo.jsx'
 
 export default function GastronomyPage() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const site = getSiteUrl()
   const [images, setImages] = React.useState({})
   const [list, setList] = React.useState(() => getAllRestaurants())
@@ -72,7 +73,35 @@ export default function GastronomyPage() {
             const cuisines = override?.cuisine || r.cuisine || []
             return (
               <Grid key={r.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                <Box sx={{ borderRadius: 2, overflow: 'hidden', border: '1px solid #eee', bgcolor: '#fff', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <Box
+                  onClick={() => navigate(`/gastronomy/${r.id}`)}
+                  sx={{
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    border: '1px solid #eee',
+                    bgcolor: '#fff',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    cursor: 'pointer',
+                    transition: 'transform 220ms ease, box-shadow 220ms ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 16px 40px rgba(0,0,0,0.18)',
+                      '& .card-cta-btn': {
+                        borderColor: colors.accent,
+                        borderWidth: '2px',
+                        bgcolor: 'transparent',
+                        color: '#fff',
+                        boxShadow: `0 6px 20px rgba(255,115,0,0.35)`,
+                        '&::after': {
+                          visibility: 'visible',
+                          transform: 'scale(100) translateX(2px)',
+                        }
+                      }
+                    }
+                  }}
+                >
                   <Box
                     component="img"
                     src={images[r.id] || r.image || '/images/restaurants/placeholder.svg'}
@@ -90,10 +119,7 @@ export default function GastronomyPage() {
                     </Stack>
                     <Typography sx={{ color: 'text.secondary', mt: 0.75 }}>{override?.short || r.short || ''}</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                      <CardCtaButton
-                        component={RouterLink}
-                        to={`/gastronomy/${r.id}`}
-                      >
+                      <CardCtaButton>
                         {t('gastronomy.cta.viewDetails', 'View details')}
                       </CardCtaButton>
                     </Box>

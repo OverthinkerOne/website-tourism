@@ -32,6 +32,7 @@ function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel, id }) 
   const navigate = useNavigate()
   return (
     <Box
+      onClick={() => navigate(`/blog/${id}`)}
       sx={{
         flex: '0 0 auto',
         width: { xs: 280, sm: 320, md: 360, lg: 400 },
@@ -41,9 +42,21 @@ function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel, id }) 
         overflow: 'hidden',
         boxShadow: '0 6px 18px rgba(0,0,0,0.08)',
         transition: 'transform 220ms ease, box-shadow 220ms ease',
+        cursor: 'pointer',
         '&:hover': {
           transform: 'translateY(-6px)',
           boxShadow: '0 16px 40px rgba(0,0,0,0.18)',
+          '& .card-cta-btn': {
+            borderColor: colors.accent,
+            borderWidth: '2px',
+            bgcolor: 'transparent',
+            color: '#fff',
+            boxShadow: `0 6px 20px rgba(255,115,0,0.35)`,
+            '&::after': {
+              visibility: 'visible',
+              transform: 'scale(100) translateX(2px)',
+            }
+          }
         },
         display: 'flex',
         flexDirection: 'column',
@@ -84,11 +97,9 @@ function BlogCard({ category, title, excerpt, Icon, image, readMoreLabel, id }) 
         </Typography>
       </Box>
 
-      {/* Button (no navigation yet) */}
+      {/* Button */}
       <Box sx={{ px: 2, pb: 1.25, mt: 'auto', display: 'flex', justifyContent: 'center' }}>
-        <CardCtaButton
-          onClick={() => navigate(`/blog/${id}`)}
-        >
+        <CardCtaButton>
           {readMoreLabel}
         </CardCtaButton>
       </Box>

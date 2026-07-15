@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Outlet, useLocation } from 'react-router-dom'
 import App from './App.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import GalleryPage from './pages/GalleryPage.jsx'
@@ -20,46 +20,59 @@ import '@fontsource/kumbh-sans' // base (regular)
 import '@fontsource/kumbh-sans/700.css' // bold
 import './i18n/index.js'
 
+function ScrollToTopLayout() {
+  const { pathname } = useLocation()
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return <Outlet />
+}
+
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App />,
-  },
-  {
-    path: '/about',
-    element: <AboutPage />,
-  },
-  {
-    path: '/gallery',
-    element: <GalleryPage />,
-  },
-  {
-    path: '/tours',
-    element: <PrivateToursPage />,
-  },
-  {
-    path: '/tours/:id',
-    element: <TourDetailPage />,
-  },
-  {
-    path: '/gastronomy',
-    element: <GastronomyPage />,
-  },
-  {
-    path: '/gastronomy/:id',
-    element: <RestaurantDetailPage />,
-  },
-  {
-    path: '/blog',
-    element: <BlogListPage />,
-  },
-  {
-    path: '/blog/:id',
-    element: <BlogPostPage />,
-  },
-  {
-    path: '/admin',
-    element: <AdminPage />,
+    element: <ScrollToTopLayout />,
+    children: [
+      {
+        path: '/',
+        element: <App />,
+      },
+      {
+        path: '/about',
+        element: <AboutPage />,
+      },
+      {
+        path: '/gallery',
+        element: <GalleryPage />,
+      },
+      {
+        path: '/tours',
+        element: <PrivateToursPage />,
+      },
+      {
+        path: '/tours/:id',
+        element: <TourDetailPage />,
+      },
+      {
+        path: '/gastronomy',
+        element: <GastronomyPage />,
+      },
+      {
+        path: '/gastronomy/:id',
+        element: <RestaurantDetailPage />,
+      },
+      {
+        path: '/blog',
+        element: <BlogListPage />,
+      },
+      {
+        path: '/blog/:id',
+        element: <BlogPostPage />,
+      },
+      {
+        path: '/admin',
+        element: <AdminPage />,
+      },
+    ],
   },
 ])
 

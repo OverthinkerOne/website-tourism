@@ -98,6 +98,11 @@ export default function AdminPage() {
   }
 
   const handleSaveBlog = () => {
+    const rawImage = currentBlog.image.trim()
+    const finalImage = (rawImage && !rawImage.startsWith('http://') && !rawImage.startsWith('https://') && !rawImage.startsWith('/'))
+      ? `https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Blog/${rawImage}`
+      : rawImage
+
     const payload = {
       id: currentBlog.id.trim(),
       title: currentBlog.title.trim(),
@@ -106,7 +111,7 @@ export default function AdminPage() {
       body: currentBlog.body.split('\n\n').map((p) => p.trim()).filter(Boolean),
       date: currentBlog.date.trim(),
       tags: currentBlog.tags.split(',').map((t) => t.trim()).filter(Boolean),
-      image: currentBlog.image.trim(),
+      image: finalImage,
       published: !!currentBlog.published,
     }
     if (!payload.id) return

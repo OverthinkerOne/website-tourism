@@ -42,10 +42,12 @@ export default function AboutPage() {
            >
               <video
                 src="/images/videos/about.mp4"
+                autoPlay
+                muted
+                loop
                 controls
                 playsInline
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                poster="/images/macuco.jpeg"
               />
             </Box>
           </Grid>

@@ -21,10 +21,11 @@ export const shine = keyframes`
 /**
  * Outlined button style for card CTAs (e.g. "View details", "Read more").
  */
-export function CardCtaButton({ children, sx, ...props }) {
+export function CardCtaButton({ children, className, sx, ...props }) {
   return (
     <Button
       variant="outlined"
+      className={`card-cta-btn ${className || ''}`}
       sx={{
         height: '46px',
         minWidth: '170px',

@@ -11,7 +11,7 @@ export default function Session10() {
   return (
     <Box component="section" sx={{ position: 'relative', width: '100%', minHeight: { xs: '60vh', md: '70vh' }, overflow: 'hidden', display: 'grid', placeItems: 'center' }}>
       {/* Background image */}
-      <Box component="img" src="/images/macuco.jpeg" alt="background" sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
+      <Box component="img" src="https://jkzymbnmqgkhzbvmdvnu.supabase.co/storage/v1/object/public/Galeria/FOTO%20MACUCO%20(1).jpg" alt="background" loading="lazy" sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
       {/* Overlay for contrast */}
       <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 100%)', zIndex: 1 }} />
 
@@ -88,7 +88,7 @@ export default function Session10() {
                 }
               }}>
           {t('session10.calendlyPrefix')}
-          <Box component="img" src="/images/calendly.png" alt="Calendly" />
+          <Box component="img" src="/images/calendly.png" alt="Calendly" loading="lazy" />
         </Link>
   <CalendlyDialog open={calOpen} onClose={() => setCalOpen(false)} url={CALENDLY_URL} locale={i18n.language} />
       </Box>

@@ -13,7 +13,7 @@ import { CardCtaButton } from '../components/GuaraButton.jsx'
 import { useTranslation } from 'react-i18next'
 import TOURS from '../data/tours.js'
 import { findImage } from '../lib/imageProvider.js'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import TOUR_IMAGES from '../data/tourImages.js'
 import { getAllTours, getTourOverride } from '../lib/content.js'
 import Seo from '../components/Seo.jsx'
@@ -21,6 +21,7 @@ import { getSiteUrl } from '../lib/content.js'
 
 export default function PrivateToursPage() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const site = getSiteUrl()
   const [images, setImages] = React.useState({})
   const [tours, setTours] = React.useState(() => getAllTours())
@@ -71,17 +72,42 @@ export default function PrivateToursPage() {
             const title = override?.title || t(`session6.titles.${tour.id}`, override?.title || tour.title || tour.id)
             return (
               <Grid key={tour.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                <Box sx={{ borderRadius: 2, overflow: 'hidden', border: '1px solid #eee', bgcolor: '#fff', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <Box
+                  onClick={() => navigate(`/tours/${tour.id}`)}
+                  sx={{
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    border: '1px solid #eee',
+                    bgcolor: '#fff',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    cursor: 'pointer',
+                    transition: 'transform 220ms ease, box-shadow 220ms ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 16px 40px rgba(0,0,0,0.18)',
+                      '& .card-cta-btn': {
+                        borderColor: colors.accent,
+                        borderWidth: '2px',
+                        bgcolor: 'transparent',
+                        color: '#fff',
+                        boxShadow: `0 6px 20px rgba(255,115,0,0.35)`,
+                        '&::after': {
+                          visibility: 'visible',
+                          transform: 'scale(100) translateX(2px)',
+                        }
+                      }
+                    }
+                  }}
+                >
                   <Box component="img" src={images[tour.id]} alt={title} onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${encodeURIComponent(title)}/800/600` }} sx={{ width: '100%', height: 200, objectFit: 'cover', display: 'block', bgcolor: '#000' }} />
                   <Box sx={{ p: 2 }}>
                     <Box sx={{ display: 'inline-flex', alignItems: 'center', px: 1, py: 0.25, borderRadius: 999, bgcolor: 'rgba(255,115,0,.12)', color: colors.accent, fontWeight: 700, fontSize: 12, textTransform: 'uppercase', letterSpacing: .6 }}>{country}</Box>
                     <Typography sx={{ mt: 1.25, fontWeight: 700, fontSize: 18 }}>{title}</Typography>
                     <Typography sx={{ color: 'text.secondary', mt: 0.75 }}>{override?.short || t(`tours.details.${tour.id}.short`, override?.short || tour.short || '')}</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                      <CardCtaButton
-                        component={RouterLink}
-                        to={`/tours/${tour.id}`}
-                      >
+                      <CardCtaButton>
                         {t('tours.cta.viewDetails')}
                       </CardCtaButton>
                     </Box>
